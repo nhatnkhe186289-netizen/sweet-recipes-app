@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { View, ActivityIndicator } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { loadProfile } from '../store/authSlice';
 import OnboardingScreen from '../screens/onboarding/OnboardingScreen';
 import AuthNavigator from './AuthNavigator';
 import TabNavigator from './TabNavigator';
@@ -14,9 +18,47 @@ import colors from '../theme/colors';
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
+  const [checkingToken, setCheckingToken] = useState(true);
+  const [initialRoute, setInitialRoute] = useState('Onboarding');
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    const checkToken = async () => {
+      try {
+        const token = await AsyncStorage.getItem('token');
+        if (token) {
+          const result = await dispatch(loadProfile());
+          if (loadProfile.fulfilled.match(result)) {
+            setInitialRoute('App');
+          } else {
+            setInitialRoute('Auth');
+          }
+        } else {
+          setInitialRoute('Onboarding');
+        }
+      } catch (error) {
+        console.error('Error checking token:', error);
+        setInitialRoute('Onboarding');
+      } finally {
+        setCheckingToken(false);
+      }
+    };
+
+    checkToken();
+  }, [dispatch]);
+
+  if (checkingToken) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: colors.white }}>
+        <ActivityIndicator size="large" color={colors.primary} />
+      </View>
+    );
+  }
+
   return (
     <Stack.Navigator
-      initialRouteName="Onboarding"
+      initialRouteName={initialRoute}
       screenOptions={{
         headerStyle: {
           backgroundColor: colors.white,

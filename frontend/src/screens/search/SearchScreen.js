@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   TextInput,
   ScrollView,
+  Platform,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,6 +24,22 @@ const SearchScreen = ({ route }) => {
   const dispatch = useDispatch();
   const [query, setQuery] = useState('');
   const [selectedCategoryId, setSelectedCategoryId] = useState('all');
+  const [scrollX, setScrollX] = useState(0);
+  const categoryScrollRef = useRef(null);
+
+  const handleScrollLeft = () => {
+    categoryScrollRef.current?.scrollTo({
+      x: Math.max(0, scrollX - 150),
+      animated: true,
+    });
+  };
+
+  const handleScrollRight = () => {
+    categoryScrollRef.current?.scrollTo({
+      x: scrollX + 150,
+      animated: true,
+    });
+  };
 
   const { recipes, categories, isLoading } = useSelector((state) => state.recipe);
 
@@ -108,26 +125,44 @@ const SearchScreen = ({ route }) => {
         </View>
 
         {/* Categories horizontal tabs */}
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.categoryTabs}
-        >
-          {displayedCategories.map((cat) => {
-            const isSelected = selectedCategoryId === cat._id;
-            return (
-              <TouchableOpacity
-                key={cat._id}
-                style={[styles.tabButton, isSelected && styles.activeTabButton]}
-                onPress={() => handleSelectCategory(cat._id)}
-              >
-                <Text style={[styles.tabButtonText, isSelected && styles.activeTabButtonText]}>
-                  {cat.name}
-                </Text>
-              </TouchableOpacity>
-            );
-          })}
-        </ScrollView>
+        <View style={[styles.categoriesWrapper, Platform.OS === 'web' && { paddingHorizontal: 36 }]}>
+          {Platform.OS === 'web' && (
+            <TouchableOpacity style={[styles.arrowBtn, styles.leftArrowBtn]} onPress={handleScrollLeft}>
+              <Ionicons name="chevron-back" size={16} color={colors.primary} />
+            </TouchableOpacity>
+          )}
+
+          <ScrollView
+            ref={categoryScrollRef}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={{ flex: 1 }}
+            contentContainerStyle={styles.categoryTabs}
+            onScroll={(e) => setScrollX(e.nativeEvent.contentOffset.x)}
+            scrollEventThrottle={16}
+          >
+            {displayedCategories.map((cat) => {
+              const isSelected = selectedCategoryId === cat._id;
+              return (
+                <TouchableOpacity
+                  key={cat._id}
+                  style={[styles.tabButton, isSelected && styles.activeTabButton]}
+                  onPress={() => handleSelectCategory(cat._id)}
+                >
+                  <Text style={[styles.tabButtonText, isSelected && styles.activeTabButtonText]}>
+                    {cat.name}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
+          </ScrollView>
+
+          {Platform.OS === 'web' && (
+            <TouchableOpacity style={[styles.arrowBtn, styles.rightArrowBtn]} onPress={handleScrollRight}>
+              <Ionicons name="chevron-forward" size={16} color={colors.primary} />
+            </TouchableOpacity>
+          )}
+        </View>
       </View>
 
       {/* Results Title Count */}
@@ -282,6 +317,34 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 20,
     paddingHorizontal: 30,
+  },
+  categoriesWrapper: {
+    position: 'relative',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  arrowBtn: {
+    position: 'absolute',
+    top: 4,
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    backgroundColor: '#FFEBF0',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    elevation: 2,
+  },
+  leftArrowBtn: {
+    left: 4,
+  },
+  rightArrowBtn: {
+    right: 4,
   },
 });
 

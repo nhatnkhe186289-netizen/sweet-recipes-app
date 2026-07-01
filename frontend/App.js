@@ -7,6 +7,38 @@ import { View, StyleSheet, useWindowDimensions, Platform } from 'react-native';
 import { store } from './src/store/store';
 import AppNavigator from './src/navigation/AppNavigator';
 
+const linking = {
+  prefixes: ['http://localhost:8081', 'sweetrecipes://'],
+  config: {
+    screens: {
+      Onboarding: 'onboarding',
+      Auth: {
+        path: 'auth',
+        screens: {
+          SignIn: 'signin',
+          SignUp: 'signup',
+          ForgotPassword: 'forgot-password',
+        },
+      },
+      App: {
+        path: '',
+        screens: {
+          Home: 'home',
+          Search: 'search',
+          Favorites: 'favorites',
+          Profile: 'profile',
+        },
+      },
+      RecipeDetail: 'recipe/:recipeId',
+      AddRecipe: 'add-recipe',
+      EditRecipe: 'edit-recipe/:recipeId',
+      Comments: 'recipe/:recipeId/comments',
+      Settings: 'settings',
+      ChangePassword: 'change-password',
+    },
+  },
+};
+
 export default function App() {
   const { width } = useWindowDimensions();
   const isWeb = Platform.OS === 'web';
@@ -15,7 +47,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <SafeAreaProvider>
-        <NavigationContainer>
+        <NavigationContainer linking={linking}>
           {showWebWrapper ? (
             <View style={styles.webWrapper}>
               <View style={styles.webContainer}>

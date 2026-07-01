@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, Alert, TouchableOpacity, Platform } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import * as ImagePicker from 'expo-image-picker';
 import recipeService from '../../services/recipe.service';
@@ -97,6 +97,10 @@ const EditRecipeScreen = ({ route, navigation }) => {
 
       if (image.startsWith('http')) {
         formData.append('image', image);
+      } else if (Platform.OS === 'web') {
+        const response = await fetch(image);
+        const blob = await response.blob();
+        formData.append('image', blob, 'recipe.jpg');
       } else {
         formData.append('image', {
           uri: image,
@@ -120,7 +124,7 @@ const EditRecipeScreen = ({ route, navigation }) => {
     return <LoadingSpinner />;
   }
 
-  const isLocalImage = (image || '').startsWith('file');
+  const isLocalImage = image && !image.startsWith('http');
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
