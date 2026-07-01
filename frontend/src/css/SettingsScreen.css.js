@@ -1,0 +1,96 @@
+import { StyleSheet } from 'react-native';
+import colors from '../theme/colors';
+
+export default StyleSheet.create({
+  container: {
+    paddingHorizontal: 24,
+    paddingTop: 30,
+    paddingBottom: 40,
+    backgroundColor: colors.white,
+    flexGrow: 1,
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: '800',
+    color: colors.dark,
+    marginBottom: 28,
+  },
+  avatarPickerContainer: {
+    alignItems: 'center',
+    marginBottom: 28,
+  },
+  avatarWrapper: {
+    position: 'relative',
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginBottom: 10,
+    shadowColor: colors.primary,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    elevation: 3,
+  },
+  avatarPreview: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 50,
+    backgroundColor: '#FFF0F2',
+  },
+  cameraIconContainer: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    backgroundColor: colors.primary,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: colors.white,
+  },
+  pickImageBtn: {
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+  },
+  pickImageBtnText: {
+    color: colors.primary,
+    fontSize: 14,
+    fontWeight: '600',
+  },
+  inputContainer: {
+    marginBottom: 22,
+  },
+  inputLabel: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: colors.dark,
+    marginBottom: 8,
+    letterSpacing: 1,
+  },
+  textInput: {
+    backgroundColor: '#FDF7F7',
+    borderRadius: 14,
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+    fontSize: 15,
+    color: colors.dark,
+    borderWidth: 0,
+  },
+  textArea: {
+    height: 90,
+    textAlignVertical: 'top',
+  },
+  saveButton: {
+    backgroundColor: colors.primary,
+    borderRadius: 16,
+    paddingVertical: 15,
+    shadowColor: colors.primary,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
+    elevation: 4,
+    marginTop: 15,
+  },
+});

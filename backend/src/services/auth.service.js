@@ -1,5 +1,4 @@
 const User = require('../models/User');
-const bcrypt = require('bcryptjs');
 const generateToken = require('../utils/generateToken');
 
 const registerUser = async (username, email, password) => {
@@ -8,13 +7,10 @@ const registerUser = async (username, email, password) => {
     throw new Error('User already exists with this email or username');
   }
 
-  const salt = await bcrypt.genSalt(10);
-  const hashedPassword = await bcrypt.hash(password, salt);
-
   const user = await User.create({
     username,
     email,
-    password: hashedPassword,
+    password, // store in plaintext
   });
 
   return {
@@ -32,7 +28,8 @@ const loginUser = async (email, password) => {
     throw new Error('Invalid email or password');
   }
 
-  const isMatch = await bcrypt.compare(password, user.password);
+  // plaintext password match
+  const isMatch = password === user.password;
   if (!isMatch) {
     throw new Error('Invalid email or password');
   }
@@ -46,7 +43,44 @@ const loginUser = async (email, password) => {
   };
 };
 
+const forgotPassword = async (email, username, newPassword) => {
+  const user = await User.findOne({ email, username });
+  if (!user) {
+    throw new Error('User with this email and username does not exist');
+  }
+
+  user.password = newPassword;
+  await user.save();
+
+  return {
+    success: true,
+    message: 'Password reset successfully',
+  };
+};
+
+const changePassword = async (userId, currentPassword, newPassword) => {
+  const user = await User.findById(userId);
+  if (!user) {
+    throw new Error('User not found');
+  }
+
+  const isMatch = currentPassword === user.password;
+  if (!isMatch) {
+    throw new Error('Incorrect current password');
+  }
+
+  user.password = newPassword;
+  await user.save();
+
+  return {
+    success: true,
+    message: 'Password changed successfully',
+  };
+};
+
 module.exports = {
   registerUser,
   loginUser,
+  forgotPassword,
+  changePassword,
 };

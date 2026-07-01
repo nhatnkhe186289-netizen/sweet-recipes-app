@@ -10,6 +10,7 @@ import {
   Dimensions,
   ImageBackground,
   Alert,
+  Platform,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
@@ -20,7 +21,8 @@ import colors from '../../theme/colors';
 import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
 
-const { width } = Dimensions.get('window');
+const rawWidth = Dimensions.get('window').width;
+const width = Platform.OS === 'web' ? Math.min(rawWidth, 600) : rawWidth;
 const imageSize = (width - 48) / 3; // 3 columns with padding
 
 const ProfileScreen = ({ navigation }) => {
@@ -63,17 +65,29 @@ const ProfileScreen = ({ navigation }) => {
   }, [navigation, user]);
 
   const handleLogout = () => {
-    Alert.alert('Đăng xuất', 'Bạn có chắc chắn muốn đăng xuất tài khoản không?', [
-      { text: 'Hủy', style: 'cancel' },
-      {
-        text: 'Đăng xuất',
-        style: 'destructive',
-        onPress: () => {
-          dispatch(logout());
-          navigation.replace('Auth');
+    const performLogout = () => {
+      dispatch(logout()).then(() => {
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'Auth' }],
+        });
+      });
+    };
+
+    if (Platform.OS === 'web') {
+      if (window.confirm('Bạn có chắc chắn muốn đăng xuất tài khoản không?')) {
+        performLogout();
+      }
+    } else {
+      Alert.alert('Đăng xuất', 'Bạn có chắc chắn muốn đăng xuất tài khoản không?', [
+        { text: 'Hủy', style: 'cancel' },
+        {
+          text: 'Đăng xuất',
+          style: 'destructive',
+          onPress: performLogout,
         },
-      },
-    ]);
+      ]);
+    }
   };
 
   const displayedRecipes = showAllRecipes ? userRecipes : userRecipes.slice(0, 6);

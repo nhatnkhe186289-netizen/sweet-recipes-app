@@ -9,7 +9,11 @@ const Input = ({ label, error, style, ...props }) => {
     <View style={[styles.container, style]}>
       {label && <Text style={styles.label}>{label}</Text>}
       <TextInput
-        style={[styles.input, error && styles.inputError]}
+        style={[
+          styles.input,
+          props.multiline ? styles.multilineInput : styles.singleLineInput,
+          error && styles.inputError
+        ]}
         placeholderTextColor={colors.grey}
         {...props}
       />
@@ -34,10 +38,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.border,
     borderRadius: 12,
-    paddingVertical: spacing.md,
     paddingHorizontal: spacing.md,
     fontSize: typography.sizes.md,
     color: colors.dark,
+  },
+  singleLineInput: {
+    height: 50,
+  },
+  multilineInput: {
+    minHeight: 80,
+    paddingVertical: spacing.sm,
+    textAlignVertical: 'top',
   },
   inputError: {
     borderColor: colors.error,

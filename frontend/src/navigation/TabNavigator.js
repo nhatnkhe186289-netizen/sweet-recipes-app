@@ -54,7 +54,7 @@ const TabNavigator = () => {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: 'Trang chủ',
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons
               name={focused ? 'home' : 'home-outline'}
@@ -68,7 +68,7 @@ const TabNavigator = () => {
         name="Search"
         component={SearchScreen}
         options={{
-          tabBarLabel: 'Search',
+          tabBarLabel: 'Tìm kiếm',
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons
               name={focused ? 'search' : 'search-outline'}
@@ -103,7 +103,7 @@ const TabNavigator = () => {
         name="Favorites"
         component={FavoritesScreen}
         options={{
-          tabBarLabel: 'Saved',
+          tabBarLabel: 'Đã lưu',
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons
               name={focused ? 'heart' : 'heart-outline'}
@@ -117,7 +117,7 @@ const TabNavigator = () => {
         name="Profile"
         component={ProfileScreen}
         options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'Hồ sơ',
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons
               name={focused ? 'person' : 'person-outline'}

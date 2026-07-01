@@ -1,30 +1,27 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Dimensions } from 'react-native';
-import colors from '../../theme/colors';
-import typography from '../../theme/typography';
-import spacing from '../../theme/spacing';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Button from '../../components/Button';
-
-const { height } = Dimensions.get('window');
+import styles from '../../css/OnboardingScreen.css';
 
 const OnboardingScreen = ({ navigation }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const onboardingData = [
     {
-      title: 'Discover Sweet Recipes',
-      subtitle: 'Explore 500+ dessert recipes from cakes to ice creams, all curated by passionate bakers.',
-      emoji: '🍰',
+      title: 'Khám phá công thức ngọt ngào',
+      subtitle: 'Khám phá hơn 500 công thức món tráng miệng từ bánh ngọt đến kem, được tuyển chọn bởi các thợ làm bánh chuyên nghiệp.',
+      image: require('../../assets/images/onboarding1.png'),
     },
     {
-      title: 'Save Your Favorites',
-      subtitle: 'Keep your favorite dessert recipes organized and accessible anytime, anywhere.',
-      emoji: '💝',
+      title: 'Lưu trữ món ăn yêu thích',
+      subtitle: 'Lưu giữ và sắp xếp các công thức bánh ngọt yêu thích của bạn để dễ dàng tra cứu mọi lúc mọi nơi.',
+      image: require('../../assets/images/onboarding2.png'),
     },
     {
-      title: 'Share With Friends',
-      subtitle: 'Publish your own delicious creations and connect with a community of sweet lovers.',
-      emoji: '🧁',
+      title: 'Chia sẻ cùng cộng đồng',
+      subtitle: 'Đăng tải các tác phẩm bánh ngọt tự làm của bạn và kết nối với cộng đồng những người đam mê làm bánh.',
+      image: require('../../assets/images/onboarding3.png'),
     }
   ];
 
@@ -40,9 +37,15 @@ const OnboardingScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Pink Curved Upper Background */}
+      {/* Curved Upper Background Image with Overlay */}
       <View style={styles.curveHeader}>
-        <Text style={styles.emojiText}>{current.emoji}</Text>
+        <Image source={current.image} style={styles.headerImage} />
+        <View style={styles.overlay} />
+        
+        {/* Floating Brand Logo Badge */}
+        <View style={styles.logoBadge}>
+          <Text style={styles.logoText}>🍰</Text>
+        </View>
       </View>
 
       {/* Content Section */}
@@ -67,92 +70,16 @@ const OnboardingScreen = ({ navigation }) => {
       {/* Footer Buttons */}
       <View style={styles.footer}>
         <Button
-          title={currentPage === onboardingData.length - 1 ? 'Get Started' : 'Next'}
+          title={currentPage === onboardingData.length - 1 ? 'Bắt đầu ngay' : 'Tiếp theo'}
           onPress={handleNext}
           style={styles.button}
         />
         <TouchableOpacity onPress={() => navigation.replace('Auth')} style={styles.skipButton}>
-          <Text style={styles.skipText}>Skip</Text>
+          <Text style={styles.skipText}>Bỏ qua</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.white,
-  },
-  curveHeader: {
-    height: height * 0.5,
-    backgroundColor: '#FFA6B9', // Beautiful pastel pink
-    borderBottomLeftRadius: 40,
-    borderBottomRightRadius: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  emojiText: {
-    fontSize: 100,
-  },
-  content: {
-    flex: 1,
-    paddingHorizontal: 32,
-    paddingTop: 35,
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: '800',
-    color: colors.dark,
-    textAlign: 'center',
-    marginBottom: 12,
-  },
-  subtitle: {
-    fontSize: 14,
-    color: colors.grey,
-    textAlign: 'center',
-    lineHeight: 22,
-    marginBottom: 25,
-  },
-  pagination: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  dot: {
-    height: 6,
-    borderRadius: 3,
-    marginHorizontal: 3,
-  },
-  activeDot: {
-    width: 20,
-    backgroundColor: colors.primary,
-  },
-  inactiveDot: {
-    width: 6,
-    backgroundColor: '#E2E8F0',
-  },
-  footer: {
-    paddingHorizontal: 28,
-    paddingBottom: 25,
-    alignItems: 'center',
-  },
-  button: {
-    width: '100%',
-    backgroundColor: colors.primary,
-    borderRadius: 16,
-    paddingVertical: 15,
-  },
-  skipButton: {
-    marginTop: 14,
-    paddingVertical: 6,
-  },
-  skipText: {
-    color: colors.grey,
-    fontSize: 14,
-    fontWeight: '600',
-  },
-});
 
 export default OnboardingScreen;

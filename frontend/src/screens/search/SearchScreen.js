@@ -4,11 +4,11 @@ import {
   Text,
   StyleSheet,
   FlatList,
-  SafeAreaView,
   TouchableOpacity,
   TextInput,
   ScrollView,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
 import { fetchRecipes, fetchCategories } from '../../store/recipeSlice';
@@ -17,7 +17,7 @@ import LoadingSpinner from '../../components/LoadingSpinner';
 import colors from '../../theme/colors';
 import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
-import { DEFAULT_CATEGORIES } from '../../constants/categories';
+
 
 const SearchScreen = ({ route }) => {
   const dispatch = useDispatch();

@@ -1,14 +1,9 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import colors from '../theme/colors';
-import typography from '../theme/typography';
-import spacing from '../theme/spacing';
 import FavoriteButton from './FavoriteButton';
-
-const { width } = Dimensions.get('window');
-const cardWidth = (width - 44) / 2; // Two columns with padding
 
 const RecipeCard = ({ recipe }) => {
   const navigation = useNavigation();
@@ -75,7 +70,7 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: colors.white,
     borderRadius: 20,
-    width: cardWidth,
+    width: '48.5%',
     marginBottom: 16,
     shadowColor: '#2B2D42',
     shadowOffset: { width: 0, height: 4 },
