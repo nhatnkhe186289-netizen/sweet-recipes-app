@@ -75,8 +75,21 @@ const removeFavorite = async (req, res) => {
   }
 };
 
+const clearFavorites = async (req, res) => {
+  try {
+    await Favorite.deleteMany({ userId: req.user._id });
+    await User.findByIdAndUpdate(req.user._id, {
+      favoriteRecipes: [],
+    });
+    return sendSuccess(res, null, 'Cleared all favorites successfully');
+  } catch (error) {
+    return sendError(res, error.message, 400);
+  }
+};
+
 module.exports = {
   getFavorites,
   addFavorite,
   removeFavorite,
+  clearFavorites,
 };

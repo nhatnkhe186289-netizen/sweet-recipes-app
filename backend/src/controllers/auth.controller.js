@@ -27,13 +27,13 @@ const login = async (req, res) => {
   }
 };
 
-const forgotPassword = async (req, res) => {
+const resetPassword = async (req, res) => {
   try {
-    const { email, username, newPassword } = req.body;
-    if (!email || !username || !newPassword) {
-      return sendError(res, 'Please provide email, username and new password', 400);
+    const { email, newPassword } = req.body;
+    if (!email || !newPassword) {
+      return sendError(res, 'Please provide email and new password', 400);
     }
-    const result = await authService.forgotPassword(email, username, newPassword);
+    const result = await authService.resetPassword(email, newPassword);
     return sendSuccess(res, result, 'Password reset successfully', 200);
   } catch (error) {
     return sendError(res, error.message, 400);
@@ -44,7 +44,7 @@ const changePassword = async (req, res) => {
   try {
     const { currentPassword, newPassword } = req.body;
     if (!currentPassword || !newPassword) {
-      return sendError(res, 'Please provide current password and new password', 400);
+      return sendError(res, 'Please provide current and new password', 400);
     }
     const result = await authService.changePassword(req.user._id, currentPassword, newPassword);
     return sendSuccess(res, result, 'Password changed successfully', 200);
@@ -56,6 +56,6 @@ const changePassword = async (req, res) => {
 module.exports = {
   register,
   login,
-  forgotPassword,
+  resetPassword,
   changePassword,
 };

@@ -1,5 +1,5 @@
 {
-  "name": "Sweet Recipes",
+  "name": "sweet-recipes-frontend",
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
@@ -16,7 +16,6 @@
     "@reduxjs/toolkit": "^2.2.3",
     "axios": "^1.6.8",
     "expo": "~54.0.0",
-    "expo-constants": "~18.0.13",
     "expo-image-picker": "~17.0.11",
     "expo-status-bar": "~2.0.0",
     "react": "19.1.0",

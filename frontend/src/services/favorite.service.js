@@ -15,8 +15,14 @@ const removeFavorite = async (recipeId) => {
   return response.data;
 };
 
+const clearFavorites = async () => {
+  const response = await api.delete('/favorites/all');
+  return response.data;
+};
+
 export default {
   getFavorites,
   addFavorite,
   removeFavorite,
+  clearFavorites,
 };

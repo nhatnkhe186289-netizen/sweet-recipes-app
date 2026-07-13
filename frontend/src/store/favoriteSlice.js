@@ -30,6 +30,17 @@ export const toggleFavorite = createAsyncThunk('favorite/toggle', async (recipeI
   }
 });
 
+export const clearAllFavorites = createAsyncThunk('favorite/clearAll', async (_, thunkAPI) => {
+  try {
+    await favoriteService.clearFavorites();
+    thunkAPI.dispatch(fetchFavorites());
+    return true;
+  } catch (error) {
+    const message = error.response?.data?.message || error.message || error.toString();
+    return thunkAPI.rejectWithValue(message);
+  }
+});
+
 const initialState = {
   favorites: [],
   favoriteIds: [],
@@ -68,6 +79,11 @@ export const favoriteSlice = createSlice({
           state.favoriteIds.push(recipeId);
           // Re-fetching full list or handling offline insert
         }
+      })
+      // Clear All Favorites
+      .addCase(clearAllFavorites.fulfilled, (state) => {
+        state.favorites = [];
+        state.favoriteIds = [];
       });
   },
 });

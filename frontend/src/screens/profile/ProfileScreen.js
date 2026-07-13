@@ -1,3 +1,4 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import React, { useEffect, useState } from 'react';
 import {
   View,
@@ -6,23 +7,21 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
-  SafeAreaView,
   Dimensions,
   ImageBackground,
   Alert,
-  Platform,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
 import { loadProfile, logout } from '../../store/authSlice';
 import recipeService from '../../services/recipe.service';
+import { confirmAction } from '../../utils/alert';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import colors from '../../theme/colors';
 import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
 
-const rawWidth = Dimensions.get('window').width;
-const width = Platform.OS === 'web' ? Math.min(rawWidth, 600) : rawWidth;
+const { width } = Dimensions.get('window');
 const imageSize = (width - 48) / 3; // 3 columns with padding
 
 const ProfileScreen = ({ navigation }) => {
@@ -65,42 +64,27 @@ const ProfileScreen = ({ navigation }) => {
   }, [navigation, user]);
 
   const handleLogout = () => {
-    const performLogout = () => {
-      dispatch(logout()).then(() => {
-        navigation.reset({
-          index: 0,
-          routes: [{ name: 'Auth' }],
-        });
-      });
-    };
-
-    if (Platform.OS === 'web') {
-      if (window.confirm('Bạn có chắc chắn muốn đăng xuất tài khoản không?')) {
-        performLogout();
+    confirmAction(
+      'Đăng xuất',
+      'Bạn có chắc chắn muốn đăng xuất tài khoản không?',
+      () => {
+        dispatch(logout());
+        navigation.replace('Auth');
       }
-    } else {
-      Alert.alert('Đăng xuất', 'Bạn có chắc chắn muốn đăng xuất tài khoản không?', [
-        { text: 'Hủy', style: 'cancel' },
-        {
-          text: 'Đăng xuất',
-          style: 'destructive',
-          onPress: performLogout,
-        },
-      ]);
-    }
+    );
   };
 
   const displayedRecipes = showAllRecipes ? userRecipes : userRecipes.slice(0, 6);
 
-  const mockFollowers = 248;
-  const mockFollowing = 91;
+  const followersCount = user?.followers?.length || 0;
+  const followingCount = user?.following?.length || 0;
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent} bounces={false}>
         {/* Cover Background Header */}
         <ImageBackground
-          source={{ uri: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800' }}
+          source={{ uri: user?.coverImage || 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800' }}
           style={styles.coverHeader}
         >
           <View style={styles.overlay} />
@@ -115,12 +99,6 @@ const ProfileScreen = ({ navigation }) => {
               }}
               style={styles.avatar}
             />
-            <TouchableOpacity
-              style={styles.editProfileOutlineBtn}
-              onPress={() => navigation.navigate('Settings')}
-            >
-              <Text style={styles.editProfileBtnText}>Edit Profile</Text>
-            </TouchableOpacity>
           </View>
 
           <Text style={styles.username}>{user ? user.username : 'Emma Rose'}</Text>
@@ -133,7 +111,7 @@ const ProfileScreen = ({ navigation }) => {
           <View style={styles.statsBar}>
             <View style={styles.statItem}>
               <Text style={styles.statVal}>{userRecipes.length}</Text>
-              <Text style={styles.statLabel}>Recipes</Text>
+              <Text style={styles.statLabel}>Công thức</Text>
             </View>
             <View style={styles.statDivider} />
             <View style={styles.statItem}>
@@ -142,20 +120,20 @@ const ProfileScreen = ({ navigation }) => {
             </View>
             <View style={styles.statDivider} />
             <View style={styles.statItem}>
-              <Text style={styles.statVal}>{mockFollowers}</Text>
-              <Text style={styles.statLabel}>Followers</Text>
+              <Text style={styles.statVal}>{followersCount}</Text>
+              <Text style={styles.statLabel}>Người theo dõi</Text>
             </View>
             <View style={styles.statDivider} />
             <View style={styles.statItem}>
-              <Text style={styles.statVal}>{mockFollowing}</Text>
-              <Text style={styles.statLabel}>Following</Text>
+              <Text style={styles.statVal}>{followingCount}</Text>
+              <Text style={styles.statLabel}>Đang theo dõi</Text>
             </View>
           </View>
 
           {/* My Recipes Grid */}
           <View style={styles.recipesSection}>
             <View style={styles.sectionHeader}>
-              <Text style={styles.sectionTitle}>My Recipes</Text>
+              <Text style={styles.tabText}>Công thức của tôi</Text>
               {userRecipes.length > 6 && (
                 <TouchableOpacity onPress={() => setShowAllRecipes(!showAllRecipes)}>
                   <Text style={styles.seeAllText}>
@@ -171,28 +149,34 @@ const ProfileScreen = ({ navigation }) => {
               <Text style={styles.emptyText}>You haven't posted any sweet recipes yet.</Text>
             ) : (
               <View style={styles.recipeGrid}>
-                {displayedRecipes.map((recipe) => (
-                  <TouchableOpacity
-                    key={recipe._id}
-                    onPress={() => navigation.navigate('RecipeDetail', { recipeId: recipe._id })}
-                    style={styles.recipeThumbnail}
-                  >
-                    <Image source={{ uri: recipe.image }} style={styles.recipeImg} />
-                  </TouchableOpacity>
-                ))}
+                {displayedRecipes.map((recipe) => {
+                  return (
+                    <TouchableOpacity
+                      key={recipe._id}
+                      onPress={() => navigation.navigate('RecipeDetail', { recipeId: recipe._id })}
+                      style={styles.recipeThumbnail}
+                    >
+                      <Image 
+                        source={{ uri: recipe.image || 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800' }} 
+                        style={styles.recipeImg} 
+                        defaultSource={{ uri: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800' }}
+                      />
+                    </TouchableOpacity>
+                  );
+                })}
               </View>
             )}
           </View>
 
           {/* Action List Section */}
           <View style={styles.actionList}>
-            <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('Settings')}>
+            <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('EditProfile')}>
               <View style={styles.actionLeft}>
                 <View style={[styles.actionIconContainer, { backgroundColor: '#FFEBF0' }]}>
                   <Ionicons name="person-outline" size={18} color={colors.primary} />
                 </View>
                 <View>
-                  <Text style={styles.actionTitle}>Edit Profile</Text>
+                  <Text style={styles.actionBtnText}>Chỉnh sửa hồ sơ</Text>
                   <Text style={styles.actionSubtitle}>Update your info & photo</Text>
                 </View>
               </View>
@@ -212,7 +196,7 @@ const ProfileScreen = ({ navigation }) => {
               <Ionicons name="chevron-forward" size={16} color={colors.grey} />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.actionItem} onPress={() => Alert.alert('Thông báo', 'Không có thông báo mới')}>
+            <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('Notifications')}>
               <View style={styles.actionLeft}>
                 <View style={[styles.actionIconContainer, { backgroundColor: '#F3EFFF' }]}>
                   <Ionicons name="notifications-outline" size={18} color="#8F00FF" />
@@ -231,7 +215,7 @@ const ProfileScreen = ({ navigation }) => {
                   <Ionicons name="settings-outline" size={18} color="#1E88E5" />
                 </View>
                 <View>
-                  <Text style={styles.actionTitle}>Settings</Text>
+                  <Text style={styles.actionTitle}>Cài đặt</Text>
                   <Text style={styles.actionSubtitle}>App preferences</Text>
                 </View>
               </View>
@@ -244,7 +228,7 @@ const ProfileScreen = ({ navigation }) => {
                   <Ionicons name="log-out-outline" size={18} color={colors.error} />
                 </View>
                 <View>
-                  <Text style={[styles.actionTitle, { color: colors.error }]}>Log Out</Text>
+                  <Text style={[styles.actionTitle, { color: colors.error }]}>Đăng xuất</Text>
                   <Text style={styles.actionSubtitle}>See you soon! 👋</Text>
                 </View>
               </View>

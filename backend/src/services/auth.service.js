@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const bcrypt = require('bcryptjs');
 const generateToken = require('../utils/generateToken');
 
 const registerUser = async (username, email, password) => {
@@ -7,10 +8,13 @@ const registerUser = async (username, email, password) => {
     throw new Error('User already exists with this email or username');
   }
 
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(password, salt);
+
   const user = await User.create({
     username,
     email,
-    password, // store in plaintext
+    password: hashedPassword,
   });
 
   return {
@@ -28,8 +32,7 @@ const loginUser = async (email, password) => {
     throw new Error('Invalid email or password');
   }
 
-  // plaintext password match
-  const isMatch = password === user.password;
+  const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
     throw new Error('Invalid email or password');
   }
@@ -43,19 +46,19 @@ const loginUser = async (email, password) => {
   };
 };
 
-const forgotPassword = async (email, username, newPassword) => {
-  const user = await User.findOne({ email, username });
+const resetPassword = async (email, newPassword) => {
+  const user = await User.findOne({ email });
   if (!user) {
-    throw new Error('User with this email and username does not exist');
+    throw new Error('User not found with this email');
   }
 
-  user.password = newPassword;
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+  user.password = hashedPassword;
   await user.save();
 
-  return {
-    success: true,
-    message: 'Password reset successfully',
-  };
+  return { success: true };
 };
 
 const changePassword = async (userId, currentPassword, newPassword) => {
@@ -64,23 +67,23 @@ const changePassword = async (userId, currentPassword, newPassword) => {
     throw new Error('User not found');
   }
 
-  const isMatch = currentPassword === user.password;
+  const isMatch = await bcrypt.compare(currentPassword, user.password);
   if (!isMatch) {
-    throw new Error('Incorrect current password');
+    throw new Error('Mật khẩu hiện tại không chính xác');
   }
 
-  user.password = newPassword;
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+  user.password = hashedPassword;
   await user.save();
 
-  return {
-    success: true,
-    message: 'Password changed successfully',
-  };
+  return { success: true };
 };
 
 module.exports = {
   registerUser,
   loginUser,
-  forgotPassword,
+  resetPassword,
   changePassword,
 };

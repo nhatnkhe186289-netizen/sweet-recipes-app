@@ -1,17 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
   StyleSheet,
   ScrollView,
-  SafeAreaView,
   TouchableOpacity,
   RefreshControl,
   TextInput,
   Image,
   ImageBackground,
   Dimensions,
-  Platform,
+  Alert,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
@@ -21,14 +21,15 @@ import RecipeCard from '../../components/RecipeCard';
 import CategoryItem from '../../components/CategoryItem';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import colors from '../../theme/colors';
+import typography from '../../theme/typography';
+import spacing from '../../theme/spacing';
+import { DEFAULT_CATEGORIES } from '../../constants/categories';
+import { showToast } from '../../utils/alert';
 
-
-const rawWidth = Dimensions.get('window').width;
-const width = Platform.OS === 'web' ? Math.min(rawWidth, 600) : rawWidth;
+const { width } = Dimensions.get('window');
 
 const HomeScreen = ({ navigation }) => {
   const dispatch = useDispatch();
-  const scrollViewRef = useRef(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [refreshing, setRefreshing] = useState(false);
@@ -59,13 +60,12 @@ const HomeScreen = ({ navigation }) => {
     dispatch(fetchRecipes(newCategory ? { category: newCategory } : {}));
   };
 
-  const displayedCategories = categories;
+  const displayedCategories = categories.length > 0 ? categories : DEFAULT_CATEGORIES;
 
   // Split recipes for Popular and Featured sections
   const popularRecipes = recipes.slice(0, 4);
   const featuredRecipes = recipes.slice(4, 8);
 
-  const trendingRecipesList = recipes.slice(0, 3);
   const trendingRecipe = recipes[0] || {
     _id: 'default_trending',
     title: 'Strawberry Dream Cake',
@@ -74,26 +74,12 @@ const HomeScreen = ({ navigation }) => {
     calories: 350,
   };
 
-  const slidesData = trendingRecipesList.length > 0 ? trendingRecipesList : [trendingRecipe];
-  const totalSlides = slidesData.length;
-
-  // Auto-play / Auto-slide effect
-  useEffect(() => {
-    if (totalSlides <= 1) return;
-    
-    const interval = setInterval(() => {
-      const nextIndex = (activeIndex + 1) % totalSlides;
-      scrollViewRef.current?.scrollTo({
-        x: nextIndex * (width - 32),
-        animated: true,
-      });
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [activeIndex, totalSlides]);
-
   const handleSearchSubmit = () => {
-    navigation.navigate('Search', { query: searchQuery });
+    if (!searchQuery.trim()) {
+      Alert.alert('Thông báo', 'Vui lòng nhập từ khóa tìm kiếm');
+      return;
+    }
+    navigation.navigate('Search', { query: searchQuery.trim() });
   };
 
   return (
@@ -107,11 +93,14 @@ const HomeScreen = ({ navigation }) => {
         {/* Upper Greeting Row */}
         <View style={styles.welcomeRow}>
           <View>
-            <Text style={styles.greeting}>Good morning 👋</Text>
-            <Text style={styles.username}>{user ? user.username : 'Emma Rose'}</Text>
+            <Text style={styles.greeting}>Chào bạn 👋</Text>
+            <Text style={styles.username}>{user ? user.username : 'Khách'}</Text>
           </View>
           <View style={styles.headerRight}>
-            <TouchableOpacity style={styles.iconCircle}>
+            <TouchableOpacity 
+              style={styles.iconCircle}
+              onPress={() => showToast('Thông báo', 'Bạn không có thông báo mới nào')}
+            >
               <Ionicons name="notifications-outline" size={22} color={colors.dark} />
             </TouchableOpacity>
             <Image
@@ -126,7 +115,7 @@ const HomeScreen = ({ navigation }) => {
           <Ionicons name="search-outline" size={20} color={colors.grey} style={styles.searchIcon} />
           <TextInput
             style={styles.searchInput}
-            placeholder="Search cakes, cookies, donuts..."
+            placeholder="Tìm kiếm công thức..."
             placeholderTextColor={colors.grey}
             value={searchQuery}
             onChangeText={setSearchQuery}
@@ -140,7 +129,6 @@ const HomeScreen = ({ navigation }) => {
         {/* Swipable Trending Banner Carousel */}
         <View style={styles.carouselContainer}>
           <ScrollView
-            ref={scrollViewRef}
             horizontal
             pagingEnabled
             showsHorizontalScrollIndicator={false}
@@ -152,7 +140,7 @@ const HomeScreen = ({ navigation }) => {
             }}
             scrollEventThrottle={16}
           >
-            {slidesData.map((item) => (
+            {(recipes.slice(0, 3).length > 0 ? recipes.slice(0, 3) : [trendingRecipe]).map((item) => (
               <TouchableOpacity
                 key={item._id}
                 activeOpacity={0.95}
@@ -185,40 +173,9 @@ const HomeScreen = ({ navigation }) => {
             ))}
           </ScrollView>
 
-          {/* Left/Right Arrow Buttons (especially useful on Web) */}
-          {totalSlides > 1 && (
-            <>
-              <TouchableOpacity
-                style={[styles.arrowButton, styles.leftArrow]}
-                onPress={() => {
-                  const nextIndex = (activeIndex - 1 + totalSlides) % totalSlides;
-                  scrollViewRef.current?.scrollTo({
-                    x: nextIndex * (width - 32),
-                    animated: true,
-                  });
-                }}
-              >
-                <Ionicons name="chevron-back" size={20} color={colors.dark} />
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                style={[styles.arrowButton, styles.rightArrow]}
-                onPress={() => {
-                  const nextIndex = (activeIndex + 1) % totalSlides;
-                  scrollViewRef.current?.scrollTo({
-                    x: nextIndex * (width - 32),
-                    animated: true,
-                  });
-                }}
-              >
-                <Ionicons name="chevron-forward" size={20} color={colors.dark} />
-              </TouchableOpacity>
-            </>
-          )}
-
           {/* Dots Indicator */}
           <View style={styles.cardDots}>
-            {slidesData.map((_, idx) => (
+            {(recipes.slice(0, 3).length > 0 ? recipes.slice(0, 3) : [trendingRecipe]).map((_, idx) => (
               <View
                 key={idx}
                 style={[
@@ -232,7 +189,7 @@ const HomeScreen = ({ navigation }) => {
 
         {/* Categories Section */}
         <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>Categories</Text>
+          <Text style={styles.sectionTitle}>Danh mục</Text>
           <TouchableOpacity onPress={() => navigation.navigate('Search')}>
             <Text style={styles.seeAllText}>See all <Ionicons name="chevron-forward" size={12} /></Text>
           </TouchableOpacity>
@@ -254,9 +211,9 @@ const HomeScreen = ({ navigation }) => {
 
         {/* Popular Recipes Section */}
         <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>Popular Recipes</Text>
+          <Text style={styles.sectionTitle}>Phổ biến nhất</Text>
           <TouchableOpacity onPress={() => navigation.navigate('Search')}>
-            <Text style={styles.seeAllText}>See all <Ionicons name="chevron-forward" size={12} /></Text>
+            <Text style={styles.seeAllText}>Xem tất cả <Ionicons name="chevron-forward" size={12} /></Text>
           </TouchableOpacity>
         </View>
 
@@ -264,7 +221,7 @@ const HomeScreen = ({ navigation }) => {
           <LoadingSpinner />
         ) : popularRecipes.length === 0 ? (
           <View style={styles.emptyContainer}>
-            <Text style={styles.emptyText}>No popular recipes found.</Text>
+            <Text style={styles.emptyText}>Không tìm thấy công thức phổ biến nào.</Text>
           </View>
         ) : (
           <View style={styles.gridContainer}>
@@ -278,9 +235,9 @@ const HomeScreen = ({ navigation }) => {
         {featuredRecipes.length > 0 && (
           <>
             <View style={styles.sectionHeader}>
-              <Text style={styles.sectionTitle}>Featured Recipes</Text>
+              <Text style={styles.sectionTitle}>Nổi bật</Text>
               <TouchableOpacity onPress={() => navigation.navigate('Search')}>
-                <Text style={styles.seeAllText}>See all <Ionicons name="chevron-forward" size={12} /></Text>
+                <Text style={styles.seeAllText}>Xem tất cả <Ionicons name="chevron-forward" size={12} /></Text>
               </TouchableOpacity>
             </View>
 
@@ -440,29 +397,6 @@ const styles = StyleSheet.create({
     color: colors.primary,
     fontSize: 11,
     fontWeight: '700',
-  },
-  arrowButton: {
-    position: 'absolute',
-    top: '50%',
-    marginTop: -18,
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    backgroundColor: 'rgba(255, 255, 255, 0.85)',
-    justifyContent: 'center',
-    alignItems: 'center',
-    zIndex: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  leftArrow: {
-    left: 10,
-  },
-  rightArrow: {
-    right: 10,
   },
   cardDots: {
     flexDirection: 'row',

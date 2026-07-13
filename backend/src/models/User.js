@@ -22,6 +22,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: 'https://res.cloudinary.com/demo/image/upload/v1622523942/sample.jpg',
   },
+  coverImage: {
+    type: String,
+    default: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800',
+  },
   bio: {
     type: String,
     default: 'Đam mê làm bánh ngọt truyền thống.',
@@ -33,6 +37,14 @@ const UserSchema = new mongoose.Schema({
   favoriteRecipes: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Recipe',
+  }],
+  followers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  }],
+  following: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
   }],
 }, {
   timestamps: true,

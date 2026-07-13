@@ -1,136 +1,138 @@
 import React, { useState } from 'react';
-import { View, Text, Alert, ScrollView, TextInput, TouchableOpacity, Image } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import { View, Text, StyleSheet, Alert, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import * as ImagePicker from 'expo-image-picker';
 import authService from '../../services/auth.service';
-import { loadProfile } from '../../store/authSlice';
 import Button from '../../components/Button';
 import colors from '../../theme/colors';
-import styles from '../../css/SettingsScreen.css';
 
 const SettingsScreen = ({ navigation }) => {
-  const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.auth);
-
-  const [username, setUsername] = useState(user?.username || '');
-  const [bio, setBio] = useState(user?.bio || '');
-  const [avatar, setAvatar] = useState(user?.avatar || '');
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
   const [updating, setUpdating] = useState(false);
 
-  const pickImage = async () => {
-    try {
-      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-      if (status !== 'granted') {
-        Alert.alert('Quyền truy cập', 'Chúng tôi cần quyền truy cập thư viện ảnh để tải ảnh lên.');
-        return;
-      }
-
-      const result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: 'images',
-        allowsEditing: true,
-        aspect: [1, 1],
-        quality: 0.8,
-      });
-
-      if (!result.canceled && result.assets && result.assets.length > 0) {
-        setAvatar(result.assets[0].uri);
-      }
-    } catch (error) {
-      Alert.alert('Lỗi', 'Không thể chọn ảnh từ thiết bị.');
-    }
-  };
-
-  const handleUpdate = async () => {
-    if (!username) {
-      Alert.alert('Lỗi', 'Tên người dùng không được để trống');
+  const handleUpdatePassword = async () => {
+    if (!currentPassword || !newPassword) {
+      Alert.alert('Lỗi', 'Vui lòng nhập đầy đủ mật khẩu hiện tại và mật khẩu mới.');
       return;
     }
 
     setUpdating(true);
-
     try {
-      const formData = new FormData();
-      formData.append('username', username);
-      formData.append('bio', bio);
-
-      if (avatar) {
-        if (avatar.startsWith('http')) {
-          formData.append('avatar', avatar);
-        } else {
-          formData.append('avatar', {
-            uri: avatar,
-            name: 'avatar.jpg',
-            type: 'image/jpeg',
-          });
-        }
-      }
-
-      await authService.updateProfile(formData);
-      Alert.alert('Thành công', 'Cập nhật hồ sơ cá nhân thành công');
-      dispatch(loadProfile());
-      navigation.goBack();
+      await authService.changePassword(currentPassword, newPassword);
+      Alert.alert('Thành công', 'Đổi mật khẩu thành công!');
+      setCurrentPassword('');
+      setNewPassword('');
     } catch (error) {
-      Alert.alert('Lỗi', error.response?.data?.message || error.message || 'Không thể cập nhật hồ sơ cá nhân');
+      Alert.alert('Lỗi', error.response?.data?.message || error.message || 'Không thể đổi mật khẩu');
     } finally {
       setUpdating(false);
     }
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.container} bounces={false}>
-      <Text style={styles.title}>Chỉnh sửa thông tin cá nhân</Text>
-      
-      {/* Avatar Picker Section */}
-      <View style={styles.avatarPickerContainer}>
-        <TouchableOpacity onPress={pickImage} activeOpacity={0.8} style={styles.avatarWrapper}>
-          <Image
-            source={{
-              uri: avatar || "https://res.cloudinary.com/demo/image/upload/v1622523942/sample.jpg"
-            }}
-            style={styles.avatarPreview}
-          />
-          <View style={styles.cameraIconContainer}>
-            <Ionicons name="camera-outline" size={18} color={colors.white} />
-          </View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.header}>
+        <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
+          <Ionicons name="arrow-back" size={24} color={colors.dark} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={pickImage} style={styles.pickImageBtn}>
-          <Text style={styles.pickImageBtnText}>Chọn ảnh đại diện</Text>
-        </TouchableOpacity>
+        <Text style={styles.headerTitle}>Cài đặt</Text>
       </View>
 
+      <Text style={styles.sectionTitle}>Bảo mật</Text>
+
       <View style={styles.inputContainer}>
-        <Text style={styles.inputLabel}>TÊN NGƯỜU DÙNG</Text>
+        <Text style={styles.inputLabel}>MẬT KHẨU HIỆN TẠI</Text>
         <TextInput
           style={styles.textInput}
-          placeholder="Nhập tên người dùng"
+          placeholder="••••••••"
           placeholderTextColor={colors.grey}
-          value={username}
-          onChangeText={setUsername}
+          secureTextEntry
+          value={currentPassword}
+          onChangeText={setCurrentPassword}
         />
       </View>
 
       <View style={styles.inputContainer}>
-        <Text style={styles.inputLabel}>TIỂU SỬ</Text>
+        <Text style={styles.inputLabel}>MẬT KHẨU MỚI</Text>
         <TextInput
-          style={[styles.textInput, styles.textArea]}
-          placeholder="Viết gì đó về bản thân bạn..."
+          style={styles.textInput}
+          placeholder="••••••••"
           placeholderTextColor={colors.grey}
-          multiline
-          numberOfLines={3}
-          value={bio}
-          onChangeText={setBio}
+          secureTextEntry
+          value={newPassword}
+          onChangeText={setNewPassword}
         />
       </View>
 
       <Button
-        title="Lưu cài đặt"
-        onPress={handleUpdate}
+        title="Đổi mật khẩu"
+        onPress={handleUpdatePassword}
         loading={updating}
         style={styles.saveButton}
       />
     </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 24,
+    paddingTop: 30,
+    paddingBottom: 40,
+    backgroundColor: colors.white,
+    flexGrow: 1,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 30,
+  },
+  backBtn: {
+    padding: 8,
+    marginRight: 10,
+    marginLeft: -8,
+  },
+  headerTitle: {
+    fontSize: 22,
+    fontWeight: '800',
+    color: colors.dark,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: colors.dark,
+    marginBottom: 16,
+  },
+  inputContainer: {
+    marginBottom: 22,
+  },
+  inputLabel: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: colors.dark,
+    marginBottom: 8,
+    letterSpacing: 1,
+  },
+  textInput: {
+    backgroundColor: '#FDF7F7',
+    borderRadius: 14,
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+    fontSize: 15,
+    color: colors.dark,
+    borderWidth: 0,
+  },
+  saveButton: {
+    backgroundColor: colors.primary,
+    borderRadius: 16,
+    paddingVertical: 15,
+    shadowColor: colors.primary,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
+    elevation: 4,
+    marginTop: 10,
+  },
+});
 
 export default SettingsScreen;

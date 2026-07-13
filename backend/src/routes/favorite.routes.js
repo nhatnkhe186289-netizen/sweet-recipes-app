@@ -7,6 +7,9 @@ router.route('/')
   .get(protect, favoriteController.getFavorites)
   .post(protect, favoriteController.addFavorite);
 
-router.delete('/:recipeId', protect, favoriteController.removeFavorite);
+router.delete('/all', protect, favoriteController.clearFavorites);
+
+router.route('/:recipeId')
+  .delete(protect, favoriteController.removeFavorite);
 
 module.exports = router;

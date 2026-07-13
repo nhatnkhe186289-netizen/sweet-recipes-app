@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, ActivityIndicator } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { loadProfile } from '../store/authSlice';
+
 import OnboardingScreen from '../screens/onboarding/OnboardingScreen';
 import AuthNavigator from './AuthNavigator';
 import TabNavigator from './TabNavigator';
@@ -12,45 +11,35 @@ import AddRecipeScreen from '../screens/recipe/AddRecipeScreen';
 import EditRecipeScreen from '../screens/recipe/EditRecipeScreen';
 import CommentsScreen from '../screens/comments/CommentsScreen';
 import SettingsScreen from '../screens/profile/SettingsScreen';
-import ChangePasswordScreen from '../screens/profile/ChangePasswordScreen';
+import EditProfileScreen from '../screens/profile/EditProfileScreen';
+import AuthorProfileScreen from '../screens/profile/AuthorProfileScreen';
+import NotificationsScreen from '../screens/notifications/NotificationsScreen';
 import colors from '../theme/colors';
 
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
-  const [checkingToken, setCheckingToken] = useState(true);
-  const [initialRoute, setInitialRoute] = useState('Onboarding');
-  const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.auth);
+  const [initialRoute, setInitialRoute] = useState(null);
 
   useEffect(() => {
-    const checkToken = async () => {
+    const checkOnboarding = async () => {
       try {
-        const token = await AsyncStorage.getItem('token');
-        if (token) {
-          const result = await dispatch(loadProfile());
-          if (loadProfile.fulfilled.match(result)) {
-            setInitialRoute('App');
-          } else {
-            setInitialRoute('Auth');
-          }
+        const hasSeen = await AsyncStorage.getItem('hasSeenOnboarding');
+        if (hasSeen === 'true') {
+          setInitialRoute('Auth');
         } else {
           setInitialRoute('Onboarding');
         }
       } catch (error) {
-        console.error('Error checking token:', error);
         setInitialRoute('Onboarding');
-      } finally {
-        setCheckingToken(false);
       }
     };
+    checkOnboarding();
+  }, []);
 
-    checkToken();
-  }, [dispatch]);
-
-  if (checkingToken) {
+  if (!initialRoute) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: colors.white }}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <ActivityIndicator size="large" color={colors.primary} />
       </View>
     );
@@ -74,12 +63,14 @@ const AppNavigator = () => {
       <Stack.Screen name="Auth" component={AuthNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="App" component={TabNavigator} options={{ headerShown: false }} />
       
-      <Stack.Screen name="RecipeDetail" component={RecipeDetailScreen} options={{ title: 'Chi tiết công thức' }} />
-      <Stack.Screen name="AddRecipe" component={AddRecipeScreen} options={{ title: 'Thêm công thức' }} />
-      <Stack.Screen name="EditRecipe" component={EditRecipeScreen} options={{ title: 'Chỉnh sửa công thức' }} />
-      <Stack.Screen name="Comments" component={CommentsScreen} options={{ title: 'Bình luận' }} />
+      <Stack.Screen name="RecipeDetail" component={RecipeDetailScreen} options={{ title: 'Recipe Details' }} />
+      <Stack.Screen name="AddRecipe" component={AddRecipeScreen} options={{ title: 'Add Recipe' }} />
+      <Stack.Screen name="EditRecipe" component={EditRecipeScreen} options={{ title: 'Edit Recipe' }} />
+      <Stack.Screen name="Comments" component={CommentsScreen} options={{ title: 'Comments' }} />
       <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Cài đặt' }} />
-      <Stack.Screen name="ChangePassword" component={ChangePasswordScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="EditProfile" component={EditProfileScreen} options={{ title: 'Chỉnh sửa hồ sơ' }} />
+      <Stack.Screen name="AuthorProfile" component={AuthorProfileScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Notifications" component={NotificationsScreen} options={{ title: 'Thông báo', headerShown: false }} />
     </Stack.Navigator>
   );
 };

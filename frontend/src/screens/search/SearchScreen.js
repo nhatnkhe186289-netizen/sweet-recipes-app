@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -7,9 +8,7 @@ import {
   TouchableOpacity,
   TextInput,
   ScrollView,
-  Platform,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
 import { fetchRecipes, fetchCategories } from '../../store/recipeSlice';
@@ -18,28 +17,12 @@ import LoadingSpinner from '../../components/LoadingSpinner';
 import colors from '../../theme/colors';
 import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
-
+import { DEFAULT_CATEGORIES } from '../../constants/categories';
 
 const SearchScreen = ({ route }) => {
   const dispatch = useDispatch();
   const [query, setQuery] = useState('');
   const [selectedCategoryId, setSelectedCategoryId] = useState('all');
-  const [scrollX, setScrollX] = useState(0);
-  const categoryScrollRef = useRef(null);
-
-  const handleScrollLeft = () => {
-    categoryScrollRef.current?.scrollTo({
-      x: Math.max(0, scrollX - 150),
-      animated: true,
-    });
-  };
-
-  const handleScrollRight = () => {
-    categoryScrollRef.current?.scrollTo({
-      x: scrollX + 150,
-      animated: true,
-    });
-  };
 
   const { recipes, categories, isLoading } = useSelector((state) => state.recipe);
 
@@ -91,25 +74,30 @@ const SearchScreen = ({ route }) => {
     <SafeAreaView style={styles.container}>
       {/* Search Header */}
       <View style={styles.searchHeader}>
-        <Text style={styles.title}>Search Recipes 🔍</Text>
+        <Text style={styles.headerTitle}>Tìm kiếm</Text>
         
         {/* Search Bar */}
         <View style={styles.searchBarContainer}>
           <Ionicons name="search-outline" size={20} color={colors.grey} style={styles.searchIcon} />
           <TextInput
             style={styles.searchInput}
-            placeholder="Search cakes, cookies, donuts..."
+            placeholder="Tìm kiếm bánh ngọt, bánh quy, donut..."
             placeholderTextColor={colors.grey}
             value={query}
             onChangeText={handleSearch}
           />
+          {query.length > 0 && (
+            <TouchableOpacity onPress={() => handleSearch('')} style={styles.clearIcon}>
+              <Ionicons name="close-circle" size={20} color={colors.grey} />
+            </TouchableOpacity>
+          )}
         </View>
 
         {/* Trending Searches */}
         <View style={styles.trendingContainer}>
           <View style={styles.trendingHeader}>
             <Ionicons name="flash-outline" size={14} color="#FFD166" />
-            <Text style={styles.trendingTitle}>Trending Searches</Text>
+            <Text style={styles.sectionTitle}>Tìm kiếm phổ biến</Text>
           </View>
           <View style={styles.tagsContainer}>
             {trendingSearches.map((term, index) => (
@@ -125,50 +113,32 @@ const SearchScreen = ({ route }) => {
         </View>
 
         {/* Categories horizontal tabs */}
-        <View style={[styles.categoriesWrapper, Platform.OS === 'web' && { paddingHorizontal: 36 }]}>
-          {Platform.OS === 'web' && (
-            <TouchableOpacity style={[styles.arrowBtn, styles.leftArrowBtn]} onPress={handleScrollLeft}>
-              <Ionicons name="chevron-back" size={16} color={colors.primary} />
-            </TouchableOpacity>
-          )}
-
-          <ScrollView
-            ref={categoryScrollRef}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            style={{ flex: 1 }}
-            contentContainerStyle={styles.categoryTabs}
-            onScroll={(e) => setScrollX(e.nativeEvent.contentOffset.x)}
-            scrollEventThrottle={16}
-          >
-            {displayedCategories.map((cat) => {
-              const isSelected = selectedCategoryId === cat._id;
-              return (
-                <TouchableOpacity
-                  key={cat._id}
-                  style={[styles.tabButton, isSelected && styles.activeTabButton]}
-                  onPress={() => handleSelectCategory(cat._id)}
-                >
-                  <Text style={[styles.tabButtonText, isSelected && styles.activeTabButtonText]}>
-                    {cat.name}
-                  </Text>
-                </TouchableOpacity>
-              );
-            })}
-          </ScrollView>
-
-          {Platform.OS === 'web' && (
-            <TouchableOpacity style={[styles.arrowBtn, styles.rightArrowBtn]} onPress={handleScrollRight}>
-              <Ionicons name="chevron-forward" size={16} color={colors.primary} />
-            </TouchableOpacity>
-          )}
-        </View>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.categoryTabs}
+        >
+          {displayedCategories.map((cat) => {
+            const isSelected = selectedCategoryId === cat._id;
+            return (
+              <TouchableOpacity
+                key={cat._id}
+                style={[styles.tabButton, isSelected && styles.activeTabButton]}
+                onPress={() => handleSelectCategory(cat._id)}
+              >
+                <Text style={[styles.tabButtonText, isSelected && styles.activeTabButtonText]}>
+                  {cat.name}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
       </View>
 
       {/* Results Title Count */}
       {!isLoading && (
-        <Text style={styles.resultsCount}>
-          {recipes.length} {recipes.length === 1 ? 'recipe' : 'recipes'} found
+        <Text style={styles.resultCount}>
+          {recipes.length} công thức tìm thấy
         </Text>
       )}
 
@@ -186,7 +156,7 @@ const SearchScreen = ({ route }) => {
           ListEmptyComponent={
             <View style={styles.emptyContainer}>
               <Text style={styles.emptyText}>
-                {query ? `No recipes found for "${query}"` : 'Type something to search delicious dessert recipes.'}
+                {query ? `Không tìm thấy công thức nào cho "${query}"` : 'Nhập nội dung để tìm kiếm công thức tráng miệng thơm ngon.'}
               </Text>
             </View>
           }
@@ -236,6 +206,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: colors.dark,
     paddingVertical: 10,
+  },
+  clearIcon: {
+    padding: 4,
   },
   trendingContainer: {
     marginBottom: 16,
@@ -317,34 +290,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 20,
     paddingHorizontal: 30,
-  },
-  categoriesWrapper: {
-    position: 'relative',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  arrowBtn: {
-    position: 'absolute',
-    top: 4,
-    width: 28,
-    height: 28,
-    borderRadius: 14,
-    backgroundColor: '#FFEBF0',
-    justifyContent: 'center',
-    alignItems: 'center',
-    zIndex: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 2,
-  },
-  leftArrowBtn: {
-    left: 4,
-  },
-  rightArrowBtn: {
-    right: 4,
   },
 });
 

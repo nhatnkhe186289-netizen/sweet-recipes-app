@@ -35,13 +35,13 @@ const updateProfile = async (formData) => {
   return response.data.data;
 };
 
-const forgotPassword = async (email, username, newPassword) => {
-  const response = await api.post('/auth/forgot-password', { email, username, newPassword });
+const resetPassword = async (email, newPassword) => {
+  const response = await api.post('/auth/reset-password', { email, newPassword });
   return response.data;
 };
 
 const changePassword = async (currentPassword, newPassword) => {
-  const response = await api.put('/auth/change-password', { currentPassword, newPassword });
+  const response = await api.post('/auth/change-password', { currentPassword, newPassword });
   return response.data;
 };
 
@@ -51,6 +51,6 @@ export default {
   logout,
   getProfile,
   updateProfile,
-  forgotPassword,
+  resetPassword,
   changePassword,
 };

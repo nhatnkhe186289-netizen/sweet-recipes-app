@@ -1,9 +1,14 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, Dimensions, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import colors from '../theme/colors';
+import typography from '../theme/typography';
+import spacing from '../theme/spacing';
 import FavoriteButton from './FavoriteButton';
+
+const { width } = Dimensions.get('window');
+const cardWidth = Platform.OS === 'web' ? Math.min((width - 44) / 2, 240) : (width - 44) / 2; // Limit width on Web
 
 const RecipeCard = ({ recipe }) => {
   const navigation = useNavigation();
@@ -70,7 +75,7 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: colors.white,
     borderRadius: 20,
-    width: '48.5%',
+    width: cardWidth,
     marginBottom: 16,
     shadowColor: '#2B2D42',
     shadowOffset: { width: 0, height: 4 },

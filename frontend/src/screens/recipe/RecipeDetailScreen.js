@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import React, { useState, useEffect } from 'react';
+import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, Alert, Share } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
+import { Ionicons } from '@expo/vector-icons';
 import recipeService from '../../services/recipe.service';
 import { fetchRecipes } from '../../store/recipeSlice';
 import FavoriteButton from '../../components/FavoriteButton';
@@ -10,6 +11,7 @@ import Button from '../../components/Button';
 import colors from '../../theme/colors';
 import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
+import { confirmAction } from '../../utils/alert';
 
 const RecipeDetailScreen = ({ route, navigation }) => {
   const { recipeId } = route.params;
@@ -35,32 +37,44 @@ const RecipeDetailScreen = ({ route, navigation }) => {
   }, [recipeId]);
 
   const handleDelete = () => {
-    Alert.alert(
+    confirmAction(
       'Xóa công thức',
       'Bạn có chắc chắn muốn xóa vĩnh viễn công thức bánh này không?',
-      [
-        { text: 'Hủy', style: 'cancel' },
-        {
-          text: 'Xóa',
-          style: 'destructive',
-          onPress: async () => {
-            try {
-              await recipeService.deleteRecipe(recipeId);
-              Alert.alert('Thành công', 'Đã xóa công thức bánh thành công.');
-              dispatch(fetchRecipes());
-              navigation.goBack();
-            } catch (error) {
-              Alert.alert('Lỗi', error.message || 'Không thể xóa công thức bánh.');
-            }
-          },
-        },
-      ]
+      async () => {
+        try {
+          await recipeService.deleteRecipe(recipeId);
+          Alert.alert('Thành công', 'Đã xóa công thức bánh thành công.');
+          dispatch(fetchRecipes());
+          navigation.goBack();
+        } catch (error) {
+          Alert.alert('Lỗi', error.message || 'Không thể xóa công thức bánh.');
+        }
+      }
     );
   };
 
   if (loading) {
     return <LoadingSpinner />;
   }
+
+  const handleShare = async () => {
+    try {
+      await Share.share({
+        message: `Check out this delicious recipe: ${recipe.title}\n\n${recipe.description}`,
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const handleAuthorPress = () => {
+    if (recipe.author) {
+      Alert.alert(
+        `Giới thiệu về ${recipe.author.username}`,
+        recipe.author.bio || 'Passionate home baker 🍰 Sharing sweet moments, one recipe at a time ✨'
+      );
+    }
+  };
 
   if (!recipe) {
     return (
@@ -80,55 +94,63 @@ const RecipeDetailScreen = ({ route, navigation }) => {
         {/* Favorite Icon Overlay container */}
         <View style={styles.actionRow}>
           <Text style={styles.category}>{(recipe.category && recipe.category.name) || 'Sweet Dessert'}</Text>
-          <FavoriteButton recipeId={recipe._id} />
+          <View style={styles.rightActions}>
+            <TouchableOpacity onPress={handleShare} style={styles.shareBtn}>
+              <Ionicons name="share-social-outline" size={24} color={colors.dark} />
+            </TouchableOpacity>
+            <FavoriteButton recipeId={recipe._id} />
+          </View>
         </View>
 
         <View style={styles.body}>
           <Text style={styles.title}>{recipe.title}</Text>
-          
-          <View style={styles.authorRow}>
+          {/* Author Info */}
+          <TouchableOpacity 
+            style={styles.authorRow}
+            onPress={() => navigation.navigate('AuthorProfile', { authorId: recipe.author._id })}
+          >
             <Image
               source={{ uri: (recipe.author && recipe.author.avatar) || 'https://res.cloudinary.com/demo/image/upload/v1622523942/sample.jpg' }}
               style={styles.avatar}
             />
             <Text style={styles.authorName}>By {recipe.author ? recipe.author.username : 'Anonymous'}</Text>
-          </View>
+          </TouchableOpacity>
 
           {/* Quick Info Grid */}
           <View style={styles.grid}>
             <View style={styles.gridItem}>
-              <Text style={styles.gridVal}>⏱️ {recipe.cookingTime}</Text>
-              <Text style={styles.gridLbl}>mins</Text>
+              <Text style={styles.infoValue}>{recipe.cookingTime} phút</Text>
+              <Text style={styles.gridLbl}>phút</Text>
             </View>
             <View style={styles.gridItem}>
-              <Text style={styles.gridVal}>🔥 {recipe.calories}</Text>
+              <Text style={styles.infoValue}>{recipe.calories} kcal</Text>
               <Text style={styles.gridLbl}>kcal</Text>
             </View>
             <View style={styles.gridItem}>
-              <Text style={styles.gridVal}>📊 {recipe.difficulty}</Text>
-              <Text style={styles.gridLbl}>Difficulty</Text>
+              <Text style={styles.infoValue}>{recipe.difficulty === 'Easy' ? 'Dễ' : recipe.difficulty === 'Medium' ? 'Trung bình' : recipe.difficulty === 'Hard' ? 'Khó' : recipe.difficulty}</Text>
+              <Text style={styles.gridLbl}>Độ khó</Text>
             </View>
           </View>
 
           {/* Description */}
-          <Text style={styles.sectionTitle}>Description</Text>
+          <Text style={styles.sectionTitle}>Mô tả</Text>
           <Text style={styles.description}>{recipe.description}</Text>
 
           {/* Ingredients */}
-          <Text style={styles.sectionTitle}>Ingredients</Text>
+          <Text style={styles.sectionTitle}>Nguyên liệu</Text>
           {recipe.ingredients.map((ing, idx) => (
             <Text key={idx} style={styles.listItem}>• {ing}</Text>
           ))}
 
           {/* Instructions */}
-          <Text style={styles.sectionTitle}>Instructions</Text>
+          <Text style={styles.sectionTitle}>Hướng dẫn thực hiện</Text>
           {recipe.instructions.map((inst, idx) => (
             <Text key={idx} style={styles.listItem}>{idx + 1}. {inst}</Text>
           ))}
 
           {/* Buttons */}
           <Button
-            title="💬 View Comments"
+            title="💬 Xem bình luận"
             variant="outline"
             onPress={() => navigation.navigate('Comments', { recipeId })}
             style={styles.commentBtn}
@@ -179,6 +201,13 @@ const styles = StyleSheet.create({
     fontWeight: typography.weights.bold,
     color: colors.primary,
     textTransform: 'uppercase',
+  },
+  rightActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  shareBtn: {
+    marginRight: spacing.md,
   },
   body: {
     paddingHorizontal: spacing.md,

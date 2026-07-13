@@ -1,12 +1,30 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, View, Image } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 import colors from '../theme/colors';
 import typography from '../theme/typography';
 import spacing from '../theme/spacing';
 
+const categoryEmojiMap = {
+  'Bánh Kem': { emoji: '🍰', bg: '#FFEBF0' },
+  'Bánh Quy': { emoji: '🍪', bg: '#FFF6E3' },
+  'Bánh Donut': { emoji: '🍩', bg: '#F3EFFF' },
+  'Cheesecake': { emoji: '🧁', bg: '#E3F2FD' },
+  'Chocolate': { emoji: '🍫', bg: '#FFEBF0' },
+  'Kẹo Ngọt': { emoji: '🍬', bg: '#FFF0F5' },
+  'Bánh Mochi': { emoji: '🍡', bg: '#E8F5E9' },
+  'Cupcake': { emoji: '🧁', bg: '#E3F2FD' },
+  'Bánh Mousse': { emoji: '🍮', bg: '#FFF8E1' },
+  'Bánh Tart': { emoji: '🥧', bg: '#FFF3E0' },
+  'Macaron': { emoji: '🍪', bg: '#FFF6E3' },
+  'Panna Cotta': { emoji: '🍮', bg: '#FFF8E1' },
+  'Brownie': { emoji: '🍞', bg: '#EFEBE9' },
+  'Bánh Su Kem': { emoji: '🥯', bg: '#FAF0E6' },
+  'Bánh Bông Lan': { emoji: '🍰', bg: '#FFEBF0' }
+};
+
 const CategoryItem = ({ category, isSelected, onPress }) => {
   const name = category.name || '';
-  const imageUrl = category.image;
+  const itemConfig = categoryEmojiMap[name] || { emoji: '🍰', bg: '#FFEBF0' };
 
   return (
     <TouchableOpacity
@@ -17,14 +35,11 @@ const CategoryItem = ({ category, isSelected, onPress }) => {
       <View
         style={[
           styles.iconContainer,
+          { backgroundColor: itemConfig.bg },
           isSelected && styles.selectedIconContainer
         ]}
       >
-        {imageUrl ? (
-          <Image source={{ uri: imageUrl }} style={styles.image} />
-        ) : (
-          <Text style={styles.emojiText}>🍰</Text>
-        )}
+        <Text style={styles.emojiText}>{itemConfig.emoji}</Text>
       </View>
       <Text style={[styles.name, isSelected && styles.selectedName]} numberOfLines={1}>
         {name}
@@ -43,7 +58,6 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 18,
-    backgroundColor: '#FFF0F2', // Soft pink placeholder background
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 8,
@@ -52,18 +66,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.04,
     shadowRadius: 6,
     elevation: 2,
-    overflow: 'hidden',
   },
   selectedIconContainer: {
     borderWidth: 2,
     borderColor: colors.primary,
     shadowColor: colors.primary,
     shadowOpacity: 0.15,
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
   },
   emojiText: {
     fontSize: 26,

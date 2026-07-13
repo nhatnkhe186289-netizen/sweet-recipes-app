@@ -7,6 +7,10 @@ const connectDB = async () => {
       useUnifiedTopology: true,
     });
     console.log(`MongoDB Connected: ${conn.connection.host}`);
+
+    // Auto-seed if empty
+    const seedData = require('../src/seeder');
+    await seedData();
   } catch (error) {
     console.error(`Error connecting to MongoDB: ${error.message}`);
     process.exit(1);
