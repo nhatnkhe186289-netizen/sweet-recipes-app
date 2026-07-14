@@ -11,6 +11,8 @@ router.route('/profile')
 router.get('/recipes', protect, userController.getUserRecipes);
 
 router.get('/:id', protect, userController.getUserById);
+router.get('/:id/followers', protect, userController.getFollowers);
+router.get('/:id/following', protect, userController.getFollowing);
 router.post('/:id/follow', protect, userController.followUser);
 router.post('/:id/unfollow', protect, userController.unfollowUser);
 

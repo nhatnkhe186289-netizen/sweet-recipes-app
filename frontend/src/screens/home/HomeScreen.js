@@ -26,7 +26,10 @@ import spacing from '../../theme/spacing';
 import { DEFAULT_CATEGORIES } from '../../constants/categories';
 import { showToast } from '../../utils/alert';
 
+import { Platform } from 'react-native';
+
 const { width } = Dimensions.get('window');
+const carouselWidth = Platform.OS === 'web' ? Math.min(width, 428) - 32 : width - 32;
 
 const HomeScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -99,7 +102,7 @@ const HomeScreen = ({ navigation }) => {
           <View style={styles.headerRight}>
             <TouchableOpacity 
               style={styles.iconCircle}
-              onPress={() => showToast('Thông báo', 'Bạn không có thông báo mới nào')}
+              onPress={() => navigation.navigate('Notifications')}
             >
               <Ionicons name="notifications-outline" size={22} color={colors.dark} />
             </TouchableOpacity>
@@ -133,7 +136,7 @@ const HomeScreen = ({ navigation }) => {
             pagingEnabled
             showsHorizontalScrollIndicator={false}
             onScroll={(e) => {
-              const slide = Math.round(e.nativeEvent.contentOffset.x / (width - 32));
+              const slide = Math.round(e.nativeEvent.contentOffset.x / carouselWidth);
               if (slide !== activeIndex) {
                 setActiveIndex(slide);
               }
@@ -338,13 +341,13 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   carouselContainer: {
-    width: width - 32,
+    width: carouselWidth,
     height: 180,
     marginBottom: 25,
     position: 'relative',
   },
   trendingCardContainer: {
-    width: width - 32,
+    width: carouselWidth,
     height: 180,
   },
   trendingCard: {
@@ -385,7 +388,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '800',
     marginTop: 2,
-    width: width * 0.45,
+    width: carouselWidth * 0.5,
   },
   viewRecipeButton: {
     backgroundColor: colors.white,

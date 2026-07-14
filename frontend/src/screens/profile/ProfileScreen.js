@@ -21,8 +21,11 @@ import colors from '../../theme/colors';
 import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
 
+import { Platform } from 'react-native';
+
 const { width } = Dimensions.get('window');
-const imageSize = (width - 48) / 3; // 3 columns with padding
+const containerWidth = Platform.OS === 'web' ? Math.min(width, 428) : width;
+const imageSize = (containerWidth - 48) / 3; // 3 columns with padding
 
 const ProfileScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -119,15 +122,21 @@ const ProfileScreen = ({ navigation }) => {
               <Text style={styles.statLabel}>Favorites</Text>
             </View>
             <View style={styles.statDivider} />
-            <View style={styles.statItem}>
+            <TouchableOpacity 
+              style={styles.statItem}
+              onPress={() => navigation.navigate('FollowConnections', { userId: user?._id, type: 'followers' })}
+            >
               <Text style={styles.statVal}>{followersCount}</Text>
               <Text style={styles.statLabel}>Người theo dõi</Text>
-            </View>
+            </TouchableOpacity>
             <View style={styles.statDivider} />
-            <View style={styles.statItem}>
+            <TouchableOpacity 
+              style={styles.statItem}
+              onPress={() => navigation.navigate('FollowConnections', { userId: user?._id, type: 'following' })}
+            >
               <Text style={styles.statVal}>{followingCount}</Text>
               <Text style={styles.statLabel}>Đang theo dõi</Text>
-            </View>
+            </TouchableOpacity>
           </View>
 
           {/* My Recipes Grid */}
@@ -176,7 +185,7 @@ const ProfileScreen = ({ navigation }) => {
                   <Ionicons name="person-outline" size={18} color={colors.primary} />
                 </View>
                 <View>
-                  <Text style={styles.actionBtnText}>Chỉnh sửa hồ sơ</Text>
+                  <Text style={styles.actionTitle}>Chỉnh sửa hồ sơ</Text>
                   <Text style={styles.actionSubtitle}>Update your info & photo</Text>
                 </View>
               </View>
