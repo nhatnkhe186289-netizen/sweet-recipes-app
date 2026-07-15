@@ -46,6 +46,10 @@ const UserSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   }],
+  dailyCalorieGoal: {
+    type: Number,
+    default: 2000,
+  },
 }, {
   timestamps: true,
 });

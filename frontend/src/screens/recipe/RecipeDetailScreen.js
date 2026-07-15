@@ -175,9 +175,11 @@ const RecipeDetailScreen = ({ route, navigation }) => {
             <TouchableOpacity
               style={styles.startCookingBtn}
               onPress={() => navigation.navigate('Cooking', {
+                recipeId: recipe._id,
                 recipeTitle: recipe.title,
                 instructions: recipe.instructions,
                 ingredients: recipe.ingredients,
+                calories: recipe.calories,
               })}
             >
               <Ionicons name="play-circle" size={18} color={colors.white} />

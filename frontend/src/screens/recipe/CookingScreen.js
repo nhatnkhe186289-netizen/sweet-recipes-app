@@ -9,16 +9,18 @@ import {
   Dimensions,
   Alert,
   Animated,
+  Platform,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import colors from '../../theme/colors';
 import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
+import nutritionService from '../../services/nutrition.service';
 
 const { width } = Dimensions.get('window');
 
 const CookingScreen = ({ route, navigation }) => {
-  const { recipeTitle, instructions, ingredients } = route.params;
+  const { recipeId, recipeTitle, instructions, ingredients, calories } = route.params;
   const [currentStep, setCurrentStep] = useState(0);
   const [showIngredients, setShowIngredients] = useState(false);
 
@@ -143,16 +145,64 @@ const CookingScreen = ({ route, navigation }) => {
       setCurrentStep(currentStep + 1);
     } else {
       // Completed last step
-      Alert.alert(
-        '🎉 Hoàn thành xuất sắc!',
-        'Chúc mừng bạn đã hoàn thành món bánh tuyệt vời này!',
-        [
-          {
-            text: 'Quay lại Chi tiết',
-            onPress: () => navigation.goBack(),
-          },
-        ]
-      );
+      const title = '🎉 Hoàn thành xuất sắc!';
+      const message = `Chúc mừng bạn đã hoàn thành món bánh tuyệt vời này! Bạn có muốn ghi nhận lượng calo của món bánh này vào nhật ký ăn uống hôm nay không?`;
+      
+      const saveCalories = async () => {
+        try {
+          await nutritionService.logNutrition({
+            recipeId,
+            recipeTitle,
+            calories: calories || 0,
+            mealType: 'Ăn vặt',
+            date: new Date(),
+            dayString: new Date().toISOString().split('T')[0],
+          });
+          if (Platform.OS === 'web') {
+            window.alert('Thành công\n\nĐã lưu lượng calo vào nhật ký hôm nay!');
+            navigation.goBack();
+          } else {
+            Alert.alert('Thành công', 'Đã lưu lượng calo vào nhật ký hôm nay!', [
+              { text: 'Đồng ý', onPress: () => navigation.goBack() }
+            ]);
+          }
+        } catch (error) {
+          console.error(error);
+          if (Platform.OS === 'web') {
+            window.alert('Lỗi\n\nKhông thể lưu nhật ký calo.');
+          } else {
+            Alert.alert('Lỗi', 'Không thể lưu nhật ký calo.');
+          }
+          navigation.goBack();
+        }
+      };
+
+      if (Platform.OS === 'web') {
+        const confirmed = window.confirm(
+          `${title}\n\n${message}\n\nNhấp chọn OK (Đồng ý) để "Ăn ngay & Lưu ${calories || 0} kcal", hoặc Cancel (Hủy) để "Chỉ hoàn thành".`
+        );
+        if (confirmed) {
+          saveCalories();
+        } else {
+          navigation.goBack();
+        }
+      } else {
+        Alert.alert(
+          title,
+          message,
+          [
+            {
+              text: 'Không, chỉ hoàn thành',
+              onPress: () => navigation.goBack(),
+              style: 'cancel',
+            },
+            {
+              text: `Ăn ngay & Lưu ${calories || 0} kcal`,
+              onPress: saveCalories,
+            },
+          ]
+        );
+      }
     }
   };
 

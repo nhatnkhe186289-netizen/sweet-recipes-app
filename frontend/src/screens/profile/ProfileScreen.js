@@ -205,6 +205,19 @@ const ProfileScreen = ({ navigation }) => {
               <Ionicons name="chevron-forward" size={16} color={colors.grey} />
             </TouchableOpacity>
 
+            <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('NutritionTracker')}>
+              <View style={styles.actionLeft}>
+                <View style={[styles.actionIconContainer, { backgroundColor: '#E8F5E9' }]}>
+                  <Ionicons name="bar-chart-outline" size={18} color="#2E7D32" />
+                </View>
+                <View>
+                  <Text style={styles.actionTitle}>Theo dõi dinh dưỡng</Text>
+                  <Text style={styles.actionSubtitle}>Calorie tracker & history</Text>
+                </View>
+              </View>
+              <Ionicons name="chevron-forward" size={16} color={colors.grey} />
+            </TouchableOpacity>
+
             <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('Notifications')}>
               <View style={styles.actionLeft}>
                 <View style={[styles.actionIconContainer, { backgroundColor: '#F3EFFF' }]}>
