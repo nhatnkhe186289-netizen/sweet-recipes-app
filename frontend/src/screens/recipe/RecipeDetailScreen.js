@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
 import recipeService from '../../services/recipe.service';
 import { fetchRecipes } from '../../store/recipeSlice';
+import { addItems } from '../../store/shoppingListSlice';
 import FavoriteButton from '../../components/FavoriteButton';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import Button from '../../components/Button';
@@ -137,13 +138,54 @@ const RecipeDetailScreen = ({ route, navigation }) => {
           <Text style={styles.description}>{recipe.description}</Text>
 
           {/* Ingredients */}
-          <Text style={styles.sectionTitle}>Nguyên liệu</Text>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 16 }}>
+            <Text style={styles.sectionTitle}>Nguyên liệu</Text>
+            <TouchableOpacity
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                backgroundColor: '#FFF0F0',
+                paddingVertical: 6,
+                paddingHorizontal: 12,
+                borderRadius: 12,
+              }}
+              onPress={() => {
+                if (recipe.ingredients && recipe.ingredients.length > 0) {
+                  dispatch(addItems({ items: recipe.ingredients, recipeTitle: recipe.title }));
+                  navigation.navigate('ShoppingList');
+                }
+              }}
+            >
+              <Ionicons name="cart-outline" size={16} color={colors.primary} />
+              <Text style={{ fontSize: 12, fontWeight: '700', color: colors.primary, marginLeft: 4 }}>
+                + Thêm vào Đi chợ
+              </Text>
+            </TouchableOpacity>
+          </View>
           {recipe.ingredients.map((ing, idx) => (
             <Text key={idx} style={styles.listItem}>• {ing}</Text>
           ))}
 
           {/* Instructions */}
-          <Text style={styles.sectionTitle}>Hướng dẫn thực hiện</Text>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 16 }}>
+            <Text style={styles.sectionTitle}>Hướng dẫn thực hiện</Text>
+            <TouchableOpacity
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                backgroundColor: '#F0F7FF',
+                paddingVertical: 6,
+                paddingHorizontal: 12,
+                borderRadius: 12,
+              }}
+              onPress={() => navigation.navigate('BakingTimer')}
+            >
+              <Ionicons name="timer-outline" size={16} color="#007AFF" />
+              <Text style={{ fontSize: 12, fontWeight: '700', color: '#007AFF', marginLeft: 4 }}>
+                ⏱️ Clock Timer
+              </Text>
+            </TouchableOpacity>
+          </View>
           {recipe.instructions.map((inst, idx) => (
             <Text key={idx} style={styles.listItem}>{idx + 1}. {inst}</Text>
           ))}

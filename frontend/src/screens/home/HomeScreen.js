@@ -97,7 +97,7 @@ const HomeScreen = ({ navigation }) => {
             <Text style={styles.username}>{user ? user.username : 'Khách'}</Text>
           </View>
           <View style={styles.headerRight}>
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.iconCircle}
               onPress={() => showToast('Thông báo', 'Bạn không có thông báo mới nào')}
             >
@@ -123,6 +123,50 @@ const HomeScreen = ({ navigation }) => {
           />
           <TouchableOpacity style={styles.filterButton} onPress={handleSearchSubmit}>
             <Text style={styles.filterButtonText}>Filter</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* Quick Tools Shortcuts Row */}
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: spacing.md, gap: 10 }}>
+          <TouchableOpacity
+            style={{
+              flex: 1,
+              flexDirection: 'row',
+              alignItems: 'center',
+              backgroundColor: '#FFF0F0',
+              paddingVertical: 12,
+              paddingHorizontal: 14,
+              borderRadius: 14,
+              borderWidth: 1,
+              borderColor: '#FFE0E0',
+            }}
+            onPress={() => navigation.navigate('ShoppingList')}
+          >
+            <Ionicons name="cart-outline" size={22} color={colors.primary} />
+            <View style={{ marginLeft: 8 }}>
+              <Text style={{ fontSize: 13, fontWeight: '800', color: colors.primary }}>Danh sách Đi chợ</Text>
+              <Text style={{ fontSize: 10, color: colors.grey }}>Quản lý nguyên liệu</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{
+              flex: 1,
+              flexDirection: 'row',
+              alignItems: 'center',
+              backgroundColor: '#F0F7FF',
+              paddingVertical: 12,
+              paddingHorizontal: 14,
+              borderRadius: 14,
+              borderWidth: 1,
+              borderColor: '#E0EEFF',
+            }}
+            onPress={() => navigation.navigate('BakingTimer')}
+          >
+            <Ionicons name="timer-outline" size={22} color="#007AFF" />
+            <View style={{ marginLeft: 8 }}>
+              <Text style={{ fontSize: 13, fontWeight: '800', color: '#007AFF' }}>Timer</Text>
+            </View>
           </TouchableOpacity>
         </View>
 
@@ -155,7 +199,7 @@ const HomeScreen = ({ navigation }) => {
                   <View style={styles.trendingTag}>
                     <Text style={styles.trendingTagText}>🔥 Hot Trend</Text>
                   </View>
-                  
+
                   <View style={styles.trendingContent}>
                     <View>
                       <Text style={styles.trendingSubtitle}>Công thức HOT nhất tuần</Text>
@@ -163,7 +207,7 @@ const HomeScreen = ({ navigation }) => {
                         {item.title}
                       </Text>
                     </View>
-                    
+
                     <View style={styles.viewRecipeButton}>
                       <Text style={styles.viewRecipeText}>Xem ngay</Text>
                     </View>

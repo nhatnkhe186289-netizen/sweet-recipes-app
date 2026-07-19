@@ -8,6 +8,7 @@ const userRoutes = require('./user.routes');
 const favoriteRoutes = require('./favorite.routes');
 const commentRoutes = require('./comment.routes');
 const notificationRoutes = require('./notification.routes');
+const shoppingListRoutes = require('./shoppingList.routes');
 
 router.use('/auth', authRoutes);
 router.use('/recipes', recipeRoutes);
@@ -16,5 +17,6 @@ router.use('/users', userRoutes);
 router.use('/favorites', favoriteRoutes);
 router.use('/comments', commentRoutes);
 router.use('/notifications', notificationRoutes);
+router.use('/shopping-list', shoppingListRoutes);
 
 module.exports = router;
