@@ -41,8 +41,15 @@ const seedData = async () => {
 
     // Insert new data
     if (data.users && data.users.length > 0) {
-      await User.insertMany(data.users);
-      console.log(`Imported ${data.users.length} Users.`);
+      const bcrypt = require('bcryptjs');
+      const formattedUsers = data.users.map(u => {
+        const password = (u.password && !u.password.startsWith('$2')) 
+          ? bcrypt.hashSync(u.password, 10) 
+          : u.password;
+        return { ...u, password };
+      });
+      await User.insertMany(formattedUsers);
+      console.log(`Imported ${formattedUsers.length} Users.`);
     }
     
     if (data.categories && data.categories.length > 0) {
@@ -56,8 +63,27 @@ const seedData = async () => {
     }
     
     if (data.comments && data.comments.length > 0) {
-      await Comment.insertMany(data.comments);
-      console.log(`Imported ${data.comments.length} Comments.`);
+      const allUsers = await User.find({});
+      const allRecipes = await Recipe.find({});
+      const userMap = new Map(allUsers.map(u => [u.email, u._id]));
+      const recipeMap = new Map(allRecipes.map(r => [r.title, r._id]));
+
+      const formattedComments = data.comments.map(c => {
+        const userId = c.userId || userMap.get(c.userEmail);
+        const recipeId = c.recipeId || recipeMap.get(c.recipeTitle);
+        if (!userId || !recipeId) return null;
+        return {
+          _id: c._id,
+          userId,
+          recipeId,
+          content: c.content,
+          createdAt: c.createdAt,
+          updatedAt: c.updatedAt || c.createdAt
+        };
+      }).filter(Boolean);
+
+      await Comment.insertMany(formattedComments);
+      console.log(`Imported ${formattedComments.length} Comments.`);
     }
 
     if (data.favorites && data.favorites.length > 0) {

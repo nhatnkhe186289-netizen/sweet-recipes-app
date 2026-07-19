@@ -9,6 +9,7 @@ import {
   ImageBackground,
   Dimensions,
   TextInput,
+  Platform,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
@@ -19,6 +20,14 @@ import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
 
 const { height } = Dimensions.get('window');
+
+const showAlert = (title, msg) => {
+  if (Platform.OS === 'web' && typeof window !== 'undefined') {
+    window.alert(`${title}: ${msg}`);
+  } else {
+    Alert.alert(title, msg);
+  }
+};
 
 const SignUpScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
@@ -32,7 +41,7 @@ const SignUpScreen = ({ navigation }) => {
 
   useEffect(() => {
     if (isError) {
-      Alert.alert('Lỗi đăng ký', message || 'Thông tin đăng ký không hợp lệ hoặc email đã tồn tại');
+      showAlert('Lỗi đăng ký', message || 'Thông tin đăng ký không hợp lệ hoặc email đã tồn tại');
       dispatch(reset());
     }
     if (isSuccess || user) {
@@ -43,15 +52,15 @@ const SignUpScreen = ({ navigation }) => {
 
   const handleSignUp = () => {
     if (!username || !email || !password || !confirmPassword) {
-      Alert.alert('Lỗi', 'Vui lòng điền đầy đủ tất cả các trường thông tin');
+      showAlert('Lỗi', 'Vui lòng điền đầy đủ tất cả các trường thông tin');
       return;
     }
     if (password.length < 6) {
-      Alert.alert('Lỗi', 'Mật khẩu phải có ít nhất 6 ký tự');
+      showAlert('Lỗi', 'Mật khẩu phải có ít nhất 6 ký tự');
       return;
     }
     if (password !== confirmPassword) {
-      Alert.alert('Lỗi', 'Mật khẩu và Xác nhận mật khẩu không khớp');
+      showAlert('Lỗi', 'Mật khẩu và Xác nhận mật khẩu không khớp');
       return;
     }
     dispatch(register({ username, email, password }));
