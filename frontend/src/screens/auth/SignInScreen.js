@@ -34,13 +34,6 @@ const SignInScreen = ({ navigation }) => {
   );
 
   useEffect(() => {
-    if (isError) {
-      Alert.alert(
-        "Lỗi đăng nhập",
-        message || "Tài khoản hoặc mật khẩu không chính xác",
-      );
-      dispatch(reset());
-    }
     if (isSuccess || user) {
       dispatch(reset());
       navigation.replace("App");
@@ -126,7 +119,10 @@ const SignInScreen = ({ navigation }) => {
             autoComplete="email"
             textContentType="emailAddress"
             value={email}
-            onChangeText={setEmail}
+            onChangeText={(text) => {
+              setEmail(text);
+              if (isError) dispatch(reset());
+            }}
           />
         </View>
 
@@ -142,7 +138,10 @@ const SignInScreen = ({ navigation }) => {
               autoComplete="password"
               textContentType="password"
               value={password}
-              onChangeText={setPassword}
+              onChangeText={(text) => {
+                setPassword(text);
+                if (isError) dispatch(reset());
+              }}
             />
             <TouchableOpacity
               onPress={() => setShowPassword(!showPassword)}

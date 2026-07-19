@@ -159,13 +159,15 @@ const RecipeDetailScreen = ({ route, navigation }) => {
           {isAuthor && (
             <View style={styles.authorButtons}>
               <Button
-                title="✏️ Edit Recipe"
+                title="Edit"
+                icon="pencil-outline"
                 variant="secondary"
                 onPress={() => navigation.navigate('EditRecipe', { recipeId })}
                 style={styles.editBtn}
               />
               <Button
-                title="🗑️ Delete Recipe"
+                title="Delete"
+                icon="trash-outline"
                 onPress={handleDelete}
                 style={styles.deleteBtn}
               />
@@ -283,11 +285,13 @@ const styles = StyleSheet.create({
   editBtn: {
     flex: 1,
     marginRight: spacing.sm,
+    paddingHorizontal: spacing.sm, // Reduce horizontal padding
   },
   deleteBtn: {
     flex: 1,
     backgroundColor: colors.error,
     marginLeft: spacing.sm,
+    paddingHorizontal: spacing.sm, // Reduce horizontal padding
   },
   errorContainer: {
     flex: 1,

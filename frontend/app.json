@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Sweet Recipes",
-    "slug": "sweet-recipes-app",
+    "slug": "sweet-recipes",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.nhatnkhsteam.sweetrecipes"
     },
     "web": {
       "favicon": "./assets/icon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4426f764-1350-429e-b239-e967a9e6bd61"
+      }
+    },
+    "owner": "nhatnkhs-team"
   }
 }

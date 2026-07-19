@@ -1,10 +1,11 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, ActivityIndicator, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import colors from '../theme/colors';
 import typography from '../theme/typography';
 import spacing from '../theme/spacing';
 
-const Button = ({ title, onPress, loading, style, textStyle, variant = 'primary', ...props }) => {
+const Button = ({ title, onPress, loading, style, textStyle, variant = 'primary', icon, ...props }) => {
   const isSecondary = variant === 'secondary';
   const isOutline = variant === 'outline';
 
@@ -33,7 +34,17 @@ const Button = ({ title, onPress, loading, style, textStyle, variant = 'primary'
       {loading ? (
         <ActivityIndicator color={isOutline ? colors.primary : colors.white} />
       ) : (
-        <Text style={titleStyle}>{title}</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          {icon && (
+            <Ionicons
+              name={icon}
+              size={20}
+              color={StyleSheet.flatten(titleStyle).color}
+              style={{ marginRight: title ? spacing.xs : 0 }}
+            />
+          )}
+          {title ? <Text style={titleStyle} numberOfLines={1} adjustsFontSizeToFit>{title}</Text> : null}
+        </View>
       )}
     </TouchableOpacity>
   );

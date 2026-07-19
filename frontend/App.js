@@ -15,7 +15,7 @@ export default function App() {
       <View style={isWeb ? styles.webContainer : styles.container}>
         <Provider store={store}>
           <SafeAreaProvider>
-            <NavigationContainer>
+            <NavigationContainer documentTitle={{ formatter: () => 'Sweet Recipes' }}>
               <AppNavigator />
               <StatusBar style="auto" />
             </NavigationContainer>
