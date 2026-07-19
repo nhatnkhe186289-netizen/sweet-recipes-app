@@ -212,6 +212,19 @@ const ProfileScreen = ({ navigation }) => {
               <Ionicons name="chevron-forward" size={16} color={colors.grey} />
             </TouchableOpacity>
 
+            <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('MealPlanner')}>
+              <View style={styles.actionLeft}>
+                <View style={[styles.actionIconContainer, { backgroundColor: '#FFEBF0' }]}>
+                  <Ionicons name="calendar-outline" size={18} color={colors.primary} />
+                </View>
+                <View>
+                  <Text style={styles.actionTitle}>Lịch nấu ăn (Meal Planner)</Text>
+                  <Text style={styles.actionSubtitle}>Lên lịch & chuẩn bị nguyên liệu</Text>
+                </View>
+              </View>
+              <Ionicons name="chevron-forward" size={16} color={colors.grey} />
+            </TouchableOpacity>
+
             <TouchableOpacity style={styles.actionItem} onPress={() => Alert.alert('Thông báo', 'Không có thông báo mới')}>
               <View style={styles.actionLeft}>
                 <View style={[styles.actionIconContainer, { backgroundColor: '#F3EFFF' }]}>

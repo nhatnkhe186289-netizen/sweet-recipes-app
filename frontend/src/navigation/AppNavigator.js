@@ -13,6 +13,10 @@ import EditRecipeScreen from '../screens/recipe/EditRecipeScreen';
 import CommentsScreen from '../screens/comments/CommentsScreen';
 import SettingsScreen from '../screens/profile/SettingsScreen';
 import ChangePasswordScreen from '../screens/profile/ChangePasswordScreen';
+import MealPlannerScreen from '../screens/recipe/MealPlannerScreen';
+import ShoppingListScreen from '../screens/recipe/ShoppingListScreen';
+import IngredientChecklistScreen from '../screens/recipe/IngredientChecklistScreen';
+import CookingModeScreen from '../screens/recipe/CookingModeScreen';
 import colors from '../theme/colors';
 
 const Stack = createNativeStackNavigator();
@@ -80,6 +84,11 @@ const AppNavigator = () => {
       <Stack.Screen name="Comments" component={CommentsScreen} options={{ title: 'Bình luận' }} />
       <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Cài đặt' }} />
       <Stack.Screen name="ChangePassword" component={ChangePasswordScreen} options={{ headerShown: false }} />
+      
+      <Stack.Screen name="MealPlanner" component={MealPlannerScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="ShoppingList" component={ShoppingListScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="IngredientChecklist" component={IngredientChecklistScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="CookingMode" component={CookingModeScreen} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 };
