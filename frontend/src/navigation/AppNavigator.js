@@ -14,6 +14,8 @@ import SettingsScreen from '../screens/profile/SettingsScreen';
 import EditProfileScreen from '../screens/profile/EditProfileScreen';
 import AuthorProfileScreen from '../screens/profile/AuthorProfileScreen';
 import NotificationsScreen from '../screens/notifications/NotificationsScreen';
+import ShoppingListScreen from '../screens/shopping/ShoppingListScreen';
+import BakingTimerScreen from '../screens/timer/BakingTimerScreen';
 import colors from '../theme/colors';
 
 const Stack = createNativeStackNavigator();
@@ -71,6 +73,8 @@ const AppNavigator = () => {
       <Stack.Screen name="EditProfile" component={EditProfileScreen} options={{ title: 'Chỉnh sửa hồ sơ' }} />
       <Stack.Screen name="AuthorProfile" component={AuthorProfileScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Notifications" component={NotificationsScreen} options={{ title: 'Thông báo', headerShown: false }} />
+      <Stack.Screen name="ShoppingList" component={ShoppingListScreen} options={{ title: 'Danh sách Đi chợ' }} />
+      <Stack.Screen name="BakingTimer" component={BakingTimerScreen} options={{ title: 'Clock Timer' }} />
     </Stack.Navigator>
   );
 };

@@ -9,6 +9,7 @@ import {
   ImageBackground,
   Dimensions,
   TextInput,
+  Platform,
 } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { Ionicons } from "@expo/vector-icons";
@@ -20,6 +21,14 @@ import typography from "../../theme/typography";
 import spacing from "../../theme/spacing";
 
 const { height } = Dimensions.get("window");
+
+const showAlert = (title, msg) => {
+  if (Platform.OS === 'web' && typeof window !== 'undefined') {
+    window.alert(`${title}: ${msg}`);
+  } else {
+    Alert.alert(title, msg);
+  }
+};
 
 const SignInScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
@@ -35,7 +44,7 @@ const SignInScreen = ({ navigation }) => {
 
   useEffect(() => {
     if (isError) {
-      Alert.alert(
+      showAlert(
         "Lỗi đăng nhập",
         message || "Tài khoản hoặc mật khẩu không chính xác",
       );
