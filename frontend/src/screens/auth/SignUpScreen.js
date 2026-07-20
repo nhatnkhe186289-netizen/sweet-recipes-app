@@ -34,11 +34,22 @@ const SignUpScreen = ({ navigation }) => {
       );
       dispatch(reset());
     }
-    if (isSuccess || user) {
-      dispatch(reset());
-      navigation.replace("App");
+    if (isSuccess) {
+      Alert.alert(
+        "Đăng ký thành công",
+        "Tài khoản của bạn đã được đăng ký thành công. Vui lòng đăng nhập để tiếp tục!",
+        [
+          {
+            text: "Đồng ý",
+            onPress: () => {
+              dispatch(reset());
+              navigation.navigate("SignIn");
+            }
+          }
+        ]
+      );
     }
-  }, [user, isError, isSuccess, message, dispatch, navigation]);
+  }, [isError, isSuccess, message, dispatch, navigation]);
 
   const handleSignUp = () => {
     if (!username || !email || !password) {

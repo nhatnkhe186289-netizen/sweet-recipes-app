@@ -14,6 +14,7 @@ const registerUser = async (username, email, password) => {
     email,
     password, // store in plaintext
     role,
+    status: 'active',
   });
 
   return {
