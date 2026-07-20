@@ -147,10 +147,9 @@ const BakingTimerScreen = ({ navigation }) => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
-    const currentPreset = presets.find((p) => p.id === activePreset);
-    const resetSecs = currentPreset ? currentPreset.minutes * 60 : initialSeconds;
-    setInitialSeconds(resetSecs);
-    setTotalSeconds(resetSecs);
+    setInitialSeconds(0);
+    setTotalSeconds(0);
+    setActivePreset(null);
   };
 
   const adjustTime = (minutesToAdd) => {
