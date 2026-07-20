@@ -1,4 +1,5 @@
 const Recipe = require('../models/Recipe');
+const mongoose = require('mongoose');
 
 const searchRecipes = async (query, categoryId, difficulty) => {
   const filter = {};
@@ -11,7 +12,7 @@ const searchRecipes = async (query, categoryId, difficulty) => {
     ];
   }
 
-  if (categoryId) {
+  if (categoryId && mongoose.Types.ObjectId.isValid(categoryId)) {
     filter.category = categoryId;
   }
 

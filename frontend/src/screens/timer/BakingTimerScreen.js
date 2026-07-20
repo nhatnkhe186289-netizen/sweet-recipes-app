@@ -74,8 +74,10 @@ const BakingTimerScreen = ({ navigation }) => {
         setTotalSeconds((prev) => {
           if (prev <= 1) {
             clearInterval(intervalRef.current);
-            setIsActive(false);
-            onTimerComplete();
+            setTimeout(() => {
+              setIsActive(false);
+              onTimerComplete();
+            }, 0);
             return 0;
           }
           return prev - 1;
@@ -239,7 +241,7 @@ const BakingTimerScreen = ({ navigation }) => {
         {showAddPreset && (
           <View style={styles.addPresetBox}>
             <Text style={styles.addPresetLabel}>
-              Lưu thời gian hiện tại ({Math.max(1, Math.round(totalSeconds / 60))} phút) thành Preset:
+              Lưu thời gian hiện tại ({(totalSeconds > 0 ? Math.max(1, Math.round(totalSeconds / 60)) : Math.max(1, Math.round(initialSeconds / 60)))} phút) thành Preset:
             </Text>
             <View style={styles.addPresetRow}>
               <TextInput

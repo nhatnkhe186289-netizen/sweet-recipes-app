@@ -137,7 +137,7 @@ const SearchScreen = ({ route }) => {
 
       {/* Results Title Count */}
       {!isLoading && (
-        <Text style={styles.resultCount}>
+        <Text style={styles.resultsCount}>
           {recipes.length} công thức tìm thấy
         </Text>
       )}

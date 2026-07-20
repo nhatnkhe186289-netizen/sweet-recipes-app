@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useDispatch } from 'react-redux';
+import { loadProfile } from '../store/authSlice';
 
 import OnboardingScreen from '../screens/onboarding/OnboardingScreen';
 import AuthNavigator from './AuthNavigator';
@@ -22,11 +24,24 @@ const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
   const [initialRoute, setInitialRoute] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const checkOnboarding = async () => {
+    const checkInitialState = async () => {
       try {
+        const token = await AsyncStorage.getItem('token');
         const hasSeen = await AsyncStorage.getItem('hasSeenOnboarding');
+
+        if (token) {
+          try {
+            await dispatch(loadProfile()).unwrap();
+            setInitialRoute('App');
+            return;
+          } catch (e) {
+            await AsyncStorage.removeItem('token');
+          }
+        }
+
         if (hasSeen === 'true') {
           setInitialRoute('Auth');
         } else {
@@ -36,8 +51,8 @@ const AppNavigator = () => {
         setInitialRoute('Onboarding');
       }
     };
-    checkOnboarding();
-  }, []);
+    checkInitialState();
+  }, [dispatch]);
 
   if (!initialRoute) {
     return (

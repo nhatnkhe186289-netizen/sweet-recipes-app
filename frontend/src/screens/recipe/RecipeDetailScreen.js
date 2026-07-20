@@ -108,13 +108,19 @@ const RecipeDetailScreen = ({ route, navigation }) => {
           {/* Author Info */}
           <TouchableOpacity 
             style={styles.authorRow}
-            onPress={() => navigation.navigate('AuthorProfile', { authorId: recipe.author._id })}
+            onPress={() => {
+              if (recipe.author?._id) {
+                navigation.navigate('AuthorProfile', { authorId: recipe.author._id });
+              } else {
+                Alert.alert('Thông báo', 'Thông tin tác giả không khả dụng.');
+              }
+            }}
           >
             <Image
               source={{ uri: (recipe.author && recipe.author.avatar) || 'https://res.cloudinary.com/demo/image/upload/v1622523942/sample.jpg' }}
               style={styles.avatar}
             />
-            <Text style={styles.authorName}>By {recipe.author ? recipe.author.username : 'Anonymous'}</Text>
+            <Text style={styles.authorName}>By {recipe.author ? recipe.author.username : 'Ẩn danh'}</Text>
           </TouchableOpacity>
 
           {/* Quick Info Grid */}

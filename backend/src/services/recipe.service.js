@@ -1,5 +1,6 @@
 const Recipe = require('../models/Recipe');
 const User = require('../models/User');
+const Favorite = require('../models/Favorite');
 
 const createRecipe = async (recipeData, authorId) => {
   const recipe = await Recipe.create({
@@ -63,6 +64,13 @@ const deleteRecipe = async (recipeId, userId) => {
   await User.findByIdAndUpdate(userId, {
     $pull: { createdRecipes: recipeId },
   });
+
+  // Clean up all Favorite entries & pull from all users' favoriteRecipes
+  await Favorite.deleteMany({ recipeId });
+  await User.updateMany(
+    { favoriteRecipes: recipeId },
+    { $pull: { favoriteRecipes: recipeId } }
+  );
 
   return { message: 'Recipe removed successfully' };
 };
