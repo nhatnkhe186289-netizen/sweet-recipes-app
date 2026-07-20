@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
 import { fetchRecipes, fetchCategories } from '../../store/recipeSlice';
 import { fetchFavorites } from '../../store/favoriteSlice';
+import { fetchMealPlans } from '../../store/mealPlanSlice';
 import RecipeCard from '../../components/RecipeCard';
 import CategoryItem from '../../components/CategoryItem';
 import LoadingSpinner from '../../components/LoadingSpinner';
@@ -26,7 +27,17 @@ import spacing from '../../theme/spacing';
 import { DEFAULT_CATEGORIES } from '../../constants/categories';
 import { showToast } from '../../utils/alert';
 
+import { Platform } from 'react-native';
+
 const { width } = Dimensions.get('window');
+const carouselWidth = Platform.OS === 'web' ? Math.min(width, 428) - 32 : width - 32;
+
+const formatDateString = (date) => {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+};
 
 const HomeScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -37,11 +48,13 @@ const HomeScreen = ({ navigation }) => {
 
   const { recipes, categories, isLoading } = useSelector((state) => state.recipe);
   const { user } = useSelector((state) => state.auth);
+  const { plans = [] } = useSelector((state) => state.mealPlan || {});
 
   useEffect(() => {
     dispatch(fetchRecipes());
     dispatch(fetchCategories());
     dispatch(fetchFavorites());
+    dispatch(fetchMealPlans());
   }, [dispatch]);
 
   const onRefresh = async () => {
@@ -50,6 +63,7 @@ const HomeScreen = ({ navigation }) => {
       dispatch(fetchRecipes(selectedCategory ? { category: selectedCategory } : {})),
       dispatch(fetchCategories()),
       dispatch(fetchFavorites()),
+      dispatch(fetchMealPlans()),
     ]);
     setRefreshing(false);
   };
@@ -99,7 +113,7 @@ const HomeScreen = ({ navigation }) => {
           <View style={styles.headerRight}>
             <TouchableOpacity
               style={styles.iconCircle}
-              onPress={() => showToast('Thông báo', 'Bạn không có thông báo mới nào')}
+              onPress={() => navigation.navigate('Notifications')}
             >
               <Ionicons name="notifications-outline" size={22} color={colors.dark} />
             </TouchableOpacity>
@@ -170,6 +184,63 @@ const HomeScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
+        {/* Today's Plan Widget */}
+        {(() => {
+          const todayStr = formatDateString(new Date());
+          const todayPlans = plans.filter((p) => p.date === todayStr);
+          
+          if (todayPlans.length > 0) {
+            const firstPlan = todayPlans[0];
+            const recipe = firstPlan.recipe;
+            if (!recipe) return null;
+
+            return (
+              <View style={styles.todayPlanCard}>
+                <View style={styles.todayPlanHeader}>
+                  <Text style={styles.todayPlanLabel}>📅 Kế hoạch hôm nay</Text>
+                  <TouchableOpacity onPress={() => navigation.navigate('MealPlanner')}>
+                    <Text style={styles.todayPlanSeeAll}>Xem lịch ({todayPlans.length})</Text>
+                  </TouchableOpacity>
+                </View>
+                <View style={styles.todayPlanBody}>
+                  <Image source={{ uri: recipe.image }} style={styles.todayPlanImg} />
+                  <View style={styles.todayPlanInfo}>
+                    <Text style={styles.todayPlanTitle} numberOfLines={1}>{recipe.title}</Text>
+                    <Text style={styles.todayPlanMeta}>
+                      ⏱️ {recipe.cookingTime} phút | 🔥 {recipe.calories} kcal
+                    </Text>
+                    <TouchableOpacity
+                      style={styles.todayPlanBtn}
+                      onPress={() => navigation.navigate('CookingMode', { recipe })}
+                    >
+                      <Ionicons name="play" size={14} color={colors.white} />
+                      <Text style={styles.todayPlanBtnText}>Bắt đầu nấu</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+            );
+          } else {
+            return (
+              <TouchableOpacity
+                style={styles.todayPlanEmptyCard}
+                onPress={() => navigation.navigate('MealPlanner')}
+                activeOpacity={0.9}
+              >
+                <View style={styles.todayPlanEmptyLeft}>
+                  <Text style={styles.todayPlanEmptyTitle}>🍰 Hôm nay nấu món gì?</Text>
+                  <Text style={styles.todayPlanEmptySub}>
+                    Bạn chưa lên lịch nấu hôm nay. Lên kế hoạch ngọt ngào ngay nhé!
+                  </Text>
+                </View>
+                <View style={styles.todayPlanEmptyRight}>
+                  <Ionicons name="calendar-outline" size={24} color={colors.primary} />
+                </View>
+              </TouchableOpacity>
+            );
+          }
+        })()}
+
         {/* Swipable Trending Banner Carousel */}
         <View style={styles.carouselContainer}>
           <ScrollView
@@ -177,7 +248,7 @@ const HomeScreen = ({ navigation }) => {
             pagingEnabled
             showsHorizontalScrollIndicator={false}
             onScroll={(e) => {
-              const slide = Math.round(e.nativeEvent.contentOffset.x / (width - 32));
+              const slide = Math.round(e.nativeEvent.contentOffset.x / carouselWidth);
               if (slide !== activeIndex) {
                 setActiveIndex(slide);
               }
@@ -382,13 +453,13 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   carouselContainer: {
-    width: width - 32,
+    width: carouselWidth,
     height: 180,
     marginBottom: 25,
     position: 'relative',
   },
   trendingCardContainer: {
-    width: width - 32,
+    width: carouselWidth,
     height: 180,
   },
   trendingCard: {
@@ -429,7 +500,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '800',
     marginTop: 2,
-    width: width * 0.45,
+    width: carouselWidth * 0.5,
   },
   viewRecipeButton: {
     backgroundColor: colors.white,
@@ -495,6 +566,108 @@ const styles = StyleSheet.create({
   emptyText: {
     color: colors.grey,
     fontSize: 14,
+  },
+  todayPlanCard: {
+    backgroundColor: colors.white,
+    borderRadius: 24,
+    padding: 16,
+    marginBottom: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.04,
+    shadowRadius: 10,
+    elevation: 3,
+  },
+  todayPlanHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#F3F4F6',
+    paddingBottom: 10,
+    marginBottom: 10,
+  },
+  todayPlanLabel: {
+    fontSize: 14,
+    fontWeight: '800',
+    color: colors.dark,
+  },
+  todayPlanSeeAll: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: colors.primary,
+  },
+  todayPlanBody: {
+    flexDirection: 'row',
+  },
+  todayPlanImg: {
+    width: 70,
+    height: 70,
+    borderRadius: 14,
+  },
+  todayPlanInfo: {
+    flex: 1,
+    marginLeft: 12,
+    justifyContent: 'space-between',
+  },
+  todayPlanTitle: {
+    fontSize: 15,
+    fontWeight: '800',
+    color: colors.dark,
+  },
+  todayPlanMeta: {
+    fontSize: 11,
+    color: colors.grey,
+  },
+  todayPlanBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: colors.success,
+    alignSelf: 'flex-start',
+    paddingVertical: 4,
+    paddingHorizontal: 10,
+    borderRadius: 8,
+    marginTop: 4,
+  },
+  todayPlanBtnText: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: colors.white,
+    marginLeft: 4,
+  },
+  todayPlanEmptyCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: '#FFEBF0',
+    borderRadius: 24,
+    padding: 16,
+    marginBottom: 20,
+    borderWidth: 1,
+    borderColor: '#FFD1DC',
+  },
+  todayPlanEmptyLeft: {
+    flex: 1,
+    marginRight: 10,
+  },
+  todayPlanEmptyTitle: {
+    fontSize: 14,
+    fontWeight: '800',
+    color: colors.primary,
+    marginBottom: 4,
+  },
+  todayPlanEmptySub: {
+    fontSize: 11,
+    color: colors.grey,
+    lineHeight: 15,
+  },
+  todayPlanEmptyRight: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: colors.white,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

@@ -19,15 +19,12 @@ import Button from "../../components/Button";
 import colors from "../../theme/colors";
 import typography from "../../theme/typography";
 import spacing from "../../theme/spacing";
+import alertService from '../../services/alertService';
 
 const { height } = Dimensions.get("window");
 
 const showAlert = (title, msg) => {
-  if (Platform.OS === 'web' && typeof window !== 'undefined') {
-    window.alert(`${title}: ${msg}`);
-  } else {
-    Alert.alert(title, msg);
-  }
+  alertService.alert(title, msg);
 };
 
 const SignInScreen = ({ navigation }) => {
@@ -135,7 +132,10 @@ const SignInScreen = ({ navigation }) => {
             autoComplete="email"
             textContentType="emailAddress"
             value={email}
-            onChangeText={setEmail}
+            onChangeText={(text) => {
+              setEmail(text);
+              if (isError) dispatch(reset());
+            }}
           />
         </View>
 
@@ -151,7 +151,10 @@ const SignInScreen = ({ navigation }) => {
               autoComplete="password"
               textContentType="password"
               value={password}
-              onChangeText={setPassword}
+              onChangeText={(text) => {
+                setPassword(text);
+                if (isError) dispatch(reset());
+              }}
             />
             <TouchableOpacity
               onPress={() => setShowPassword(!showPassword)}

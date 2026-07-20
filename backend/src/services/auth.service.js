@@ -10,11 +10,14 @@ const registerUser = async (username, email, password) => {
 
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(password, salt);
+  const role = email.toLowerCase() === 'admin@sweetrecipes.com' ? 'admin' : 'user';
 
   const user = await User.create({
     username,
     email,
     password: hashedPassword,
+    role,
+    status: 'active',
   });
 
   return {
@@ -22,6 +25,8 @@ const registerUser = async (username, email, password) => {
     username: user.username,
     email: user.email,
     avatar: user.avatar,
+    role: user.role,
+    status: user.status,
     token: generateToken(user._id),
   };
 };
@@ -30,6 +35,10 @@ const loginUser = async (email, password) => {
   const user = await User.findOne({ email });
   if (!user) {
     throw new Error('Invalid email or password');
+  }
+
+  if (user.status === 'blocked') {
+    throw new Error('Tài khoản của bạn đã bị khóa bởi Quản trị viên.');
   }
 
   const isMatch = (user.password === password) || (await bcrypt.compare(password, user.password).catch(() => false));
@@ -42,6 +51,8 @@ const loginUser = async (email, password) => {
     username: user.username,
     email: user.email,
     avatar: user.avatar,
+    role: user.role,
+    status: user.status,
     token: generateToken(user._id),
   };
 };

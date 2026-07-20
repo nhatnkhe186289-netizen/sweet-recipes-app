@@ -46,6 +46,20 @@ const UserSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   }],
+  role: {
+    type: String,
+    enum: ['user', 'admin'],
+    default: 'user',
+  },
+  status: {
+    type: String,
+    enum: ['active', 'blocked'],
+    default: 'active',
+  },
+  dailyCalorieGoal: {
+    type: Number,
+    default: 2000,
+  },
 }, {
   timestamps: true,
 });

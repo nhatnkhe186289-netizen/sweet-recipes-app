@@ -154,6 +154,32 @@ const getUserById = async (req, res) => {
   }
 };
 
+const getFollowers = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+      .populate('followers', 'username avatar bio');
+    if (!user) {
+      return sendError(res, 'User not found', 404);
+    }
+    return sendSuccess(res, user.followers, 'Followers retrieved successfully');
+  } catch (error) {
+    return sendError(res, error.message, 500);
+  }
+};
+
+const getFollowing = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+      .populate('following', 'username avatar bio');
+    if (!user) {
+      return sendError(res, 'User not found', 404);
+    }
+    return sendSuccess(res, user.following, 'Following retrieved successfully');
+  } catch (error) {
+    return sendError(res, error.message, 500);
+  }
+};
+
 module.exports = {
   getProfile,
   updateProfile,
@@ -161,4 +187,6 @@ module.exports = {
   followUser,
   unfollowUser,
   getUserById,
+  getFollowers,
+  getFollowing,
 };

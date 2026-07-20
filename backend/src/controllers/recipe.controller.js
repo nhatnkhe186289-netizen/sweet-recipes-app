@@ -67,9 +67,22 @@ const getRecipes = async (req, res) => {
   }
 };
 
+const jwt = require('jsonwebtoken');
+const User = require('../models/User');
+
 const getRecipeById = async (req, res) => {
   try {
-    const recipe = await recipeService.getRecipeById(req.params.id);
+    let currentUser = null;
+    if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+      try {
+        const token = req.headers.authorization.split(' ')[1];
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        currentUser = await User.findById(decoded.id).select('-password');
+      } catch (e) {
+        // Ignore invalid token here since it's a public route, but we won't have auth context
+      }
+    }
+    const recipe = await recipeService.getRecipeById(req.params.id, currentUser);
     return sendSuccess(res, recipe, 'Recipe retrieved successfully');
   } catch (error) {
     return sendError(res, error.message, 404);

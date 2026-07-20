@@ -21,6 +21,7 @@ import {
 } from '../../store/shoppingListSlice';
 import colors from '../../theme/colors';
 import spacing from '../../theme/spacing';
+import alertService from '../../services/alertService';
 
 const showAlert = (title, msg) => {
   if (Platform.OS === 'web' && typeof window !== 'undefined') {
@@ -61,20 +62,7 @@ const ShoppingListScreen = ({ navigation }) => {
 
   const handleClearAll = () => {
     if (items.length === 0) return;
-    if (Platform.OS === 'web' && typeof window !== 'undefined') {
-      if (window.confirm('Bạn có chắc chắn muốn xóa toàn bộ danh sách đi chợ?')) {
-        dispatch(clearAllItems());
-      }
-    } else {
-      Alert.alert(
-        'Xác nhận',
-        'Bạn có chắc chắn muốn xóa toàn bộ danh sách đi chợ?',
-        [
-          { text: 'Hủy', style: 'cancel' },
-          { text: 'Xóa tất cả', style: 'destructive', onPress: () => dispatch(clearAllItems()) },
-        ]
-      );
-    }
+    alertService.confirm('Xác nhận', 'Bạn có chắc chắn muốn xóa toàn bộ danh sách đi chợ?', () => dispatch(clearAllItems()));
   };
 
   const boughtCount = items.filter((i) => i.isBought).length;

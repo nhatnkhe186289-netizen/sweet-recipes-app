@@ -9,6 +9,9 @@ const favoriteRoutes = require('./favorite.routes');
 const commentRoutes = require('./comment.routes');
 const notificationRoutes = require('./notification.routes');
 const shoppingListRoutes = require('./shoppingList.routes');
+const mealPlanRoutes = require('./mealPlan.routes');
+const adminRoutes = require('./admin.routes');
+const nutritionRoutes = require('./nutrition.routes');
 
 router.use('/auth', authRoutes);
 router.use('/recipes', recipeRoutes);
@@ -18,5 +21,8 @@ router.use('/favorites', favoriteRoutes);
 router.use('/comments', commentRoutes);
 router.use('/notifications', notificationRoutes);
 router.use('/shopping-list', shoppingListRoutes);
+router.use('/mealplans', mealPlanRoutes);
+router.use('/admin', adminRoutes);
+router.use('/nutrition', nutritionRoutes);
 
 module.exports = router;

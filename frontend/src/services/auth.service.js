@@ -3,9 +3,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const register = async (username, email, password) => {
   const response = await api.post('/auth/register', { username, email, password });
-  if (response.data.success && response.data.data.token) {
-    await AsyncStorage.setItem('token', response.data.data.token);
-  }
   return response.data.data;
 };
 

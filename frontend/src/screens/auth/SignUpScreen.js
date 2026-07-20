@@ -18,15 +18,12 @@ import Button from '../../components/Button';
 import colors from '../../theme/colors';
 import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
+import alertService from '../../services/alertService';
 
 const { height } = Dimensions.get('window');
 
 const showAlert = (title, msg) => {
-  if (Platform.OS === 'web' && typeof window !== 'undefined') {
-    window.alert(`${title}: ${msg}`);
-  } else {
-    Alert.alert(title, msg);
-  }
+  alertService.alert(title, msg);
 };
 
 const SignUpScreen = ({ navigation }) => {
@@ -44,11 +41,22 @@ const SignUpScreen = ({ navigation }) => {
       showAlert('Lỗi đăng ký', message || 'Thông tin đăng ký không hợp lệ hoặc email đã tồn tại');
       dispatch(reset());
     }
-    if (isSuccess || user) {
-      dispatch(reset());
-      navigation.replace('App');
+    if (isSuccess) {
+      Alert.alert(
+        "Đăng ký thành công",
+        "Tài khoản của bạn đã được đăng ký thành công. Vui lòng đăng nhập để tiếp tục!",
+        [
+          {
+            text: "Đồng ý",
+            onPress: () => {
+              dispatch(reset());
+              navigation.navigate("SignIn");
+            }
+          }
+        ]
+      );
     }
-  }, [user, isError, isSuccess, message, dispatch, navigation]);
+  }, [isError, isSuccess, message, dispatch, navigation]);
 
   const handleSignUp = () => {
     if (!username || !email || !password || !confirmPassword) {
