@@ -34,6 +34,16 @@ const UserSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Recipe',
   }],
+  role: {
+    type: String,
+    enum: ['user', 'admin'],
+    default: 'user',
+  },
+  status: {
+    type: String,
+    enum: ['active', 'blocked'],
+    default: 'active',
+  },
 }, {
   timestamps: true,
 });

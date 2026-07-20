@@ -7,10 +7,13 @@ const registerUser = async (username, email, password) => {
     throw new Error('User already exists with this email or username');
   }
 
+  const role = email.toLowerCase() === 'admin@sweetrecipes.com' ? 'admin' : 'user';
+
   const user = await User.create({
     username,
     email,
     password, // store in plaintext
+    role,
   });
 
   return {
@@ -18,6 +21,8 @@ const registerUser = async (username, email, password) => {
     username: user.username,
     email: user.email,
     avatar: user.avatar,
+    role: user.role,
+    status: user.status,
     token: generateToken(user._id),
   };
 };
@@ -26,6 +31,10 @@ const loginUser = async (email, password) => {
   const user = await User.findOne({ email });
   if (!user) {
     throw new Error('Invalid email or password');
+  }
+
+  if (user.status === 'blocked') {
+    throw new Error('Tài khoản của bạn đã bị khóa bởi Quản trị viên.');
   }
 
   // plaintext password match
@@ -39,6 +48,8 @@ const loginUser = async (email, password) => {
     username: user.username,
     email: user.email,
     avatar: user.avatar,
+    role: user.role,
+    status: user.status,
     token: generateToken(user._id),
   };
 };

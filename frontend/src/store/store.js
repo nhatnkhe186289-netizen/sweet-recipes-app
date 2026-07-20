@@ -3,6 +3,7 @@ import authReducer from './authSlice';
 import recipeReducer from './recipeSlice';
 import favoriteReducer from './favoriteSlice';
 import mealPlanReducer from './mealPlanSlice';
+import adminReducer from './adminSlice';
 
 export const store = configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export const store = configureStore({
     recipe: recipeReducer,
     favorite: favoriteReducer,
     mealPlan: mealPlanReducer,
+    admin: adminReducer,
   },
 });

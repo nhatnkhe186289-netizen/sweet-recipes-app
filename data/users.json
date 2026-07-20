@@ -7,7 +7,9 @@
     "email": "tuananh.nguyen@gmail.com",
     "password": "123456",
     "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
-    "bio": "Đam mê làm bánh kem và các loại bánh ngọt truyền thống."
+    "bio": "Đam mê làm bánh kem và các loại bánh ngọt truyền thống.",
+    "role": "admin",
+    "status": "active"
   },
   {
     "_id": {
@@ -17,7 +19,9 @@
     "email": "maichi.tran@gmail.com",
     "password": "123456",
     "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
-    "bio": "Thích nghiên cứu các công thức làm bánh quy thơm giòn cho gia đình."
+    "bio": "Thích nghiên cứu các công thức làm bánh quy thơm giòn cho gia đình.",
+    "role": "user",
+    "status": "active"
   },
   {
     "_id": {
@@ -27,7 +31,9 @@
     "email": "nam.hoang@gmail.com",
     "password": "123456",
     "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
-    "bio": "Chuyên gia bánh Donut và các món bánh chiên xốp mềm."
+    "bio": "Chuyên gia bánh Donut và các món bánh chiên xốp mềm.",
+    "role": "user",
+    "status": "active"
   },
   {
     "_id": {
@@ -37,7 +43,9 @@
     "email": "phuongthao.vu@gmail.com",
     "password": "123456",
     "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
-    "bio": "Thích ăn đồ ngọt đặc biệt là kẹo hạnh phúc Nougat tự làm."
+    "bio": "Thích ăn đồ ngọt đặc biệt là kẹo hạnh phúc Nougat tự làm.",
+    "role": "user",
+    "status": "active"
   },
   {
     "_id": {
@@ -47,7 +55,9 @@
     "email": "quan.le@gmail.com",
     "password": "123456",
     "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
-    "bio": "Học làm bánh phô mai và các loại bánh lạnh phục vụ quán cà phê."
+    "bio": "Học làm bánh phô mai và các loại bánh lạnh phục vụ quán cà phê.",
+    "role": "user",
+    "status": "active"
   },
   {
     "_id": {
@@ -57,7 +67,9 @@
     "email": "vy.khanh@gmail.com",
     "password": "123456",
     "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
-    "bio": "Yêu thích làm bánh bông lan trứng muối và các món ăn vặt."
+    "bio": "Yêu thích làm bánh bông lan trứng muối và các món ăn vặt.",
+    "role": "user",
+    "status": "active"
   },
   {
     "_id": {
@@ -67,7 +79,9 @@
     "email": "lam.thanh@gmail.com",
     "password": "123456",
     "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
-    "bio": "Đam mê các dòng bánh ngọt cao cấp của Pháp như Macaron và Tart."
+    "bio": "Đam mê các dòng bánh ngọt cao cấp của Pháp như Macaron và Tart.",
+    "role": "user",
+    "status": "active"
   },
   {
     "_id": {
@@ -77,7 +91,9 @@
     "email": "ngoc.bich@gmail.com",
     "password": "123456",
     "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
-    "bio": "Blogger ẩm thực chuyên chia sẻ công thức Panna Cotta dâu tây tươi mát."
+    "bio": "Blogger ẩm thực chuyên chia sẻ công thức Panna Cotta dâu tây tươi mát.",
+    "role": "user",
+    "status": "active"
   },
   {
     "_id": {
@@ -87,7 +103,9 @@
     "email": "dang.hai@gmail.com",
     "password": "123456",
     "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
-    "bio": "Đầu bếp bánh ngọt nghiệp dư luôn thích thử thách bản thân với công thức khó."
+    "bio": "Đầu bếp bánh ngọt nghiệp dư luôn thích thử thách bản thân với công thức khó.",
+    "role": "user",
+    "status": "active"
   },
   {
     "_id": {
@@ -97,6 +115,8 @@
     "email": "linhdan.do@gmail.com",
     "password": "123456",
     "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
-    "bio": "Yêu thích làm bánh Mochi Nhật Bản mềm dẻo và các loại tráng miệng Đông Á."
+    "bio": "Yêu thích làm bánh Mochi Nhật Bản mềm dẻo và các loại tráng miệng Đông Á.",
+    "role": "user",
+    "status": "active"
   }
 ]

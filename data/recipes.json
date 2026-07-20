@@ -32,7 +32,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b01"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -66,7 +67,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b01"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -97,7 +99,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b02"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -131,7 +134,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b02"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -165,7 +169,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b03"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -195,7 +200,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b03"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -229,7 +235,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b05"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -262,7 +269,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b05"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -290,7 +298,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b07"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -321,7 +330,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b07"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -353,7 +363,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b04"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -383,7 +394,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b04"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -415,7 +427,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b0a"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -447,7 +460,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b0a"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -481,7 +495,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b01"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -514,7 +529,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b01"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -546,7 +562,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b05"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -578,7 +595,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b05"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -611,7 +629,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b07"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -645,7 +664,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b07"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -678,7 +698,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b07"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -710,7 +731,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b07"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -741,7 +763,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b08"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -771,7 +794,8 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b08"
-    }
+    },
+    "status": "approved"
   },
   {
     "_id": {
@@ -804,6 +828,7 @@
     ],
     "author": {
       "$oid": "64a7c1b5e52c8b0e8c8a1b09"
-    }
+    },
+    "status": "approved"
   }
 ]

@@ -17,6 +17,8 @@ import MealPlannerScreen from '../screens/recipe/MealPlannerScreen';
 import ShoppingListScreen from '../screens/recipe/ShoppingListScreen';
 import IngredientChecklistScreen from '../screens/recipe/IngredientChecklistScreen';
 import CookingModeScreen from '../screens/recipe/CookingModeScreen';
+import AdminDashboardScreen from '../screens/profile/AdminDashboardScreen';
+import ManageAccountsScreen from '../screens/profile/ManageAccountsScreen';
 import colors from '../theme/colors';
 
 const Stack = createNativeStackNavigator();
@@ -89,6 +91,9 @@ const AppNavigator = () => {
       <Stack.Screen name="ShoppingList" component={ShoppingListScreen} options={{ headerShown: false }} />
       <Stack.Screen name="IngredientChecklist" component={IngredientChecklistScreen} options={{ headerShown: false }} />
       <Stack.Screen name="CookingMode" component={CookingModeScreen} options={{ headerShown: false }} />
+      
+      <Stack.Screen name="AdminDashboard" component={AdminDashboardScreen} options={{ title: 'Kiểm duyệt công thức' }} />
+      <Stack.Screen name="ManageAccounts" component={ManageAccountsScreen} options={{ title: 'Quản lý tài khoản' }} />
     </Stack.Navigator>
   );
 };

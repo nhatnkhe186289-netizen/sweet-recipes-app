@@ -238,6 +238,36 @@ const ProfileScreen = ({ navigation }) => {
               <Ionicons name="chevron-forward" size={16} color={colors.grey} />
             </TouchableOpacity>
 
+            {user?.role === 'admin' && (
+              <>
+                <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('AdminDashboard')}>
+                  <View style={styles.actionLeft}>
+                    <View style={[styles.actionIconContainer, { backgroundColor: '#E0F2F1' }]}>
+                      <Ionicons name="shield-checkmark-outline" size={18} color="#00897B" />
+                    </View>
+                    <View>
+                      <Text style={styles.actionTitle}>Kiểm duyệt công thức</Text>
+                      <Text style={styles.actionSubtitle}>Duyệt hoặc từ chối bài đăng mới</Text>
+                    </View>
+                  </View>
+                  <Ionicons name="chevron-forward" size={16} color={colors.grey} />
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('ManageAccounts')}>
+                  <View style={styles.actionLeft}>
+                    <View style={[styles.actionIconContainer, { backgroundColor: '#E8EAF6' }]}>
+                      <Ionicons name="people-outline" size={18} color="#3F51B5" />
+                    </View>
+                    <View>
+                      <Text style={styles.actionTitle}>Quản lý tài khoản</Text>
+                      <Text style={styles.actionSubtitle}>Chặn/Xóa tài khoản, phân quyền Admin</Text>
+                    </View>
+                  </View>
+                  <Ionicons name="chevron-forward" size={16} color={colors.grey} />
+                </TouchableOpacity>
+              </>
+            )}
+
             <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('Settings')}>
               <View style={styles.actionLeft}>
                 <View style={[styles.actionIconContainer, { backgroundColor: '#E3F2FD' }]}>

@@ -16,19 +16,33 @@ const createRecipe = async (recipeData, authorId) => {
 };
 
 const getRecipes = async (filter = {}) => {
-  return await Recipe.find(filter)
+  // If not explicitly querying all or setting status, default to 'approved'
+  const queryFilter = { status: 'approved', ...filter };
+  return await Recipe.find(queryFilter)
     .populate('author', 'username avatar')
     .populate('category', 'name image')
     .sort({ createdAt: -1 });
 };
 
-const getRecipeById = async (recipeId) => {
+const getRecipeById = async (recipeId, currentUser = null) => {
   const recipe = await Recipe.findById(recipeId)
     .populate('author', 'username avatar')
     .populate('category', 'name image');
 
   if (!recipe) {
     throw new Error('Recipe not found');
+  }
+
+  // If recipe is not approved, check if current user is author or admin
+  if (recipe.status !== 'approved') {
+    if (!currentUser) {
+      throw new Error('Not authorized to view this recipe');
+    }
+    const isAuthor = recipe.author && recipe.author._id.toString() === currentUser._id.toString();
+    const isAdmin = currentUser.role === 'admin';
+    if (!isAuthor && !isAdmin) {
+      throw new Error('Not authorized to view this recipe');
+    }
   }
 
   return recipe;

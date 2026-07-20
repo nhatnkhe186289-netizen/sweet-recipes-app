@@ -1,7 +1,7 @@
 const Recipe = require('../models/Recipe');
 
 const searchRecipes = async (query, categoryId, difficulty) => {
-  const filter = {};
+  const filter = { status: 'approved' };
 
   if (query) {
     filter.$or = [
