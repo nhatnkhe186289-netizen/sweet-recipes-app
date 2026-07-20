@@ -2,7 +2,7 @@
 
 Tài liệu chi tiết CSDL MongoDB cho dự án Sweet Recipes.
 
-## Sơ đồ Mermaid ERD
+## Sơ đồ ERD
 
 ```mermaid
 erDiagram
