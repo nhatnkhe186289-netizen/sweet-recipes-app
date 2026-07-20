@@ -32,7 +32,7 @@ const AppNavigator = () => {
   const [initialRoute, setInitialRoute] = useState(null);
 
   useEffect(() => {
-    const checkOnboarding = async () => {
+    const checkOnboardingAndAuth = async () => {
       try {
         const hasSeen = await AsyncStorage.getItem('hasSeenOnboarding');
         if (hasSeen === 'true') {
@@ -40,11 +40,19 @@ const AppNavigator = () => {
         } else {
           setInitialRoute('Onboarding');
         }
+        
+        const token = await AsyncStorage.getItem('token');
+        if (token) {
+          // If we have a token, proactively load the user profile so it's ready across all screens
+          const { loadProfile } = require('../store/authSlice');
+          const { store } = require('../store/store');
+          store.dispatch(loadProfile());
+        }
       } catch (error) {
         setInitialRoute('Onboarding');
       }
     };
-    checkOnboarding();
+    checkOnboardingAndAuth();
   }, []);
 
   if (!initialRoute) {
