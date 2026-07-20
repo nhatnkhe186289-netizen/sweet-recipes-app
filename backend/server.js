@@ -1,11 +1,25 @@
+<<<<<<< HEAD
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const routes = require('./src/routes');
 const { notFound, errorHandler } = require('./src/middlewares/error.middleware');
+=======
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const path = require("path");
+const connectDB = require("./config/db");
+const routes = require("./src/routes");
+const {
+  notFound,
+  errorHandler,
+} = require("./src/middlewares/error.middleware");
+>>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
 
 dotenv.config();
+console.log("MONGODB_URI =", process.env.MONGODB_URI);
 
 // Connect to Database
 connectDB();
@@ -17,13 +31,19 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+<<<<<<< HEAD
+=======
+// Serve Static Uploads
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+>>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
 // Welcome Route
-app.get('/', (req, res) => {
-  res.json({ message: 'Welcome to Sweet Recipe & Favorites API!' });
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to Sweet Recipe & Favorites API!" });
 });
 
 // API Routes
-app.use('/api', routes);
+app.use("/api", routes);
 
 // Error Handling Middlewares
 app.use(notFound);

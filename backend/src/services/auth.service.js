@@ -8,13 +8,23 @@ const registerUser = async (username, email, password) => {
     throw new Error('User already exists with this email or username');
   }
 
+<<<<<<< HEAD
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(password, salt);
+=======
+  const role = email.toLowerCase() === 'admin@sweetrecipes.com' ? 'admin' : 'user';
+>>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
 
   const user = await User.create({
     username,
     email,
+<<<<<<< HEAD
     password: hashedPassword,
+=======
+    password, // store in plaintext
+    role,
+    status: 'active',
+>>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
   });
 
   return {
@@ -22,6 +32,8 @@ const registerUser = async (username, email, password) => {
     username: user.username,
     email: user.email,
     avatar: user.avatar,
+    role: user.role,
+    status: user.status,
     token: generateToken(user._id),
   };
 };
@@ -32,7 +44,16 @@ const loginUser = async (email, password) => {
     throw new Error('Invalid email or password');
   }
 
+<<<<<<< HEAD
   const isMatch = (user.password === password) || (await bcrypt.compare(password, user.password).catch(() => false));
+=======
+  if (user.status === 'blocked') {
+    throw new Error('Tài khoản của bạn đã bị khóa bởi Quản trị viên.');
+  }
+
+  // plaintext password match
+  const isMatch = password === user.password;
+>>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
   if (!isMatch) {
     throw new Error('Invalid email or password');
   }
@@ -42,6 +63,8 @@ const loginUser = async (email, password) => {
     username: user.username,
     email: user.email,
     avatar: user.avatar,
+    role: user.role,
+    status: user.status,
     token: generateToken(user._id),
   };
 };

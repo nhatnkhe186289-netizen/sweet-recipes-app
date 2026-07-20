@@ -38,6 +38,7 @@ const UserSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Recipe',
   }],
+<<<<<<< HEAD
   followers: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
@@ -46,6 +47,18 @@ const UserSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   }],
+=======
+  role: {
+    type: String,
+    enum: ['user', 'admin'],
+    default: 'user',
+  },
+  status: {
+    type: String,
+    enum: ['active', 'blocked'],
+    default: 'active',
+  },
+>>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
 }, {
   timestamps: true,
 });

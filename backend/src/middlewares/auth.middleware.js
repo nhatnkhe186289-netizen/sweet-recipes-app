@@ -17,6 +17,9 @@ const protect = async (req, res, next) => {
       if (!req.user) {
         return sendError(res, 'User not found', 404);
       }
+      if (req.user.status === 'blocked') {
+        return sendError(res, 'Tài khoản của bạn đã bị khóa bởi Quản trị viên.', 403);
+      }
       next();
     } catch (error) {
       console.error(error);
@@ -29,4 +32,12 @@ const protect = async (req, res, next) => {
   }
 };
 
-module.exports = { protect };
+const adminOnly = (req, res, next) => {
+  if (req.user && req.user.role === 'admin') {
+    next();
+  } else {
+    return sendError(res, 'Không có quyền truy cập. Chỉ dành cho Quản trị viên.', 403);
+  }
+};
+
+module.exports = { protect, adminOnly };

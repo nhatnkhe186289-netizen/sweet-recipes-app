@@ -196,7 +196,24 @@ const ProfileScreen = ({ navigation }) => {
               <Ionicons name="chevron-forward" size={16} color={colors.grey} />
             </TouchableOpacity>
 
+<<<<<<< HEAD
             <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('Notifications')}>
+=======
+            <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('MealPlanner')}>
+              <View style={styles.actionLeft}>
+                <View style={[styles.actionIconContainer, { backgroundColor: '#FFEBF0' }]}>
+                  <Ionicons name="calendar-outline" size={18} color={colors.primary} />
+                </View>
+                <View>
+                  <Text style={styles.actionTitle}>Lịch nấu ăn (Meal Planner)</Text>
+                  <Text style={styles.actionSubtitle}>Lên lịch & chuẩn bị nguyên liệu</Text>
+                </View>
+              </View>
+              <Ionicons name="chevron-forward" size={16} color={colors.grey} />
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.actionItem} onPress={() => Alert.alert('Thông báo', 'Không có thông báo mới')}>
+>>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
               <View style={styles.actionLeft}>
                 <View style={[styles.actionIconContainer, { backgroundColor: '#F3EFFF' }]}>
                   <Ionicons name="notifications-outline" size={18} color="#8F00FF" />
@@ -208,6 +225,36 @@ const ProfileScreen = ({ navigation }) => {
               </View>
               <Ionicons name="chevron-forward" size={16} color={colors.grey} />
             </TouchableOpacity>
+
+            {user?.role === 'admin' && (
+              <>
+                <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('AdminDashboard')}>
+                  <View style={styles.actionLeft}>
+                    <View style={[styles.actionIconContainer, { backgroundColor: '#E0F2F1' }]}>
+                      <Ionicons name="shield-checkmark-outline" size={18} color="#00897B" />
+                    </View>
+                    <View>
+                      <Text style={styles.actionTitle}>Kiểm duyệt công thức</Text>
+                      <Text style={styles.actionSubtitle}>Duyệt hoặc từ chối bài đăng mới</Text>
+                    </View>
+                  </View>
+                  <Ionicons name="chevron-forward" size={16} color={colors.grey} />
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('ManageAccounts')}>
+                  <View style={styles.actionLeft}>
+                    <View style={[styles.actionIconContainer, { backgroundColor: '#E8EAF6' }]}>
+                      <Ionicons name="people-outline" size={18} color="#3F51B5" />
+                    </View>
+                    <View>
+                      <Text style={styles.actionTitle}>Quản lý tài khoản</Text>
+                      <Text style={styles.actionSubtitle}>Chặn/Xóa tài khoản, phân quyền Admin</Text>
+                    </View>
+                  </View>
+                  <Ionicons name="chevron-forward" size={16} color={colors.grey} />
+                </TouchableOpacity>
+              </>
+            )}
 
             <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('Settings')}>
               <View style={styles.actionLeft}>
