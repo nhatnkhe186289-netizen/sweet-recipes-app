@@ -23,6 +23,14 @@ const createRecipe = async (req, res) => {
     const parsedIngredients = typeof ingredients === 'string' ? JSON.parse(ingredients) : ingredients;
     const parsedInstructions = typeof instructions === 'string' ? JSON.parse(instructions) : instructions;
 
+    // Helper to map English or undefined difficulty to Vietnamese enum
+    const mapDifficulty = (diff) => {
+      if (diff === 'Easy') return 'Dễ';
+      if (diff === 'Medium') return 'Trung bình';
+      if (diff === 'Hard') return 'Khó';
+      return diff || 'Dễ';
+    };
+
     const recipeData = {
       title,
       description,
@@ -32,7 +40,7 @@ const createRecipe = async (req, res) => {
       instructions: parsedInstructions,
       cookingTime: Number(cookingTime),
       calories: Number(calories),
-      difficulty: difficulty || 'Easy',
+      difficulty: mapDifficulty(difficulty),
     };
 
     const recipe = await recipeService.createRecipe(recipeData, req.user._id);
@@ -91,7 +99,12 @@ const updateRecipe = async (req, res) => {
     if (category) updateData.category = category;
     if (cookingTime) updateData.cookingTime = Number(cookingTime);
     if (calories) updateData.calories = Number(calories);
-    if (difficulty) updateData.difficulty = difficulty;
+    if (difficulty) {
+      if (difficulty === 'Easy') updateData.difficulty = 'Dễ';
+      else if (difficulty === 'Medium') updateData.difficulty = 'Trung bình';
+      else if (difficulty === 'Hard') updateData.difficulty = 'Khó';
+      else updateData.difficulty = difficulty;
+    }
 
     if (ingredients) {
       updateData.ingredients = typeof ingredients === 'string' ? JSON.parse(ingredients) : ingredients;

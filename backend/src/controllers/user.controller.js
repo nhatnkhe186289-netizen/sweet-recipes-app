@@ -82,9 +82,13 @@ const followUser = async (req, res) => {
       return sendError(res, 'User not found', 404);
     }
 
-    if (!currentUser.following.includes(targetUserId)) {
+    const isAlreadyFollowing = currentUser.following.some(id => id.toString() === targetUserId.toString());
+
+    if (!isAlreadyFollowing) {
       currentUser.following.push(targetUserId);
-      targetUser.followers.push(userId);
+      if (!targetUser.followers.some(id => id.toString() === userId.toString())) {
+        targetUser.followers.push(userId);
+      }
       await currentUser.save();
       await targetUser.save();
 
