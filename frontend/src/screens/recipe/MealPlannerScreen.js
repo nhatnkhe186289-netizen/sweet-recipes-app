@@ -474,7 +474,7 @@ const MealPlannerScreen = ({ navigation }) => {
               </TouchableOpacity>
             </View>
 
-            <Text style={styles.modalSectionLabel}>Chọn thời gian làm bánh:</Text>
+            <Text style={styles.modalSectionLabel}>Chọn giờ bắt đầu làm bánh (hẹn giờ thông báo):</Text>
             <View style={styles.timePickerContainer}>
               {/* Hour selector */}
               <View style={styles.timePickerColumn}>
