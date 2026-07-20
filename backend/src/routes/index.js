@@ -9,11 +9,15 @@ const favoriteRoutes = require('./favorite.routes');
 const commentRoutes = require('./comment.routes');
 <<<<<<< HEAD
 const notificationRoutes = require('./notification.routes');
+<<<<<<< HEAD
 const shoppingListRoutes = require('./shoppingList.routes');
 =======
 const mealPlanRoutes = require('./mealPlan.routes');
 const adminRoutes = require('./admin.routes');
 >>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
+=======
+const nutritionRoutes = require('./nutrition.routes');
+>>>>>>> 76f9c8eb914945604796a85e8d2d83584eff33dc
 
 router.use('/auth', authRoutes);
 router.use('/recipes', recipeRoutes);
@@ -23,10 +27,14 @@ router.use('/favorites', favoriteRoutes);
 router.use('/comments', commentRoutes);
 <<<<<<< HEAD
 router.use('/notifications', notificationRoutes);
+<<<<<<< HEAD
 router.use('/shopping-list', shoppingListRoutes);
 =======
 router.use('/mealplans', mealPlanRoutes);
 router.use('/admin', adminRoutes);
 >>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
+=======
+router.use('/nutrition', nutritionRoutes);
+>>>>>>> 76f9c8eb914945604796a85e8d2d83584eff33dc
 
 module.exports = router;

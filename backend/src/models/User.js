@@ -47,6 +47,7 @@ const UserSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   }],
+<<<<<<< HEAD
 =======
   role: {
     type: String,
@@ -59,6 +60,12 @@ const UserSchema = new mongoose.Schema({
     default: 'active',
   },
 >>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
+=======
+  dailyCalorieGoal: {
+    type: Number,
+    default: 2000,
+  },
+>>>>>>> 76f9c8eb914945604796a85e8d2d83584eff33dc
 }, {
   timestamps: true,
 });

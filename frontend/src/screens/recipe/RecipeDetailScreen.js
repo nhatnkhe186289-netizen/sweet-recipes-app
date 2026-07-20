@@ -52,6 +52,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
   const dispatch = useDispatch();
   const [recipe, setRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [checkedIngredients, setCheckedIngredients] = useState([]);
 
   const [showDatePickerModal, setShowDatePickerModal] = useState(false);
   const [selectedPlanDate, setSelectedPlanDate] = useState(formatDateString(new Date()));
@@ -64,6 +65,14 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 
   const { user } = useSelector((state) => state.auth);
   const { plans = [] } = useSelector((state) => state.mealPlan || {});
+
+  const toggleIngredient = (idx) => {
+    if (checkedIngredients.includes(idx)) {
+      setCheckedIngredients(checkedIngredients.filter((i) => i !== idx));
+    } else {
+      setCheckedIngredients([...checkedIngredients, idx]);
+    }
+  };
 
   useEffect(() => {
     const loadRecipeDetails = async () => {
@@ -256,15 +265,15 @@ const RecipeDetailScreen = ({ route, navigation }) => {
           {/* Quick Info Grid */}
           <View style={styles.grid}>
             <View style={styles.gridItem}>
-              <Text style={styles.infoValue}>{recipe.cookingTime} phút</Text>
+              <Text style={styles.gridVal}>{recipe.cookingTime} phút</Text>
               <Text style={styles.gridLbl}>phút</Text>
             </View>
             <View style={styles.gridItem}>
-              <Text style={styles.infoValue}>{recipe.calories} kcal</Text>
+              <Text style={styles.gridVal}>{recipe.calories} kcal</Text>
               <Text style={styles.gridLbl}>kcal</Text>
             </View>
             <View style={styles.gridItem}>
-              <Text style={styles.infoValue}>{recipe.difficulty === 'Easy' ? 'Dễ' : recipe.difficulty === 'Medium' ? 'Trung bình' : recipe.difficulty === 'Hard' ? 'Khó' : recipe.difficulty}</Text>
+              <Text style={styles.gridVal}>{recipe.difficulty === 'Easy' ? 'Dễ' : recipe.difficulty === 'Medium' ? 'Trung bình' : recipe.difficulty === 'Hard' ? 'Khó' : recipe.difficulty}</Text>
               <Text style={styles.gridLbl}>Độ khó</Text>
             </View>
           </View>
@@ -274,6 +283,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
           <Text style={styles.description}>{recipe.description}</Text>
 
           {/* Ingredients */}
+<<<<<<< HEAD
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 16 }}>
             <Text style={styles.sectionTitle}>Nguyên liệu</Text>
             <TouchableOpacity
@@ -320,6 +330,46 @@ const RecipeDetailScreen = ({ route, navigation }) => {
               <Text style={{ fontSize: 12, fontWeight: '700', color: '#007AFF', marginLeft: 4 }}>
                 ⏱️ Clock Timer
               </Text>
+=======
+          <Text style={styles.sectionTitle}>Nguyên liệu</Text>
+          {recipe.ingredients.map((ing, idx) => {
+            const isChecked = checkedIngredients.includes(idx);
+            return (
+              <TouchableOpacity
+                key={idx}
+                style={styles.ingredientRow}
+                onPress={() => toggleIngredient(idx)}
+                activeOpacity={0.8}
+              >
+                <Ionicons
+                  name={isChecked ? "checkbox" : "square-outline"}
+                  size={20}
+                  color={isChecked ? colors.primary : colors.grey}
+                  style={styles.checkbox}
+                />
+                <Text style={[styles.listItem, { marginBottom: 0 }, isChecked && styles.checkedListItem]}>
+                  {ing}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+
+          {/* Instructions */}
+          <View style={styles.instructionsHeader}>
+            <Text style={styles.sectionTitleInline}>Hướng dẫn thực hiện</Text>
+            <TouchableOpacity
+              style={styles.startCookingBtn}
+              onPress={() => navigation.navigate('Cooking', {
+                recipeId: recipe._id,
+                recipeTitle: recipe.title,
+                instructions: recipe.instructions,
+                ingredients: recipe.ingredients,
+                calories: recipe.calories,
+              })}
+            >
+              <Ionicons name="play-circle" size={18} color={colors.white} />
+              <Text style={styles.startCookingText}>Bắt đầu nấu</Text>
+>>>>>>> 76f9c8eb914945604796a85e8d2d83584eff33dc
             </TouchableOpacity>
           </View>
           {recipe.instructions.map((inst, idx) => (
@@ -640,6 +690,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+<<<<<<< HEAD
   planBtn: {
     marginTop: spacing.lg,
   },
@@ -782,6 +833,50 @@ const styles = StyleSheet.create({
     marginTop: 20,
     backgroundColor: colors.success,
     shadowColor: colors.success,
+=======
+  ingredientRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 6,
+  },
+  checkbox: {
+    marginRight: 10,
+  },
+  checkedListItem: {
+    textDecorationLine: 'line-through',
+    color: colors.grey,
+  },
+  instructionsHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: spacing.lg,
+    marginBottom: spacing.sm,
+  },
+  sectionTitleInline: {
+    fontSize: typography.sizes.lg,
+    fontWeight: typography.weights.bold,
+    color: colors.dark,
+  },
+  startCookingBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: colors.primary,
+    paddingVertical: 8,
+    paddingHorizontal: 14,
+    borderRadius: 14,
+    shadowColor: colors.primary,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 2,
+  },
+  startCookingText: {
+    color: colors.white,
+    fontWeight: '700',
+    fontSize: 12,
+    marginLeft: 6,
+>>>>>>> 76f9c8eb914945604796a85e8d2d83584eff33dc
   },
 });
 

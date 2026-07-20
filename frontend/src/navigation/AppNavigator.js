@@ -14,6 +14,7 @@ import SettingsScreen from '../screens/profile/SettingsScreen';
 import EditProfileScreen from '../screens/profile/EditProfileScreen';
 import AuthorProfileScreen from '../screens/profile/AuthorProfileScreen';
 import NotificationsScreen from '../screens/notifications/NotificationsScreen';
+<<<<<<< HEAD
 import ShoppingListScreen from '../screens/shopping/ShoppingListScreen';
 import BakingTimerScreen from '../screens/timer/BakingTimerScreen';
 import ChangePasswordScreen from '../screens/profile/ChangePasswordScreen';
@@ -22,6 +23,11 @@ import IngredientChecklistScreen from '../screens/recipe/IngredientChecklistScre
 import CookingModeScreen from '../screens/recipe/CookingModeScreen';
 import AdminDashboardScreen from '../screens/profile/AdminDashboardScreen';
 import ManageAccountsScreen from '../screens/profile/ManageAccountsScreen';
+=======
+import CookingScreen from '../screens/recipe/CookingScreen';
+import FollowConnectionsScreen from '../screens/profile/FollowConnectionsScreen';
+import NutritionTrackerScreen from '../screens/profile/NutritionTrackerScreen';
+>>>>>>> 76f9c8eb914945604796a85e8d2d83584eff33dc
 import colors from '../theme/colors';
 
 const Stack = createNativeStackNavigator();
@@ -79,6 +85,7 @@ const AppNavigator = () => {
       <Stack.Screen name="EditProfile" component={EditProfileScreen} options={{ title: 'Chỉnh sửa hồ sơ' }} />
       <Stack.Screen name="AuthorProfile" component={AuthorProfileScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Notifications" component={NotificationsScreen} options={{ title: 'Thông báo', headerShown: false }} />
+<<<<<<< HEAD
       <Stack.Screen name="ShoppingList" component={ShoppingListScreen} options={{ title: 'Danh sách Đi chợ' }} />
       <Stack.Screen name="BakingTimer" component={BakingTimerScreen} options={{ title: 'Clock Timer' }} />
       <Stack.Screen name="ChangePassword" component={ChangePasswordScreen} options={{ headerShown: false }} />
@@ -89,6 +96,11 @@ const AppNavigator = () => {
       
       <Stack.Screen name="AdminDashboard" component={AdminDashboardScreen} options={{ title: 'Kiểm duyệt công thức' }} />
       <Stack.Screen name="ManageAccounts" component={ManageAccountsScreen} options={{ title: 'Quản lý tài khoản' }} />
+=======
+      <Stack.Screen name="Cooking" component={CookingScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="FollowConnections" component={FollowConnectionsScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="NutritionTracker" component={NutritionTrackerScreen} options={{ title: 'Theo dõi dinh dưỡng' }} />
+>>>>>>> 76f9c8eb914945604796a85e8d2d83584eff33dc
     </Stack.Navigator>
   );
 };

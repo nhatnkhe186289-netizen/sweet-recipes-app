@@ -19,8 +19,11 @@ import api from '../../services/api';
 import colors from '../../theme/colors';
 import typography from '../../theme/typography';
 
+import { Platform } from 'react-native';
+
 const { width } = Dimensions.get('window');
-const imageSize = (width - 48) / 3;
+const containerWidth = Platform.OS === 'web' ? Math.min(width, 428) : width;
+const imageSize = (containerWidth - 48) / 3;
 
 const AuthorProfileScreen = ({ route, navigation }) => {
   const { authorId } = route.params;
@@ -167,15 +170,21 @@ const AuthorProfileScreen = ({ route, navigation }) => {
               <Text style={styles.statLabel}>Công thức</Text>
             </View>
             <View style={styles.statDivider} />
-            <View style={styles.statItem}>
+            <TouchableOpacity 
+              style={styles.statItem}
+              onPress={() => navigation.navigate('FollowConnections', { userId: authorId, type: 'followers' })}
+            >
               <Text style={styles.statVal}>{followersCount}</Text>
               <Text style={styles.statLabel}>Người theo dõi</Text>
-            </View>
+            </TouchableOpacity>
             <View style={styles.statDivider} />
-            <View style={styles.statItem}>
+            <TouchableOpacity 
+              style={styles.statItem}
+              onPress={() => navigation.navigate('FollowConnections', { userId: authorId, type: 'following' })}
+            >
               <Text style={styles.statVal}>{followingCount}</Text>
               <Text style={styles.statLabel}>Đang theo dõi</Text>
-            </View>
+            </TouchableOpacity>
           </View>
 
           {/* Author's Recipes */}
