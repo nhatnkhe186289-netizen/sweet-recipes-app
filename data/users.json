@@ -5,17 +5,11 @@
     },
     "username": "Tuấn Anh",
     "email": "tuananh.nguyen@gmail.com",
-<<<<<<< HEAD
-    "password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
+"password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
     "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150",
-    "bio": "Đam mê làm bánh kem và các loại bánh ngọt truyền thống."
-=======
-    "password": "123456",
-    "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
     "bio": "Đam mê làm bánh kem và các loại bánh ngọt truyền thống.",
     "role": "admin",
     "status": "active"
->>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
   },
   {
     "_id": {
@@ -23,17 +17,11 @@
     },
     "username": "Mai Chi",
     "email": "maichi.tran@gmail.com",
-<<<<<<< HEAD
-    "password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
+"password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
     "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150",
-    "bio": "Thích nghiên cứu các công thức làm bánh quy thơm giòn cho gia đình."
-=======
-    "password": "123456",
-    "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
     "bio": "Thích nghiên cứu các công thức làm bánh quy thơm giòn cho gia đình.",
     "role": "user",
     "status": "active"
->>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
   },
   {
     "_id": {
@@ -41,17 +29,11 @@
     },
     "username": "Hoàng Nam",
     "email": "nam.hoang@gmail.com",
-<<<<<<< HEAD
-    "password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
+"password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
     "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150",
-    "bio": "Chuyên gia bánh Donut và các món bánh chiên xốp mềm."
-=======
-    "password": "123456",
-    "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
     "bio": "Chuyên gia bánh Donut và các món bánh chiên xốp mềm.",
     "role": "user",
     "status": "active"
->>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
   },
   {
     "_id": {
@@ -59,17 +41,11 @@
     },
     "username": "Phương Thảo",
     "email": "phuongthao.vu@gmail.com",
-<<<<<<< HEAD
-    "password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
+"password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
     "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150",
-    "bio": "Thích ăn đồ ngọt đặc biệt là kẹo hạnh phúc Nougat tự làm."
-=======
-    "password": "123456",
-    "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
     "bio": "Thích ăn đồ ngọt đặc biệt là kẹo hạnh phúc Nougat tự làm.",
     "role": "user",
     "status": "active"
->>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
   },
   {
     "_id": {
@@ -77,17 +53,11 @@
     },
     "username": "Minh Quân",
     "email": "quan.le@gmail.com",
-<<<<<<< HEAD
-    "password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
+"password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
     "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150",
-    "bio": "Học làm bánh phô mai và các loại bánh lạnh phục vụ quán cà phê."
-=======
-    "password": "123456",
-    "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
     "bio": "Học làm bánh phô mai và các loại bánh lạnh phục vụ quán cà phê.",
     "role": "user",
     "status": "active"
->>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
   },
   {
     "_id": {
@@ -95,17 +65,11 @@
     },
     "username": "Khánh Vy",
     "email": "vy.khanh@gmail.com",
-<<<<<<< HEAD
-    "password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
+"password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
     "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150",
-    "bio": "Yêu thích làm bánh bông lan trứng muối và các món ăn vặt."
-=======
-    "password": "123456",
-    "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
     "bio": "Yêu thích làm bánh bông lan trứng muối và các món ăn vặt.",
     "role": "user",
     "status": "active"
->>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
   },
   {
     "_id": {
@@ -113,17 +77,11 @@
     },
     "username": "Thanh Lâm",
     "email": "lam.thanh@gmail.com",
-<<<<<<< HEAD
-    "password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
+"password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
     "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150",
-    "bio": "Đam mê các dòng bánh ngọt cao cấp của Pháp như Macaron và Tart."
-=======
-    "password": "123456",
-    "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
     "bio": "Đam mê các dòng bánh ngọt cao cấp của Pháp như Macaron và Tart.",
     "role": "user",
     "status": "active"
->>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
   },
   {
     "_id": {
@@ -131,17 +89,11 @@
     },
     "username": "Bích Ngọc",
     "email": "ngoc.bich@gmail.com",
-<<<<<<< HEAD
-    "password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
+"password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
     "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150",
-    "bio": "Blogger ẩm thực chuyên chia sẻ công thức Panna Cotta dâu tây tươi mát."
-=======
-    "password": "123456",
-    "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
     "bio": "Blogger ẩm thực chuyên chia sẻ công thức Panna Cotta dâu tây tươi mát.",
     "role": "user",
     "status": "active"
->>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
   },
   {
     "_id": {
@@ -149,17 +101,11 @@
     },
     "username": "Hải Đăng",
     "email": "dang.hai@gmail.com",
-<<<<<<< HEAD
-    "password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
+"password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
     "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150",
-    "bio": "Đầu bếp bánh ngọt nghiệp dư luôn thích thử thách bản thân với công thức khó."
-=======
-    "password": "123456",
-    "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
     "bio": "Đầu bếp bánh ngọt nghiệp dư luôn thích thử thách bản thân với công thức khó.",
     "role": "user",
     "status": "active"
->>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
   },
   {
     "_id": {
@@ -167,16 +113,10 @@
     },
     "username": "Linh Đan",
     "email": "linhdan.do@gmail.com",
-<<<<<<< HEAD
-    "password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
+"password": "$2a$10$hW2WpF9f2IR7jwevExDP5.TuQmTpH9BdR1.WSjd9NzeyCj6fBM6Du",
     "avatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150",
-    "bio": "Yêu thích làm bánh Mochi Nhật Bản mềm dẻo và các loại tráng miệng Đông Á."
-=======
-    "password": "123456",
-    "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
     "bio": "Yêu thích làm bánh Mochi Nhật Bản mềm dẻo và các loại tráng miệng Đông Á.",
     "role": "user",
     "status": "active"
->>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
   }
 ]
