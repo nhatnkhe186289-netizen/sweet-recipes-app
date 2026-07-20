@@ -4,7 +4,6 @@ Tài liệu chi tiết CSDL MongoDB cho dự án Sweet Recipes.
 
 ## 📊 Sơ đồ Mermaid ERD
 
-> **Lưu ý**: GitHub và VS Code Markdown Preview hỗ trợ hiển thị trực tiếp sơ đồ Mermaid dưới dạng biểu đồ đồ họa sắc nét.
 
 ```mermaid
 erDiagram

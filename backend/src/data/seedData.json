@@ -4,117 +4,181 @@
       "_id": "64a7c1b5e52c8b0e8c8a1b01",
       "username": "Tuấn Anh",
       "email": "tuananh.nguyen@gmail.com",
-      "password": "123456",
+      "password": "$2a$10$ezjM0qBmHp8k/djnScuDa.tIpMRnTLL91ttj6UppY2oXkcSrQI2ee",
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
-      "bio": "Đam mê làm bánh kem và các loại bánh ngọt truyền thống.",
-      "__v": 4,
       "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800",
+      "bio": "Đam mê làm bánh kem và các loại bánh ngọt truyền thống.",
       "createdRecipes": [],
       "favoriteRecipes": [],
       "followers": [],
       "following": [],
-      "updatedAt": "2026-07-13T17:28:12.885Z"
+      "updatedAt": "2026-07-13T17:28:12.885Z",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.147Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1b02",
       "username": "Mai Chi",
       "email": "maichi.tran@gmail.com",
-      "password": "123456",
+      "password": "$2a$10$9xtoioS8v9Nl/Lf/ia6yue.1foGv7NmBLIrenHZBMq92gMOmx3wXG",
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
+      "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800",
       "bio": "Thích nghiên cứu các công thức làm bánh quy thơm giòn cho gia đình.",
-      "__v": 0
+      "createdRecipes": [],
+      "favoriteRecipes": [],
+      "followers": [],
+      "following": [],
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.147Z",
+      "updatedAt": "2026-07-19T09:19:01.147Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1b03",
       "username": "Hoàng Nam",
       "email": "nam.hoang@gmail.com",
-      "password": "123456",
+      "password": "$2a$10$l0NmwhUMSJ/QCv0iRt5TF.V.KtaS6Rt8oNX0ZPOi7FaVtpKynxbny",
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
+      "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800",
       "bio": "Chuyên gia bánh Donut và các món bánh chiên xốp mềm.",
-      "__v": 0
+      "createdRecipes": [],
+      "favoriteRecipes": [],
+      "followers": [],
+      "following": [],
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.147Z",
+      "updatedAt": "2026-07-19T09:19:01.147Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1b04",
       "username": "Phương Thảo",
       "email": "phuongthao.vu@gmail.com",
-      "password": "123456",
+      "password": "$2a$10$bgYRYbtRCnS7qz6zXzwwmuh/XfMBqkVqdN7SKNiLBATZIyG7vnqyi",
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
+      "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800",
       "bio": "Thích ăn đồ ngọt đặc biệt là kẹo hạnh phúc Nougat tự làm.",
-      "__v": 0
+      "createdRecipes": [],
+      "favoriteRecipes": [],
+      "followers": [],
+      "following": [],
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.147Z",
+      "updatedAt": "2026-07-19T09:19:01.147Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1b05",
       "username": "Minh Quân",
       "email": "quan.le@gmail.com",
-      "password": "123456",
+      "password": "$2a$10$iG4pn2mbhb7A1/VpIUWwjO11nD0fnFN7CF4c5AHOteYVyY3rHeJsm",
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
+      "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800",
       "bio": "Học làm bánh phô mai và các loại bánh lạnh phục vụ quán cà phê.",
-      "__v": 0
+      "createdRecipes": [],
+      "favoriteRecipes": [],
+      "followers": [],
+      "following": [],
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.147Z",
+      "updatedAt": "2026-07-19T09:19:01.147Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1b06",
       "username": "Khánh Vy",
       "email": "vy.khanh@gmail.com",
-      "password": "123456",
+      "password": "$2a$10$yfJQ./aScaHDdKLBqeBUSeIYUyJlCxbktfcJWbph2AZZeXLxqg9OS",
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
+      "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800",
       "bio": "Yêu thích làm bánh bông lan trứng muối và các món ăn vặt.",
-      "__v": 0
+      "createdRecipes": [],
+      "favoriteRecipes": [],
+      "followers": [],
+      "following": [],
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.147Z",
+      "updatedAt": "2026-07-19T09:19:01.147Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1b07",
       "username": "Thanh Lâm",
       "email": "lam.thanh@gmail.com",
-      "password": "123456",
+      "password": "$2a$10$VwWYwVTkEeoGVYGmBEjvDOlcI2/nzrrcAnre2510nfOX0GF0WKVK2",
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
+      "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800",
       "bio": "Đam mê các dòng bánh ngọt cao cấp của Pháp như Macaron và Tart.",
-      "__v": 0
+      "createdRecipes": [],
+      "favoriteRecipes": [],
+      "followers": [],
+      "following": [],
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.147Z",
+      "updatedAt": "2026-07-19T09:19:01.147Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1b08",
       "username": "Bích Ngọc",
       "email": "ngoc.bich@gmail.com",
-      "password": "123456",
+      "password": "$2a$10$tuwHMuMtWgqTo18vlOP3EOKrthcRcpOW6RH706UhPVEXwVMpUaLEe",
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
+      "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800",
       "bio": "Blogger ẩm thực chuyên chia sẻ công thức Panna Cotta dâu tây tươi mát.",
-      "__v": 0
+      "createdRecipes": [],
+      "favoriteRecipes": [],
+      "followers": [],
+      "following": [],
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.147Z",
+      "updatedAt": "2026-07-19T09:19:01.147Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1b09",
       "username": "Hải Đăng",
       "email": "dang.hai@gmail.com",
-      "password": "123456",
+      "password": "$2a$10$v88J3hHDPiM4d8EqcMOvU.wonFugGSi/mlt.miA2srcoEKmnxai6O",
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
+      "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800",
       "bio": "Đầu bếp bánh ngọt nghiệp dư luôn thích thử thách bản thân với công thức khó.",
-      "__v": 0
+      "createdRecipes": [],
+      "favoriteRecipes": [],
+      "followers": [],
+      "following": [],
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.147Z",
+      "updatedAt": "2026-07-19T09:19:01.147Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1b0a",
       "username": "Linh Đan",
       "email": "linhdan.do@gmail.com",
-      "password": "123456",
+      "password": "$2a$10$hYQNd9bZ/5upC272jqNkAOBVHWYp0nOlhmNOSKjv4XROSMA1WNCOa",
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
+      "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800",
       "bio": "Yêu thích làm bánh Mochi Nhật Bản mềm dẻo và các loại tráng miệng Đông Á.",
-      "__v": 0
+      "createdRecipes": [],
+      "favoriteRecipes": [],
+      "followers": [],
+      "following": [],
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.148Z",
+      "updatedAt": "2026-07-19T09:19:01.148Z"
     },
     {
       "_id": "6a44ef0fab867844b478b554",
       "username": "Nguyễn Khắc Nhất",
       "email": "nhat14022004@gmail.com",
-      "password": "12345678",
+      "password": "$2a$10$guMLYA61d4N/xLF.xSFRsOk3.nwMDLi0R9E1ePQMoz4fVqO8lxh.u",
       "avatar": "https://res.cloudinary.com/demo/image/upload/v1622523942/sample.jpg",
+      "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800",
       "bio": "Đam mê làm bánh ngọt truyền thống.",
       "createdRecipes": [
         "6a44f197ab867844b478b5f0"
       ],
       "favoriteRecipes": [],
-      "createdAt": "2026-07-01T10:42:23.229Z",
-      "updatedAt": "2026-07-13T17:27:59.441Z",
-      "__v": 1,
-      "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800",
       "followers": [
         "6a54fe0aa5f0c3848a755ce2"
       ],
-      "following": []
+      "following": [],
+      "createdAt": "2026-07-01T10:42:23.229Z",
+      "updatedAt": "2026-07-13T17:27:59.441Z",
+      "__v": 0
     },
     {
       "_id": "6a54fe0aa5f0c3848a755ce2",
@@ -122,6 +186,7 @@
       "email": "clonenrkne1@gmail.com",
       "password": "$2a$10$WzQL7aGrI6ezwvE5BV9jIO7yRGcYqDBuAXAywsQvAOFXI2C66ALdm",
       "avatar": "https://res.cloudinary.com/f2g8eqbl/image/upload/v1783962724/sweet_recipes/ie0xtwzv2hbh9iho98lu.jpg",
+      "coverImage": "https://res.cloudinary.com/f2g8eqbl/image/upload/v1783962725/sweet_recipes/ic7wc6bkowm0xjshjo46.jpg",
       "bio": "Đam mê làm bánh ngọt truyền thống.",
       "createdRecipes": [
         "6a55105e5c5a956f5da8d817"
@@ -133,116 +198,209 @@
         "64a7c1b5e52c8b0e8c8a1d06",
         "64a7c1b5e52c8b0e8c8a1d08"
       ],
-      "createdAt": "2026-07-13T15:02:34.327Z",
-      "updatedAt": "2026-07-13T17:28:12.882Z",
-      "__v": 5,
-      "coverImage": "https://res.cloudinary.com/f2g8eqbl/image/upload/v1783962725/sweet_recipes/ic7wc6bkowm0xjshjo46.jpg",
       "followers": [],
       "following": [
         "6a44ef0fab867844b478b554"
-      ]
+      ],
+      "createdAt": "2026-07-13T15:02:34.327Z",
+      "updatedAt": "2026-07-13T17:28:12.882Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a5c96e41fc4004e6ae321b4",
+      "username": "newuser123",
+      "email": "newuser123@gmail.com",
+      "password": "$2a$10$L1GLezVahQZphUOqWRaXBuESeK3TXzovQeq7bYpFN1sUCLQhksq0.",
+      "avatar": "https://res.cloudinary.com/demo/image/upload/v1622523942/sample.jpg",
+      "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800",
+      "bio": "Đam mê làm bánh ngọt truyền thống.",
+      "createdRecipes": [],
+      "favoriteRecipes": [],
+      "followers": [],
+      "following": [],
+      "createdAt": "2026-07-19T09:20:36.800Z",
+      "updatedAt": "2026-07-19T09:20:36.800Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a5c973d1fc4004e6ae321b7",
+      "username": "xuanthang",
+      "email": "xuanthangdth1@gmail.com",
+      "password": "$2a$10$F3W0nqByufs1L1lgFkzj..9MLe8lMmmQmZAmBvkoEKdcOU..Tbc9W",
+      "avatar": "https://res.cloudinary.com/demo/image/upload/v1622523942/sample.jpg",
+      "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800",
+      "bio": "Đam mê làm bánh ngọt truyền thống.",
+      "createdRecipes": [],
+      "favoriteRecipes": [
+        "64a7c1b5e52c8b0e8c8a1d08"
+      ],
+      "followers": [],
+      "following": [],
+      "createdAt": "2026-07-19T09:22:05.141Z",
+      "updatedAt": "2026-07-19T13:36:25.262Z",
+      "__v": 0
     }
   ],
   "categories": [
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c01",
       "name": "Bánh Kem",
-      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.157Z",
+      "updatedAt": "2026-07-19T09:19:01.157Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c02",
       "name": "Bánh Quy",
-      "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800&q=80",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.157Z",
+      "updatedAt": "2026-07-19T09:19:01.157Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c03",
       "name": "Bánh Donut",
-      "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=800&q=80",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.157Z",
+      "updatedAt": "2026-07-19T09:19:01.157Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c04",
       "name": "Cheesecake",
-      "image": "https://loremflickr.com/800/800/cheesecake,dessert"
+      "image": "https://loremflickr.com/800/800/cheesecake,dessert",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.157Z",
+      "updatedAt": "2026-07-19T09:19:01.157Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c05",
       "name": "Chocolate",
-      "image": "https://loremflickr.com/800/800/chocolate,dessert"
+      "image": "https://loremflickr.com/800/800/chocolate,dessert",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.157Z",
+      "updatedAt": "2026-07-19T09:19:01.157Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c06",
       "name": "Kẹo Ngọt",
-      "image": "https://images.unsplash.com/photo-1582293041079-7814c2f12063?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1582293041079-7814c2f12063?w=800&q=80",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.157Z",
+      "updatedAt": "2026-07-19T09:19:01.157Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c07",
       "name": "Bánh Mochi",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVSuwNWwpcd3PBie4pGqY1YWSKDnHoiRRKYHml7G8vtw&s=10"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVSuwNWwpcd3PBie4pGqY1YWSKDnHoiRRKYHml7G8vtw&s=10",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.157Z",
+      "updatedAt": "2026-07-19T09:19:01.157Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c08",
       "name": "Cupcake",
-      "image": "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=800&q=80",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.157Z",
+      "updatedAt": "2026-07-19T09:19:01.157Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c09",
       "name": "Bánh Mousse",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ37rJp9-W73zIt3t929Wtj7O-J0jOFSnfqSToU30-Qg&s=10"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ37rJp9-W73zIt3t929Wtj7O-J0jOFSnfqSToU30-Qg&s=10",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.157Z",
+      "updatedAt": "2026-07-19T09:19:01.157Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c0a",
       "name": "Bánh Tart",
-      "image": "https://images.unsplash.com/photo-1519869325930-281384150729?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1519869325930-281384150729?w=800&q=80",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.157Z",
+      "updatedAt": "2026-07-19T09:19:01.157Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c0b",
       "name": "Macaron",
-      "image": "https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=800&q=80",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.157Z",
+      "updatedAt": "2026-07-19T09:19:01.157Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c0c",
       "name": "Panna Cotta",
-      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.157Z",
+      "updatedAt": "2026-07-19T09:19:01.157Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c0d",
       "name": "Brownie",
-      "image": "https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=800&q=80",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.158Z",
+      "updatedAt": "2026-07-19T09:19:01.158Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c0e",
       "name": "Bánh Su Kem",
-      "image": "https://loremflickr.com/800/800/choux,creampuff"
+      "image": "https://loremflickr.com/800/800/choux,creampuff",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.158Z",
+      "updatedAt": "2026-07-19T09:19:01.158Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c0f",
       "name": "Bánh Bông Lan",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV2SAiLlrwy3PYHqoRzaId2XVXmP5uSH6OEmzT2i9alA&s=10"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV2SAiLlrwy3PYHqoRzaId2XVXmP5uSH6OEmzT2i9alA&s=10",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.158Z",
+      "updatedAt": "2026-07-19T09:19:01.158Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c10",
       "name": "Kem (Ice Cream)",
-      "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=800&q=80",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.158Z",
+      "updatedAt": "2026-07-19T09:19:01.158Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c11",
       "name": "Bánh Sừng Bò",
-      "image": "https://loremflickr.com/800/800/croissant,pastry"
+      "image": "https://loremflickr.com/800/800/croissant,pastry",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.158Z",
+      "updatedAt": "2026-07-19T09:19:01.158Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c12",
       "name": "Bánh Tiramisu",
-      "image": "https://loremflickr.com/800/800/tiramisu,dessert"
+      "image": "https://loremflickr.com/800/800/tiramisu,dessert",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.158Z",
+      "updatedAt": "2026-07-19T09:19:01.158Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c13",
       "name": "Bánh Waffle",
-      "image": "https://loremflickr.com/800/800/waffle,dessert"
+      "image": "https://loremflickr.com/800/800/waffle,dessert",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.158Z",
+      "updatedAt": "2026-07-19T09:19:01.158Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1c14",
       "name": "Bánh Pancake",
-      "image": "https://loremflickr.com/800/800/pancake,dessert"
+      "image": "https://loremflickr.com/800/800/pancake,dessert",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.158Z",
+      "updatedAt": "2026-07-19T09:19:01.158Z"
     }
   ],
   "recipes": [
@@ -252,9 +410,6 @@
       "description": "Bánh kem socola thơm ngậy với cốt bánh gato xốp mềm, phủ kem tươi socola béo ngậy trang trí đẹp mắt.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEb-VZmEmMRDiPMEtWjPANWLtA25gKBIeqJd8qDDl85A&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c01",
-      "difficulty": "Trung bình",
-      "cookingTime": 60,
-      "calories": 420,
       "ingredients": [
         "120g bột mì số 8",
         "30g bột ca cao nguyên chất",
@@ -273,7 +428,13 @@
         "Nướng cốt bánh ở nhiệt độ 160 độ C trong vòng 35-40 phút.",
         "Đánh bông kem whipping với socola đun chảy, phủ đều lên cốt bánh đã nguội và trang trí."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b01"
+      "cookingTime": 60,
+      "difficulty": "Trung bình",
+      "calories": 420,
+      "author": "64a7c1b5e52c8b0e8c8a1b01",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.167Z",
+      "updatedAt": "2026-07-19T09:19:01.167Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d02",
@@ -281,9 +442,6 @@
       "description": "Bánh kem dâu tây sữa tươi ngọt mát dịu dàng với màu sắc tươi sáng hấp dẫn thích hợp cho các buổi tiệc sinh nhật.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Kzl_PzxHB7w6rSV9EIgGH46HyKo-VbsUowHL0JmZXg&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c01",
-      "difficulty": "Khó",
-      "cookingTime": 75,
-      "calories": 390,
       "ingredients": [
         "120g bột mì đa dụng",
         "4 quả trứng gà",
@@ -301,7 +459,13 @@
         "Cắt đôi bánh theo chiều ngang, phết kem whipping đã đánh bông và xếp dâu tây cắt lát vào giữa.",
         "Chà láng kem xung quanh bánh và trang trí dâu tây tươi lên bề mặt."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b01"
+      "cookingTime": 75,
+      "difficulty": "Khó",
+      "calories": 390,
+      "author": "64a7c1b5e52c8b0e8c8a1b01",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.167Z",
+      "updatedAt": "2026-07-19T09:19:01.167Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d03",
@@ -309,9 +473,6 @@
       "description": "Bánh quy bơ giòn rụm thơm lừng mùi bơ sữa truyền thống, công thức đơn giản thích hợp để nhâm nhi cùng trà chiều.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgyiJN_bAmDoya_3_G58_QDVfCSJMNy4HfPSeTHciprQ&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c02",
-      "difficulty": "Dễ",
-      "cookingTime": 30,
-      "calories": 160,
       "ingredients": [
         "100g bơ lạt mềm",
         "60g đường bột",
@@ -326,7 +487,13 @@
         "Cho bột vào túi bắt kem, tạo hình bánh hoa trên khay nướng lót giấy nến.",
         "Nướng bánh ở nhiệt độ 170 độ C trong khoảng 12-15 phút đến khi viền bánh vàng đều."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b02"
+      "cookingTime": 30,
+      "difficulty": "Dễ",
+      "calories": 160,
+      "author": "64a7c1b5e52c8b0e8c8a1b02",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.167Z",
+      "updatedAt": "2026-07-19T09:19:01.167Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d04",
@@ -334,9 +501,6 @@
       "description": "Bánh quy socola chip giòn rụm bên ngoài, dẻo mềm ẩm bên trong với những hạt socola chip ngọt đắng hài hòa.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoxZacUPfpoRLEAdPEx8EP8Sv_sC_BzbfZMjC-KFzwyA&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c02",
-      "difficulty": "Dễ",
-      "cookingTime": 25,
-      "calories": 185,
       "ingredients": [
         "115g bơ lạt nhiệt độ phòng",
         "80g đường nâu",
@@ -354,7 +518,13 @@
         "Múc bột thành các viên tròn nhỏ xếp lên khay nướng lót giấy nến.",
         "Nướng ở nhiệt độ 180 độ C trong vòng 10-12 phút đến khi viền bánh vàng nâu."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b02"
+      "cookingTime": 25,
+      "difficulty": "Dễ",
+      "calories": 185,
+      "author": "64a7c1b5e52c8b0e8c8a1b02",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.167Z",
+      "updatedAt": "2026-07-19T09:19:01.167Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d05",
@@ -362,9 +532,6 @@
       "description": "Bánh donut phủ socola được chiên vàng xốp mềm mịn, nhúng qua một lớp sốt socola đen đun chảy ngọt ngào.",
       "image": "https://daylambanh.edu.vn/wp-content/uploads/2017/09/banh-donut-phu-socola-ngot-ngao.jpg",
       "category": "64a7c1b5e52c8b0e8c8a1c03",
-      "difficulty": "Trung bình",
-      "cookingTime": 45,
-      "calories": 290,
       "ingredients": [
         "250g bột mì làm bánh mì",
         "40g đường cát",
@@ -382,7 +549,13 @@
         "Chiên bánh ngập dầu nóng ở lửa vừa cho đến khi vàng đều hai mặt.",
         "Chờ bánh nguội bớt, nhúng mặt bánh vào sốt socola đun chảy và trang trí."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b03"
+      "cookingTime": 45,
+      "difficulty": "Trung bình",
+      "calories": 290,
+      "author": "64a7c1b5e52c8b0e8c8a1b03",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.167Z",
+      "updatedAt": "2026-07-19T09:19:01.167Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d06",
@@ -390,9 +563,6 @@
       "description": "Bánh donut dâu tây ngọt ngào được phủ lớp kem dâu tây hồng hào thơm ngậy, rắc thêm kẹo cốm nhiều màu sắc.",
       "image": "https://afamilycdn.com/thumb_w/600/E88MOq9iOdccccccccccccjjVmV53G/Image/2016/05/20160526_ANKT_Donut%20(6)-08372.jpg",
       "category": "64a7c1b5e52c8b0e8c8a1c03",
-      "difficulty": "Trung bình",
-      "cookingTime": 50,
-      "calories": 270,
       "ingredients": [
         "Bánh donut chiên giòn sẵn theo công thức cơ bản",
         "120g socola trắng",
@@ -406,7 +576,13 @@
         "Nhúng một mặt bánh donut vào hỗn hợp socola dâu tây.",
         "Nhanh tay rắc kẹo cốm màu sắc lên bề mặt khi socola chưa đông cứng."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b03"
+      "cookingTime": 50,
+      "difficulty": "Trung bình",
+      "calories": 270,
+      "author": "64a7c1b5e52c8b0e8c8a1b03",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.167Z",
+      "updatedAt": "2026-07-19T09:19:01.167Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d07",
@@ -414,9 +590,6 @@
       "description": "Bánh cheesecake matcha trà xanh Nhật Bản thanh mát béo ngậy kết hợp cùng đế bánh quy giòn tan mà không cần nướng.",
       "image": "https://nioteas.com/cdn/shop/articles/20250812152413-matcha-20cheesecake-20recipe.webp?v=1755012258",
       "category": "64a7c1b5e52c8b0e8c8a1c04",
-      "difficulty": "Trung bình",
-      "cookingTime": 40,
-      "calories": 350,
       "ingredients": [
         "90g bánh quy nghiền vụn",
         "35g bơ lạt đun chảy",
@@ -434,7 +607,13 @@
         "Cho gelatin đun chảy vào khuấy quyện đều hỗn hợp.",
         "Rót kem vào khuôn và bảo quản trong ngăn mát tủ lạnh ít nhất 4 tiếng trước khi dùng."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b05"
+      "cookingTime": 40,
+      "difficulty": "Trung bình",
+      "calories": 350,
+      "author": "64a7c1b5e52c8b0e8c8a1b05",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.167Z",
+      "updatedAt": "2026-07-19T09:19:01.167Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d08",
@@ -442,9 +621,6 @@
       "description": "Bánh cheesecake Oreo mát lạnh không cần lò nướng với nhân kem phô mai béo ngậy trộn lẫn vụn bánh Oreo giòn ngọt.",
       "image": "https://www.simplyrecipes.com/thmb/KYRxj-uUlZv0whFghuzLL9F6z80=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Oreo-Cheesecake-LEAD-04-ab9df2c09a1346fe945ddbccf5fa6251.jpg",
       "category": "64a7c1b5e52c8b0e8c8a1c04",
-      "difficulty": "Dễ",
-      "cookingTime": 35,
-      "calories": 380,
       "ingredients": [
         "12 cái bánh Oreo bỏ kem giữa nghiền vụn",
         "40g bơ lạt đun chảy",
@@ -461,7 +637,13 @@
         "Rót hỗn hợp kem phô mai Oreo lên đế bánh quy trong khuôn.",
         "Trang trí vụn bánh Oreo lên bề mặt và để lạnh 4 tiếng."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b05"
+      "cookingTime": 35,
+      "difficulty": "Dễ",
+      "calories": 380,
+      "author": "64a7c1b5e52c8b0e8c8a1b05",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d09",
@@ -469,9 +651,6 @@
       "description": "Kẹo chocolate hạnh nhân handmade giòn rụm với vị đắng nhẹ của chocolate đen và vị bùi ngậy đặc trưng của hạnh nhân nướng.",
       "image": "https://nhaphanphoibanhkeo.vn/upload/product/keo-almond-chocolate-42g1710602496.jpg",
       "category": "64a7c1b5e52c8b0e8c8a1c05",
-      "difficulty": "Dễ",
-      "cookingTime": 20,
-      "calories": 220,
       "ingredients": [
         "200g socola đen chip",
         "80g hạnh nhân nguyên hạt nướng chín thơm"
@@ -483,7 +662,13 @@
         "Dàn mỏng hỗn hợp socola hạnh nhân lên khay lót giấy nến.",
         "Để nguội ở nhiệt độ phòng hoặc tủ lạnh khoảng 20 phút cho đông cứng rồi bẻ miếng vừa ăn."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b07"
+      "cookingTime": 20,
+      "difficulty": "Dễ",
+      "calories": 220,
+      "author": "64a7c1b5e52c8b0e8c8a1b07",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d0a",
@@ -491,9 +676,6 @@
       "description": "Kẹo chocolate truffle mềm mịn béo ngậy được vê tròn và phủ một lớp bột cacao đắng nhẹ tinh tế.",
       "image": "https://file.hstatic.net/1000396324/file/keo-chocolate-truffle_177d8acebcf1474f8b20907393e35052.jpg",
       "category": "64a7c1b5e52c8b0e8c8a1c05",
-      "difficulty": "Dễ",
-      "cookingTime": 30,
-      "calories": 190,
       "ingredients": [
         "180g socola đen 65%",
         "90ml kem whipping cream",
@@ -508,7 +690,13 @@
         "Cho hỗn hợp vào ngăn mát tủ lạnh khoảng 2 tiếng cho đông đặc.",
         "Dùng muỗng nhỏ múc từng viên vê tròn và lăn qua bột cacao."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b07"
+      "cookingTime": 30,
+      "difficulty": "Dễ",
+      "calories": 190,
+      "author": "64a7c1b5e52c8b0e8c8a1b07",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d0b",
@@ -516,9 +704,6 @@
       "description": "Kẹo Nougat dẻo ngọt thơm bùi ngập tràn bơ sữa, kết hợp cùng các loại hạt dinh dưỡng và quả khô sấy dẻo nhiều màu sắc.",
       "image": "https://cdn.tgdd.vn/2021/01/CookProductThumb/k2-620x620.jpg",
       "category": "64a7c1b5e52c8b0e8c8a1c06",
-      "difficulty": "Trung bình",
-      "cookingTime": 30,
-      "calories": 260,
       "ingredients": [
         "200g kẹo marshmallow xốp mềm",
         "70g bơ lạt",
@@ -534,7 +719,13 @@
         "Cho kẹo ra khuôn cán phẳng bề mặt dày khoảng 2cm.",
         "Chờ kẹo nguội đông cứng lại rồi cắt thành từng miếng chữ nhật nhỏ vừa ăn."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b04"
+      "cookingTime": 30,
+      "difficulty": "Trung bình",
+      "calories": 260,
+      "author": "64a7c1b5e52c8b0e8c8a1b04",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d0c",
@@ -542,9 +733,6 @@
       "description": "Kẹo caramel tự làm dẻo ngọt đậm đà hương bơ sữa béo ngậy, món ăn vặt yêu thích cho cả gia đình.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-D25e1WUFz4brGtTYqTwUm6nYdfXyTaAfDOuCDZiUFA&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c06",
-      "difficulty": "Trung bình",
-      "cookingTime": 35,
-      "calories": 170,
       "ingredients": [
         "200g đường cát",
         "120ml kem whipping cream ấm",
@@ -558,7 +746,13 @@
         "Bật bếp ở lửa nhỏ đun tiếp hỗn hợp đạt độ dẻo mong muốn.",
         "Rót caramel ra khay có lót giấy nến chờ nguội rồi cắt miếng vuông nhỏ."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b04"
+      "cookingTime": 35,
+      "difficulty": "Trung bình",
+      "calories": 170,
+      "author": "64a7c1b5e52c8b0e8c8a1b04",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d0d",
@@ -566,9 +760,6 @@
       "description": "Bánh mochi matcha dẻo mềm vị trà xanh thanh mát, bọc lấy lớp nhân kem tươi trà xanh mát lạnh ngọt ngào bên trong.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfkSnH6Tbs22mD3IKv8paO7qCTarZzcUIbChC9TFj9aw&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c07",
-      "difficulty": "Trung bình",
-      "cookingTime": 40,
-      "calories": 210,
       "ingredients": [
         "100g bột gạo nếp làm bánh mochi",
         "30g đường cát",
@@ -584,7 +775,13 @@
         "Rải bột ngô lên thớt làm bột áo chống dính, chia bột nếp thành các phần nhỏ.",
         "Cán mỏng vỏ bột nếp, múc kem trà xanh lạnh vào giữa rồi bọc kín lại thành viên tròn."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b0a"
+      "cookingTime": 40,
+      "difficulty": "Trung bình",
+      "calories": 210,
+      "author": "64a7c1b5e52c8b0e8c8a1b0a",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d0e",
@@ -592,9 +789,6 @@
       "description": "Bánh mochi dâu tây tươi kiểu Nhật với vỏ bột nếp dẻo dai bọc nhân đậu đỏ bùi ngọt và quả dâu tây chín mọng chua ngọt.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDG6-E1_hHEhB-loh1yjYJXmTga4cocoiqZmYXnsGOL0WtprQOe8IoOxYm&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c07",
-      "difficulty": "Khó",
-      "cookingTime": 45,
-      "calories": 195,
       "ingredients": [
         "100g bột nếp Nhật Shiratamako",
         "150ml nước",
@@ -610,7 +804,13 @@
         "Trộn khối bột nếp chín dẻo mịn trên thớt rải bột khoai tây chống dính.",
         "Chia bột thành 6 phần cán mỏng, bọc kín lớp vỏ nếp bên ngoài nhân đậu đỏ dâu tây."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b0a"
+      "cookingTime": 45,
+      "difficulty": "Khó",
+      "calories": 195,
+      "author": "64a7c1b5e52c8b0e8c8a1b0a",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d0f",
@@ -618,9 +818,6 @@
       "description": "Bánh cupcake vanilla nhỏ xinh xốp mềm tỏa hương vani nhẹ nhàng, phủ lớp kem bơ ngọt ngào béo mịn.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD-7ttL5HDYwwXQ1Kb4fz2VF14j3YFgmoNKQcI27TRzw&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c08",
-      "difficulty": "Dễ",
-      "cookingTime": 35,
-      "calories": 240,
       "ingredients": [
         "110g bột mì",
         "100g đường cát",
@@ -638,7 +835,13 @@
         "Nướng bánh ở nhiệt độ 180 độ C trong 18-20 phút.",
         "Để bánh nguội hẳn rồi bắt kem bơ vani trang trí lên trên."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b01"
+      "cookingTime": 35,
+      "difficulty": "Dễ",
+      "calories": 240,
+      "author": "64a7c1b5e52c8b0e8c8a1b01",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d10",
@@ -646,9 +849,6 @@
       "description": "Bánh cupcake socola xốp mềm đậm đà vị cacao đắng ngọt nhẹ, phủ lớp kem tươi socola béo ngậy hấp dẫn.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6esWQZ2Y74-wcRkdgoJrXt_-PcfLk0hOOxKugxGbBkQ&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c08",
-      "difficulty": "Dễ",
-      "cookingTime": 35,
-      "calories": 260,
       "ingredients": [
         "90g bột mì",
         "25g bột ca cao",
@@ -665,7 +865,13 @@
         "Múc bột vào khay cupcake lót cúp giấy nướng chín 18 phút ở 175 độ C.",
         "Để bánh nguội và trang trí bằng sốt kem tươi socola."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b01"
+      "cookingTime": 35,
+      "difficulty": "Dễ",
+      "calories": 260,
+      "author": "64a7c1b5e52c8b0e8c8a1b01",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d11",
@@ -673,9 +879,6 @@
       "description": "Bánh mousse xoài mát lạnh ngọt ngào với vị chua ngọt tự nhiên của xoài chín và lớp kem tươi mịn mượt tan trên đầu lưỡi.",
       "image": "https://s3-ap-southeast-1.amazonaws.com/happie-bucket/3/d/a/3daa82dd-71e2-419b-bc33-55d3178aab11-origin.jpeg",
       "category": "64a7c1b5e52c8b0e8c8a1c09",
-      "difficulty": "Trung bình",
-      "cookingTime": 45,
-      "calories": 280,
       "ingredients": [
         "200g thịt xoài chín xay mịn",
         "150ml whipping cream",
@@ -691,7 +894,13 @@
         "Rót mousse xoài vào khuôn, cất ngăn mát tủ lạnh khoảng 4 tiếng.",
         "Trang trí lát xoài tươi lên bề mặt trước khi ăn."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b05"
+      "cookingTime": 45,
+      "difficulty": "Trung bình",
+      "calories": 280,
+      "author": "64a7c1b5e52c8b0e8c8a1b05",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d12",
@@ -699,9 +908,6 @@
       "description": "Bánh mousse socola béo mịn đậm đà hương vị cacao, món tráng miệng kiểu Pháp sang trọng cho các bữa tiệc.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWTUnaXCnCaFctbzJywfmuZNQPdESz2UwwqMVROrj_Ug&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c09",
-      "difficulty": "Trung bình",
-      "cookingTime": 40,
-      "calories": 310,
       "ingredients": [
         "150g socola đen băm nhỏ",
         "200ml kem whipping cream",
@@ -717,7 +923,13 @@
         "Đánh bông whipping cream rồi fold nhẹ vào hỗn hợp socola.",
         "Rót mousse socola ra cốc thủy tinh xinh xắn bảo quản lạnh 3 tiếng."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b05"
+      "cookingTime": 40,
+      "difficulty": "Trung bình",
+      "calories": 310,
+      "author": "64a7c1b5e52c8b0e8c8a1b05",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d13",
@@ -725,9 +937,6 @@
       "description": "Bánh tart trái cây với đế bánh tart giòn rụm bùi bơ, chứa nhân kem custard béo ngậy và xếp đầy các lát hoa quả tươi mát rực rỡ.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK2D9moPj12Jhei7ydIL82c68JVOE9FYD7DRyNsjFQQw&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c0a",
-      "difficulty": "Khó",
-      "cookingTime": 60,
-      "calories": 320,
       "ingredients": [
         "120g bột mì đa dụng làm đế tart",
         "60g bơ lạt lạnh cắt khối",
@@ -744,7 +953,13 @@
         "Để đế bánh nguội hoàn toàn rồi bơm kem trứng custard đầy lòng bánh.",
         "Xếp các lát trái cây tươi thái mỏng lên trên và phủ mỏng lớp thạch gương."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b07"
+      "cookingTime": 60,
+      "difficulty": "Khó",
+      "calories": 320,
+      "author": "64a7c1b5e52c8b0e8c8a1b07",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d14",
@@ -752,9 +967,6 @@
       "description": "Bánh tart trứng thơm lừng vỏ bánh ngàn lớp giòn rụm ăn cùng nhân kem trứng vàng óng béo ngậy mềm tan.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmie0aHUa7qCRrEAZ1gAJ55m6Al0p6FS6UeSAZYVISGw&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c0a",
-      "difficulty": "Khó",
-      "cookingTime": 50,
-      "calories": 280,
       "ingredients": [
         "Đế bánh tart ngàn lớp làm sẵn",
         "2 quả trứng gà",
@@ -772,7 +984,13 @@
         "Rót hỗn hợp kem trứng vào 8/10 mỗi chiếc vỏ bánh tart.",
         "Nướng bánh ở nhiệt độ 200 độ C trong 20-25 phút cho mặt bánh hơi xém vàng."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b07"
+      "cookingTime": 50,
+      "difficulty": "Khó",
+      "calories": 280,
+      "author": "64a7c1b5e52c8b0e8c8a1b07",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d15",
@@ -780,9 +998,6 @@
       "description": "Bánh macaron matcha tròn xinh giòn rụm bùi thơm hạnh nhân, kẹp ở giữa lớp nhân kem trà xanh Nhật Bản thanh mát.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXzqI6lG5p3gEO5pf1zjobbSpLc9xynVxJP70RR4ac0A&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c0b",
-      "difficulty": "Khó",
-      "cookingTime": 90,
-      "calories": 140,
       "ingredients": [
         "70g bột hạnh nhân siêu mịn",
         "60g đường bột",
@@ -799,7 +1014,13 @@
         "Để bánh khô mặt tự nhiên trong 30-45 phút đến khi sờ không dính tay.",
         "Nướng bánh ở 140 độ C trong 12-15 phút, để nguội và kẹp kem."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b07"
+      "cookingTime": 90,
+      "difficulty": "Khó",
+      "calories": 140,
+      "author": "64a7c1b5e52c8b0e8c8a1b07",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d16",
@@ -807,9 +1028,6 @@
       "description": "Bánh macaron vanilla thanh lịch với vỏ bánh hạnh nhân giòn giòn dai dai, kẹp nhân kem bơ vani thơm ngọt dịu dàng.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQez7-K6sRTx97IeVtoLIII3SQHA-SByV26SJOJHWZjZg&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c0b",
-      "difficulty": "Khó",
-      "cookingTime": 90,
-      "calories": 135,
       "ingredients": [
         "70g bột hạnh nhân",
         "65g đường bột",
@@ -825,7 +1043,13 @@
         "Để khô mặt bánh hoàn toàn ở nhiệt độ phòng rồi đem nướng ở 140 độ C.",
         "Kẹp nhân kem bơ hạt vani ngọt ngào vào giữa hai lớp bánh đã nguội."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b07"
+      "cookingTime": 90,
+      "difficulty": "Khó",
+      "calories": 135,
+      "author": "64a7c1b5e52c8b0e8c8a1b07",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d17",
@@ -833,9 +1057,6 @@
       "description": "Bánh panna cotta dâu mịn màng béo ngậy của kem sữa tươi Ý ăn cùng nước sốt dâu tây chua ngọt tươi mát.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRM5MiDszDOCF777ur5-jxrCA75ZDtTMPXM4b6zcFStw&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c0c",
-      "difficulty": "Dễ",
-      "cookingTime": 25,
-      "calories": 210,
       "ingredients": [
         "150ml sữa tươi không đường",
         "150ml whipping cream",
@@ -850,7 +1071,13 @@
         "Đặt hũ sữa kem vào ngăn mát tủ lạnh tối thiểu 3 tiếng cho đông đặc.",
         "Rót một lớp sốt dâu tây tươi mát lên bề mặt trước khi dùng."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b08"
+      "cookingTime": 25,
+      "difficulty": "Dễ",
+      "calories": 210,
+      "author": "64a7c1b5e52c8b0e8c8a1b08",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d18",
@@ -858,9 +1085,6 @@
       "description": "Bánh panna cotta việt quất mềm mịn mát lạnh béo ngậy sữa kem kết hợp sốt quả việt quất ngọt thơm nịnh miệng.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLqJyqZA2gmVImt52b31y-B5YojDdhxBOjt9N9Q-Guiw&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c0c",
-      "difficulty": "Dễ",
-      "cookingTime": 25,
-      "calories": 215,
       "ingredients": [
         "150ml sữa tươi",
         "150ml kem whipping",
@@ -874,7 +1098,13 @@
         "Để lạnh hũ sữa kem trong tủ mát khoảng 3 tiếng cho đông mượt.",
         "Phủ mứt sốt việt quất lên bề mặt bánh kem sữa mát lạnh."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b08"
+      "cookingTime": 25,
+      "difficulty": "Dễ",
+      "calories": 215,
+      "author": "64a7c1b5e52c8b0e8c8a1b08",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "64a7c1b5e52c8b0e8c8a1d19",
@@ -882,9 +1112,6 @@
       "description": "Bánh brownie socola cổ điển ẩm ướt đậm đà hương vị cacao đắng ngọt nồng nàn quyến rũ.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSstsu34dhXlkw5SBMUYxlhszJw-3geKkrmhz9lwm9EaQ&s=10",
       "category": "64a7c1b5e52c8b0e8c8a1c0d",
-      "difficulty": "Dễ",
-      "cookingTime": 40,
-      "calories": 320,
       "ingredients": [
         "150g socola đen băm nhỏ",
         "100g bơ lạt",
@@ -901,7 +1128,13 @@
         "Rót bột vào khuôn vuông lót giấy nến.",
         "Nướng bánh ở nhiệt độ 175 độ C trong vòng 20-22 phút."
       ],
-      "author": "64a7c1b5e52c8b0e8c8a1b09"
+      "cookingTime": 40,
+      "difficulty": "Dễ",
+      "calories": 320,
+      "author": "64a7c1b5e52c8b0e8c8a1b09",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.168Z",
+      "updatedAt": "2026-07-19T09:19:01.168Z"
     },
     {
       "_id": "6a44f197ab867844b478b5f0",
@@ -961,423 +1194,471 @@
   "comments": [
     {
       "_id": "6a426a02f357aa90c4298ccd",
-      "userEmail": "maichi.tran@gmail.com",
-      "recipeTitle": "Bánh Kem Socola",
+      "userId": "64a7c1b5e52c8b0e8c8a1b02",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d01",
       "content": "Bánh rất mềm và thơm, cảm ơn tác giả.",
-      "createdAt": "2026-06-29T12:00:00Z"
+      "createdAt": "2026-06-29T12:00:00.000Z",
+      "updatedAt": "2026-06-29T12:00:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cce",
-      "userEmail": "phuongthao.vu@gmail.com",
-      "recipeTitle": "Bánh Kem Socola",
+      "userId": "64a7c1b5e52c8b0e8c8a1b04",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d01",
       "content": "Mình làm theo công thức và thành công ngay lần đầu.",
-      "createdAt": "2026-06-29T12:05:00Z"
+      "createdAt": "2026-06-29T12:05:00.000Z",
+      "updatedAt": "2026-06-29T12:05:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298ccf",
-      "userEmail": "vy.khanh@gmail.com",
-      "recipeTitle": "Bánh Kem Dâu Tây",
+      "userId": "64a7c1b5e52c8b0e8c8a1b06",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d02",
       "content": "Nhà mình ai cũng thích món này.",
-      "createdAt": "2026-06-29T12:10:00Z"
+      "createdAt": "2026-06-29T12:10:00.000Z",
+      "updatedAt": "2026-06-29T12:10:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cd0",
-      "userEmail": "quan.le@gmail.com",
-      "recipeTitle": "Bánh Kem Dâu Tây",
+      "userId": "64a7c1b5e52c8b0e8c8a1b05",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d02",
       "content": "Công thức dễ hiểu và phù hợp cho người mới.",
-      "createdAt": "2026-06-29T12:15:00Z"
+      "createdAt": "2026-06-29T12:15:00.000Z",
+      "updatedAt": "2026-06-29T12:15:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cd1",
-      "userEmail": "tuananh.nguyen@gmail.com",
-      "recipeTitle": "Bánh Quy Bơ",
+      "userId": "64a7c1b5e52c8b0e8c8a1b01",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d03",
       "content": "Bánh quy rất thơm mùi bơ, ăn giòn rụm thích cực.",
-      "createdAt": "2026-06-29T12:20:00Z"
+      "createdAt": "2026-06-29T12:20:00.000Z",
+      "updatedAt": "2026-06-29T12:20:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cd2",
-      "userEmail": "dang.hai@gmail.com",
-      "recipeTitle": "Bánh Quy Bơ",
+      "userId": "64a7c1b5e52c8b0e8c8a1b09",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d03",
       "content": "Mình sẽ thử lại vào cuối tuần.",
-      "createdAt": "2026-06-29T12:25:00Z"
+      "createdAt": "2026-06-29T12:25:00.000Z",
+      "updatedAt": "2026-06-29T12:25:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cd3",
-      "userEmail": "nam.hoang@gmail.com",
-      "recipeTitle": "Bánh Quy Socola Chip",
+      "userId": "64a7c1b5e52c8b0e8c8a1b03",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d04",
       "content": "Bé nhà mình thích ăn bánh này lắm, cảm ơn công thức của bạn.",
-      "createdAt": "2026-06-29T12:30:00Z"
+      "createdAt": "2026-06-29T12:30:00.000Z",
+      "updatedAt": "2026-06-29T12:30:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cd4",
-      "userEmail": "ngoc.bich@gmail.com",
-      "recipeTitle": "Bánh Quy Socola Chip",
+      "userId": "64a7c1b5e52c8b0e8c8a1b08",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d04",
       "content": "Bánh ngọt vừa phải, không bị ngấy.",
-      "createdAt": "2026-06-29T12:35:00Z"
+      "createdAt": "2026-06-29T12:35:00.000Z",
+      "updatedAt": "2026-06-29T12:35:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cd5",
-      "userEmail": "linhdan.do@gmail.com",
-      "recipeTitle": "Donut Phủ Socola",
+      "userId": "64a7c1b5e52c8b0e8c8a1b0a",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d05",
       "content": "Vỏ bánh donut xốp mềm, phủ socola cực kỳ ngon.",
-      "createdAt": "2026-06-29T12:40:00Z"
+      "createdAt": "2026-06-29T12:40:00.000Z",
+      "updatedAt": "2026-06-29T12:40:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cd6",
-      "userEmail": "lam.thanh@gmail.com",
-      "recipeTitle": "Donut Phủ Socola",
+      "userId": "64a7c1b5e52c8b0e8c8a1b07",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d05",
       "content": "Hướng dẫn rất chi tiết và dễ làm.",
-      "createdAt": "2026-06-29T12:45:00Z"
+      "createdAt": "2026-06-29T12:45:00.000Z",
+      "updatedAt": "2026-06-29T12:45:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cd7",
-      "userEmail": "phuongthao.vu@gmail.com",
-      "recipeTitle": "Donut Dâu Tây",
+      "userId": "64a7c1b5e52c8b0e8c8a1b04",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d06",
       "content": "Màu hồng xinh xắn lắm, ăn vị dâu thơm nhẹ.",
-      "createdAt": "2026-06-29T12:50:00Z"
+      "createdAt": "2026-06-29T12:50:00.000Z",
+      "updatedAt": "2026-06-29T12:50:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cd8",
-      "userEmail": "maichi.tran@gmail.com",
-      "recipeTitle": "Donut Dâu Tây",
+      "userId": "64a7c1b5e52c8b0e8c8a1b02",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d06",
       "content": "Món này mang đi picnic thì hết sẩy.",
-      "createdAt": "2026-06-29T12:55:00Z"
+      "createdAt": "2026-06-29T12:55:00.000Z",
+      "updatedAt": "2026-06-29T12:55:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cd9",
-      "userEmail": "ngoc.bich@gmail.com",
-      "recipeTitle": "Cheesecake Matcha",
+      "userId": "64a7c1b5e52c8b0e8c8a1b08",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d07",
       "content": "Vị trà xanh thanh mát kết hợp với kem cheese béo ngậy rất ngon.",
-      "createdAt": "2026-06-29T13:00:00Z"
+      "createdAt": "2026-06-29T13:00:00.000Z",
+      "updatedAt": "2026-06-29T13:00:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cda",
-      "userEmail": "tuananh.nguyen@gmail.com",
-      "recipeTitle": "Cheesecake Matcha",
+      "userId": "64a7c1b5e52c8b0e8c8a1b01",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d07",
       "content": "Đế bánh Oreo giòn giòn ăn kèm rất hợp.",
-      "createdAt": "2026-06-29T13:05:00Z"
+      "createdAt": "2026-06-29T13:05:00.000Z",
+      "updatedAt": "2026-06-29T13:05:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cdb",
-      "userEmail": "dang.hai@gmail.com",
-      "recipeTitle": "Cheesecake Oreo",
+      "userId": "64a7c1b5e52c8b0e8c8a1b09",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d08",
       "content": "Bánh lạnh mát, không cần nướng nên làm cực nhanh.",
-      "createdAt": "2026-06-29T13:10:00Z"
+      "createdAt": "2026-06-29T13:10:00.000Z",
+      "updatedAt": "2026-06-29T13:10:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cdc",
-      "userEmail": "vy.khanh@gmail.com",
-      "recipeTitle": "Cheesecake Oreo",
+      "userId": "64a7c1b5e52c8b0e8c8a1b06",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d08",
       "content": "Công thức chuẩn xác, bánh đông rất đẹp.",
-      "createdAt": "2026-06-29T13:15:00Z"
+      "createdAt": "2026-06-29T13:15:00.000Z",
+      "updatedAt": "2026-06-29T13:15:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cdd",
-      "userEmail": "lam.thanh@gmail.com",
-      "recipeTitle": "Chocolate Hạnh Nhân",
+      "userId": "64a7c1b5e52c8b0e8c8a1b07",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d09",
       "content": "Hạnh nhân giòn bùi quyện với socola đắng nhẹ rất tuyệt.",
-      "createdAt": "2026-06-29T13:20:00Z"
+      "createdAt": "2026-06-29T13:20:00.000Z",
+      "updatedAt": "2026-06-29T13:20:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cde",
-      "userEmail": "nam.hoang@gmail.com",
-      "recipeTitle": "Chocolate Hạnh Nhân",
+      "userId": "64a7c1b5e52c8b0e8c8a1b03",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d09",
       "content": "Làm quà tặng người yêu dịp Valentine cực kỳ ý nghĩa.",
-      "createdAt": "2026-06-29T13:25:00Z"
+      "createdAt": "2026-06-29T13:25:00.000Z",
+      "updatedAt": "2026-06-29T13:25:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cdf",
-      "userEmail": "quan.le@gmail.com",
-      "recipeTitle": "Chocolate Truffle",
+      "userId": "64a7c1b5e52c8b0e8c8a1b05",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0a",
       "content": "Socola tươi mềm mịn, tan ngay trong miệng luôn.",
-      "createdAt": "2026-06-29T13:30:00Z"
+      "createdAt": "2026-06-29T13:30:00.000Z",
+      "updatedAt": "2026-06-29T13:30:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298ce0",
-      "userEmail": "linhdan.do@gmail.com",
-      "recipeTitle": "Chocolate Truffle",
+      "userId": "64a7c1b5e52c8b0e8c8a1b0a",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0a",
       "content": "Lớp bột cacao bên ngoài giúp bánh không bị quá ngọt.",
-      "createdAt": "2026-06-29T13:35:00Z"
+      "createdAt": "2026-06-29T13:35:00.000Z",
+      "updatedAt": "2026-06-29T13:35:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298ce1",
-      "userEmail": "maichi.tran@gmail.com",
-      "recipeTitle": "Kẹo Nougat",
+      "userId": "64a7c1b5e52c8b0e8c8a1b02",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0b",
       "content": "Kẹo dẻo ngon nhiều hạt dinh dưỡng, ăn không sợ béo.",
-      "createdAt": "2026-06-29T13:40:00Z"
+      "createdAt": "2026-06-29T13:40:00.000Z",
+      "updatedAt": "2026-06-29T13:40:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298ce2",
-      "userEmail": "phuongthao.vu@gmail.com",
-      "recipeTitle": "Kẹo Nougat",
+      "userId": "64a7c1b5e52c8b0e8c8a1b04",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0b",
       "content": "Tết năm nào mình cũng làm món này theo công thức của bạn.",
-      "createdAt": "2026-06-29T13:45:00Z"
+      "createdAt": "2026-06-29T13:45:00.000Z",
+      "updatedAt": "2026-06-29T13:45:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298ce3",
-      "userEmail": "vy.khanh@gmail.com",
-      "recipeTitle": "Kẹo Caramel",
+      "userId": "64a7c1b5e52c8b0e8c8a1b06",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0c",
       "content": "Kẹo caramel ngọt ngào, thơm mùi bơ muối rất cuốn.",
-      "createdAt": "2026-06-29T13:50:00Z"
+      "createdAt": "2026-06-29T13:50:00.000Z",
+      "updatedAt": "2026-06-29T13:50:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298ce4",
-      "userEmail": "dang.hai@gmail.com",
-      "recipeTitle": "Kẹo Caramel",
+      "userId": "64a7c1b5e52c8b0e8c8a1b09",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0c",
       "content": "Cực kỳ thích vị mặn nhẹ của muối biển trong kẹo.",
-      "createdAt": "2026-06-29T13:55:00Z"
+      "createdAt": "2026-06-29T13:55:00.000Z",
+      "updatedAt": "2026-06-29T13:55:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298ce5",
-      "userEmail": "tuananh.nguyen@gmail.com",
-      "recipeTitle": "Mochi Matcha",
+      "userId": "64a7c1b5e52c8b0e8c8a1b01",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0d",
       "content": "Vỏ bánh dẻo mềm, nhân kem lạnh ăn phê chữ ê kéo dài.",
-      "createdAt": "2026-06-29T14:00:00Z"
+      "createdAt": "2026-06-29T14:00:00.000Z",
+      "updatedAt": "2026-06-29T14:00:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298ce6",
-      "userEmail": "ngoc.bich@gmail.com",
-      "recipeTitle": "Mochi Matcha",
+      "userId": "64a7c1b5e52c8b0e8c8a1b08",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0d",
       "content": "Làm mochi bằng lò vi sóng nhanh gọn lẹ.",
-      "createdAt": "2026-06-29T14:05:00Z"
+      "createdAt": "2026-06-29T14:05:00.000Z",
+      "updatedAt": "2026-06-29T14:05:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298ce7",
-      "userEmail": "nam.hoang@gmail.com",
-      "recipeTitle": "Mochi Dâu Tây",
+      "userId": "64a7c1b5e52c8b0e8c8a1b03",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0e",
       "content": "Dâu tây tươi ngọt bọc nhân đậu đỏ ăn rất hợp rơ.",
-      "createdAt": "2026-06-29T14:10:00Z"
+      "createdAt": "2026-06-29T14:10:00.000Z",
+      "updatedAt": "2026-06-29T14:10:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298ce8",
-      "userEmail": "lam.thanh@gmail.com",
-      "recipeTitle": "Mochi Dâu Tây",
+      "userId": "64a7c1b5e52c8b0e8c8a1b07",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0e",
       "content": "Bánh dẻo dai đúng vị Nhật Bản truyền thống.",
-      "createdAt": "2026-06-29T14:15:00Z"
+      "createdAt": "2026-06-29T14:15:00.000Z",
+      "updatedAt": "2026-06-29T14:15:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298ce9",
-      "userEmail": "linhdan.do@gmail.com",
-      "recipeTitle": "Cupcake Vanilla",
+      "userId": "64a7c1b5e52c8b0e8c8a1b0a",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0f",
       "content": "Bánh bông xốp, kem bơ ngọt ngào thơm phức hương vani.",
-      "createdAt": "2026-06-29T14:20:00Z"
+      "createdAt": "2026-06-29T14:20:00.000Z",
+      "updatedAt": "2026-06-29T14:20:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cea",
-      "userEmail": "quan.le@gmail.com",
-      "recipeTitle": "Cupcake Vanilla",
+      "userId": "64a7c1b5e52c8b0e8c8a1b05",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0f",
       "content": "Công thức nướng bánh chuẩn nhiệt độ, bánh chín đều.",
-      "createdAt": "2026-06-29T14:25:00Z"
+      "createdAt": "2026-06-29T14:25:00.000Z",
+      "updatedAt": "2026-06-29T14:25:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298ceb",
-      "userEmail": "phuongthao.vu@gmail.com",
-      "recipeTitle": "Cupcake Socola",
+      "userId": "64a7c1b5e52c8b0e8c8a1b04",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d10",
       "content": "Lớp kem tươi socola béo ngậy, ăn kèm cốt bánh đắng nhẹ rất ngon.",
-      "createdAt": "2026-06-29T14:30:00Z"
+      "createdAt": "2026-06-29T14:30:00.000Z",
+      "updatedAt": "2026-06-29T14:30:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cec",
-      "userEmail": "maichi.tran@gmail.com",
-      "recipeTitle": "Cupcake Socola",
+      "userId": "64a7c1b5e52c8b0e8c8a1b02",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d10",
       "content": "Trang trí cupcake socola mang đi tặng sinh nhật bạn bè rất xinh.",
-      "createdAt": "2026-06-29T14:35:00Z"
+      "createdAt": "2026-06-29T14:35:00.000Z",
+      "updatedAt": "2026-06-29T14:35:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298ced",
-      "userEmail": "vy.khanh@gmail.com",
-      "recipeTitle": "Mousse Xoài",
+      "userId": "64a7c1b5e52c8b0e8c8a1b06",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d11",
       "content": "Vị xoài chua ngọt ăn thanh mát giải nhiệt mùa hè.",
-      "createdAt": "2026-06-29T14:40:00Z"
+      "createdAt": "2026-06-29T14:40:00.000Z",
+      "updatedAt": "2026-06-29T14:40:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cee",
-      "userEmail": "dang.hai@gmail.com",
-      "recipeTitle": "Mousse Xoài",
+      "userId": "64a7c1b5e52c8b0e8c8a1b09",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d11",
       "content": "Mousse xoài mềm mịn như lụa, cả nhà đều khen.",
-      "createdAt": "2026-06-29T14:45:00Z"
+      "createdAt": "2026-06-29T14:45:00.000Z",
+      "updatedAt": "2026-06-29T14:45:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cef",
-      "userEmail": "lam.thanh@gmail.com",
-      "recipeTitle": "Mousse Socola",
+      "userId": "64a7c1b5e52c8b0e8c8a1b07",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d12",
       "content": "Đúng chuẩn mousse Pháp, béo mịn đậm đà hương cacao.",
-      "createdAt": "2026-06-29T14:50:00Z"
+      "createdAt": "2026-06-29T14:50:00.000Z",
+      "updatedAt": "2026-06-29T14:50:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cf0",
-      "userEmail": "nam.hoang@gmail.com",
-      "recipeTitle": "Mousse Socola",
+      "userId": "64a7c1b5e52c8b0e8c8a1b03",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d12",
       "content": "Lớp kem mịn tan ngay trên đầu lưỡi, rất đáng thử.",
-      "createdAt": "2026-06-29T14:55:00Z"
+      "createdAt": "2026-06-29T14:55:00.000Z",
+      "updatedAt": "2026-06-29T14:55:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cf1",
-      "userEmail": "ngoc.bich@gmail.com",
-      "recipeTitle": "Tart Trái Cây",
+      "userId": "64a7c1b5e52c8b0e8c8a1b08",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d13",
       "content": "Bánh tart giòn bùi xếp đầy dâu tây và kiwi tươi rói nhìn hấp dẫn.",
-      "createdAt": "2026-06-29T15:00:00Z"
+      "createdAt": "2026-06-29T15:00:00.000Z",
+      "updatedAt": "2026-06-29T15:00:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cf2",
-      "userEmail": "tuananh.nguyen@gmail.com",
-      "recipeTitle": "Tart Trái Cây",
+      "userId": "64a7c1b5e52c8b0e8c8a1b01",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d13",
       "content": "Kem custard ngọt thanh béo ngậy làm đế bánh ngon hơn hẳn.",
-      "createdAt": "2026-06-29T15:05:00Z"
+      "createdAt": "2026-06-29T15:05:00.000Z",
+      "updatedAt": "2026-06-29T15:05:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cf3",
-      "userEmail": "quan.le@gmail.com",
-      "recipeTitle": "Tart Trứng",
+      "userId": "64a7c1b5e52c8b0e8c8a1b05",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d14",
       "content": "Vỏ bánh ngàn lớp giòn tan, nhân kem trứng vàng óng béo mịn.",
-      "createdAt": "2026-06-29T15:10:00Z"
+      "createdAt": "2026-06-29T15:10:00.000Z",
+      "updatedAt": "2026-06-29T15:10:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cf4",
-      "userEmail": "linhdan.do@gmail.com",
-      "recipeTitle": "Tart Trứng",
+      "userId": "64a7c1b5e52c8b0e8c8a1b0a",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d14",
       "content": "Lần đầu làm bánh tart trứng thành công rực rỡ nhờ công thức này.",
-      "createdAt": "2026-06-29T15:15:00Z"
+      "createdAt": "2026-06-29T15:15:00.000Z",
+      "updatedAt": "2026-06-29T15:15:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cf5",
-      "userEmail": "maichi.tran@gmail.com",
-      "recipeTitle": "Macaron Matcha",
+      "userId": "64a7c1b5e52c8b0e8c8a1b02",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d15",
       "content": "Vỏ bánh macaron lên chân rất đẹp, không bị nứt.",
-      "createdAt": "2026-06-29T15:20:00Z"
+      "createdAt": "2026-06-29T15:20:00.000Z",
+      "updatedAt": "2026-06-29T15:20:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cf6",
-      "userEmail": "phuongthao.vu@gmail.com",
-      "recipeTitle": "Macaron Matcha",
+      "userId": "64a7c1b5e52c8b0e8c8a1b04",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d15",
       "content": "Vị trà xanh đắng nhẹ giúp cân bằng vị ngọt của vỏ bánh.",
-      "createdAt": "2026-06-29T15:25:00Z"
+      "createdAt": "2026-06-29T15:25:00.000Z",
+      "updatedAt": "2026-06-29T15:25:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cf7",
-      "userEmail": "vy.khanh@gmail.com",
-      "recipeTitle": "Macaron Vanilla",
+      "userId": "64a7c1b5e52c8b0e8c8a1b06",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d16",
       "content": "Bánh macaron vani ngọt ngào bùi thơm bột hạnh nhân cực chuẩn.",
-      "createdAt": "2026-06-29T15:30:00Z"
+      "createdAt": "2026-06-29T15:30:00.000Z",
+      "updatedAt": "2026-06-29T15:30:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cf8",
-      "userEmail": "dang.hai@gmail.com",
-      "recipeTitle": "Macaron Vanilla",
+      "userId": "64a7c1b5e52c8b0e8c8a1b09",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d16",
       "content": "Kem bơ hạt vani thơm lừng làm nhân bánh rất hợp.",
-      "createdAt": "2026-06-29T15:35:00Z"
+      "createdAt": "2026-06-29T15:35:00.000Z",
+      "updatedAt": "2026-06-29T15:35:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cf9",
-      "userEmail": "lam.thanh@gmail.com",
-      "recipeTitle": "Panna Cotta Dâu",
+      "userId": "64a7c1b5e52c8b0e8c8a1b07",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d17",
       "content": "Panna cotta mềm mượt ăn kèm sốt dâu chua chua ngọt ngọt ngon tuyệt.",
-      "createdAt": "2026-06-29T15:40:00Z"
+      "createdAt": "2026-06-29T15:40:00.000Z",
+      "updatedAt": "2026-06-29T15:40:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cfa",
-      "userEmail": "nam.hoang@gmail.com",
-      "recipeTitle": "Panna Cotta Dâu",
+      "userId": "64a7c1b5e52c8b0e8c8a1b03",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d17",
       "content": "Làm tráng miệng cho tiệc gia đình ai cũng tấm tắc khen.",
-      "createdAt": "2026-06-29T15:45:00Z"
+      "createdAt": "2026-06-29T15:45:00.000Z",
+      "updatedAt": "2026-06-29T15:45:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cfb",
-      "userEmail": "ngoc.bich@gmail.com",
-      "recipeTitle": "Panna Cotta Việt Quất",
+      "userId": "64a7c1b5e52c8b0e8c8a1b08",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d18",
       "content": "Hũ sữa kem mát lạnh kết hợp sốt việt quất chua thanh thanh ăn rất cuốn.",
-      "createdAt": "2026-06-29T15:50:00Z"
+      "createdAt": "2026-06-29T15:50:00.000Z",
+      "updatedAt": "2026-06-29T15:50:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cfc",
-      "userEmail": "tuananh.nguyen@gmail.com",
-      "recipeTitle": "Panna Cotta Việt Quất",
+      "userId": "64a7c1b5e52c8b0e8c8a1b01",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d18",
       "content": "Công thức gelatin chuẩn lượng giúp bánh đông mượt không bị cứng.",
-      "createdAt": "2026-06-29T15:55:00Z"
+      "createdAt": "2026-06-29T15:55:00.000Z",
+      "updatedAt": "2026-06-29T15:55:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cfd",
-      "userEmail": "quan.le@gmail.com",
-      "recipeTitle": "Brownie Socola",
+      "userId": "64a7c1b5e52c8b0e8c8a1b05",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d19",
       "content": "Bánh ẩm ướt đậm đà, ăn kèm kem vani lạnh cực ngon.",
-      "createdAt": "2026-06-29T16:00:00Z"
+      "createdAt": "2026-06-29T16:00:00.000Z",
+      "updatedAt": "2026-06-29T16:00:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298cfe",
-      "userEmail": "linhdan.do@gmail.com",
-      "recipeTitle": "Brownie Socola",
+      "userId": "64a7c1b5e52c8b0e8c8a1b0a",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d19",
       "content": "Cách làm đơn giản, nguyên liệu dễ tìm.",
-      "createdAt": "2026-06-29T16:05:00Z"
-    },
-    {
-      "_id": "6a426a02f357aa90c4298cff",
-      "userEmail": "phuongthao.vu@gmail.com",
-      "recipeTitle": "Brownie Hạnh Nhân",
-      "content": "Bánh brownie có thêm hạnh nhân lát ăn bùi bùi giòn giòn đỡ ngấy.",
-      "createdAt": "2026-06-29T16:10:00Z"
-    },
-    {
-      "_id": "6a426a02f357aa90c4298d00",
-      "userEmail": "maichi.tran@gmail.com",
-      "recipeTitle": "Brownie Hạnh Nhân",
-      "content": "Cốt bánh brownie ẩm mềm socola đắng ngọt vừa phải.",
-      "createdAt": "2026-06-29T16:15:00Z"
-    },
-    {
-      "_id": "6a426a02f357aa90c4298d01",
-      "userEmail": "vy.khanh@gmail.com",
-      "recipeTitle": "Su Kem Truyền Thống",
-      "content": "Vỏ bánh nở phồng đẹp mắt, nhân kem custard ngập tràn béo ngậy.",
-      "createdAt": "2026-06-29T16:20:00Z"
-    },
-    {
-      "_id": "6a426a02f357aa90c4298d02",
-      "userEmail": "dang.hai@gmail.com",
-      "recipeTitle": "Su Kem Truyền Thống",
-      "content": "Món su kem tuổi thơ ngon chuẩn vị ngoài hàng.",
-      "createdAt": "2026-06-29T16:25:00Z"
-    },
-    {
-      "_id": "6a426a02f357aa90c4298d03",
-      "userEmail": "lam.thanh@gmail.com",
-      "recipeTitle": "Su Kem Socola",
-      "content": "Su kem phủ sốt socola nhìn bắt mắt và ăn ngon hơn hẳn.",
-      "createdAt": "2026-06-29T16:30:00Z"
-    },
-    {
-      "_id": "6a426a02f357aa90c4298d04",
-      "userEmail": "nam.hoang@gmail.com",
-      "recipeTitle": "Su Kem Socola",
-      "content": "Kem socola bên trong ngọt đắng béo ngậy ăn không bị chán.",
-      "createdAt": "2026-06-29T16:35:00Z"
+      "createdAt": "2026-06-29T16:05:00.000Z",
+      "updatedAt": "2026-06-29T16:05:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298d05",
-      "userEmail": "ngoc.bich@gmail.com",
-      "recipeTitle": "Bông Lan Trứng Muối",
+      "userId": "64a7c1b5e52c8b0e8c8a1b08",
+      "recipeId": "6a44f197ab867844b478b5f0",
       "content": "Cốt bánh mềm xốp kết hợp sốt dầu trứng và chà bông mặn mặn đậm đà.",
-      "createdAt": "2026-06-29T16:40:00Z"
+      "createdAt": "2026-06-29T16:40:00.000Z",
+      "updatedAt": "2026-06-29T16:40:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a426a02f357aa90c4298d06",
-      "userEmail": "tuananh.nguyen@gmail.com",
-      "recipeTitle": "Bông Lan Trứng Muối",
+      "userId": "64a7c1b5e52c8b0e8c8a1b01",
+      "recipeId": "6a44f197ab867844b478b5f0",
       "content": "Trứng muối nướng chín vàng thơm phức không bị tanh chút nào.",
-      "createdAt": "2026-06-29T16:45:00Z"
-    },
-    {
-      "_id": "6a426a02f357aa90c4298d07",
-      "userEmail": "quan.le@gmail.com",
-      "recipeTitle": "Bông Lan Phô Mai",
-      "content": "Bánh phồng xốp mềm mịn nhẹ như mây, tan ngay trong miệng.",
-      "createdAt": "2026-06-29T16:50:00Z"
-    },
-    {
-      "_id": "6a426a02f357aa90c4298d08",
-      "userEmail": "linhdan.do@gmail.com",
-      "recipeTitle": "Bông Lan Phô Mai",
-      "content": "Vị béo ngậy thơm lừng mùi phô mai sữa rất lôi cuốn.",
-      "createdAt": "2026-06-29T16:55:00Z"
+      "createdAt": "2026-06-29T16:45:00.000Z",
+      "updatedAt": "2026-06-29T16:45:00.000Z",
+      "__v": 0
     },
     {
       "_id": "6a4271116c6fe7209a176a81",
@@ -1411,132 +1692,210 @@
     {
       "_id": "6a426b01f357aa90c4298d85",
       "userId": "64a7c1b5e52c8b0e8c8a1b01",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d01"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d01",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d86",
       "userId": "64a7c1b5e52c8b0e8c8a1b01",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d07"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d07",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d87",
       "userId": "64a7c1b5e52c8b0e8c8a1b01",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d10"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d10",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d88",
       "userId": "64a7c1b5e52c8b0e8c8a1b02",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d03"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d03",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d89",
       "userId": "64a7c1b5e52c8b0e8c8a1b02",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d04"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d04",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d8a",
       "userId": "64a7c1b5e52c8b0e8c8a1b02",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d16"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d16",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d8b",
       "userId": "64a7c1b5e52c8b0e8c8a1b03",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d05"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d05",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d8c",
       "userId": "64a7c1b5e52c8b0e8c8a1b03",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d06"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d06",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d8d",
       "userId": "64a7c1b5e52c8b0e8c8a1b03",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d1c"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d1c",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d8e",
       "userId": "64a7c1b5e52c8b0e8c8a1b04",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d0b"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0b",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d8f",
       "userId": "64a7c1b5e52c8b0e8c8a1b04",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d0c"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0c",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d90",
       "userId": "64a7c1b5e52c8b0e8c8a1b04",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d0a"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0a",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d91",
       "userId": "64a7c1b5e52c8b0e8c8a1b05",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d07"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d07",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d92",
       "userId": "64a7c1b5e52c8b0e8c8a1b05",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d08"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d08",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d93",
       "userId": "64a7c1b5e52c8b0e8c8a1b05",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d11"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d11",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d94",
       "userId": "64a7c1b5e52c8b0e8c8a1b06",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d1d"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d1d",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d95",
       "userId": "64a7c1b5e52c8b0e8c8a1b06",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d1e"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d1e",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d96",
       "userId": "64a7c1b5e52c8b0e8c8a1b06",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d1b"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d1b",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d97",
       "userId": "64a7c1b5e52c8b0e8c8a1b07",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d13"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d13",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.196Z",
+      "updatedAt": "2026-07-19T09:19:01.196Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d98",
       "userId": "64a7c1b5e52c8b0e8c8a1b07",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d15"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d15",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.197Z",
+      "updatedAt": "2026-07-19T09:19:01.197Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d99",
       "userId": "64a7c1b5e52c8b0e8c8a1b07",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d16"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d16",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.197Z",
+      "updatedAt": "2026-07-19T09:19:01.197Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d9a",
       "userId": "64a7c1b5e52c8b0e8c8a1b08",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d17"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d17",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.197Z",
+      "updatedAt": "2026-07-19T09:19:01.197Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d9b",
       "userId": "64a7c1b5e52c8b0e8c8a1b08",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d18"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d18",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.197Z",
+      "updatedAt": "2026-07-19T09:19:01.197Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d9c",
       "userId": "64a7c1b5e52c8b0e8c8a1b09",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d19"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d19",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.197Z",
+      "updatedAt": "2026-07-19T09:19:01.197Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d9d",
       "userId": "64a7c1b5e52c8b0e8c8a1b0a",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d0d"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0d",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.197Z",
+      "updatedAt": "2026-07-19T09:19:01.197Z"
     },
     {
       "_id": "6a426b01f357aa90c4298d9e",
       "userId": "64a7c1b5e52c8b0e8c8a1b0a",
-      "recipeId": "64a7c1b5e52c8b0e8c8a1d0e"
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d0e",
+      "__v": 0,
+      "createdAt": "2026-07-19T09:19:01.197Z",
+      "updatedAt": "2026-07-19T09:19:01.197Z"
     },
     {
       "_id": "6a550d1079e4c6c11b998201",
@@ -1576,6 +1935,14 @@
       "recipeId": "64a7c1b5e52c8b0e8c8a1d08",
       "createdAt": "2026-07-13T16:35:02.342Z",
       "updatedAt": "2026-07-13T16:35:02.342Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a5cd2d909846e332fe47038",
+      "userId": "6a5c973d1fc4004e6ae321b7",
+      "recipeId": "64a7c1b5e52c8b0e8c8a1d08",
+      "createdAt": "2026-07-19T13:36:25.253Z",
+      "updatedAt": "2026-07-19T13:36:25.253Z",
       "__v": 0
     }
   ],
