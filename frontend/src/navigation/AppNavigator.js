@@ -18,6 +18,14 @@ import AuthorProfileScreen from '../screens/profile/AuthorProfileScreen';
 import NotificationsScreen from '../screens/notifications/NotificationsScreen';
 import ShoppingListScreen from '../screens/shopping/ShoppingListScreen';
 import BakingTimerScreen from '../screens/timer/BakingTimerScreen';
+import MealPlannerScreen from '../screens/recipe/MealPlannerScreen';
+import IngredientChecklistScreen from '../screens/recipe/IngredientChecklistScreen';
+import CookingModeScreen from '../screens/recipe/CookingModeScreen';
+import AdminDashboardScreen from '../screens/profile/AdminDashboardScreen';
+import ManageAccountsScreen from '../screens/profile/ManageAccountsScreen';
+import CookingScreen from '../screens/recipe/CookingScreen';
+import FollowConnectionsScreen from '../screens/profile/FollowConnectionsScreen';
+import NutritionTrackerScreen from '../screens/profile/NutritionTrackerScreen';
 import colors from '../theme/colors';
 
 const Stack = createNativeStackNavigator();
@@ -90,6 +98,16 @@ const AppNavigator = () => {
       <Stack.Screen name="Notifications" component={NotificationsScreen} options={{ title: 'Thông báo', headerShown: false }} />
       <Stack.Screen name="ShoppingList" component={ShoppingListScreen} options={{ title: 'Danh sách Đi chợ' }} />
       <Stack.Screen name="BakingTimer" component={BakingTimerScreen} options={{ title: 'Clock Timer' }} />
+      
+      <Stack.Screen name="MealPlanner" component={MealPlannerScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="IngredientChecklist" component={IngredientChecklistScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="CookingMode" component={CookingModeScreen} options={{ headerShown: false }} />
+      
+      <Stack.Screen name="AdminDashboard" component={AdminDashboardScreen} options={{ title: 'Kiểm duyệt công thức' }} />
+      <Stack.Screen name="ManageAccounts" component={ManageAccountsScreen} options={{ title: 'Quản lý tài khoản' }} />
+      <Stack.Screen name="Cooking" component={CookingScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="FollowConnections" component={FollowConnectionsScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="NutritionTracker" component={NutritionTrackerScreen} options={{ title: 'Theo dõi dinh dưỡng' }} />
     </Stack.Navigator>
   );
 };
