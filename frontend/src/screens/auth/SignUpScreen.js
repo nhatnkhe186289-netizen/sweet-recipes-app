@@ -44,11 +44,6 @@ const SignUpScreen = ({ navigation }) => {
       showAlert('Lỗi đăng ký', message || 'Thông tin đăng ký không hợp lệ hoặc email đã tồn tại');
       dispatch(reset());
     }
-<<<<<<< HEAD
-    if (isSuccess || user) {
-      dispatch(reset());
-      navigation.replace('App');
-=======
     if (isSuccess) {
       Alert.alert(
         "Đăng ký thành công",
@@ -63,7 +58,6 @@ const SignUpScreen = ({ navigation }) => {
           }
         ]
       );
->>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
     }
   }, [isError, isSuccess, message, dispatch, navigation]);
 

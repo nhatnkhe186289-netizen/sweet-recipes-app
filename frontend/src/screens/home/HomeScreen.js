@@ -140,7 +140,6 @@ const HomeScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-<<<<<<< HEAD
         {/* Quick Tools Shortcuts Row */}
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: spacing.md, gap: 10 }}>
           <TouchableOpacity
@@ -184,7 +183,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
           </TouchableOpacity>
         </View>
-=======
+
         {/* Today's Plan Widget */}
         {(() => {
           const todayStr = formatDateString(new Date());
@@ -241,7 +240,6 @@ const HomeScreen = ({ navigation }) => {
             );
           }
         })()}
->>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
 
         {/* Swipable Trending Banner Carousel */}
         <View style={styles.carouselContainer}>

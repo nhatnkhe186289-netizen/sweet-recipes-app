@@ -205,9 +205,6 @@ const ProfileScreen = ({ navigation }) => {
               <Ionicons name="chevron-forward" size={16} color={colors.grey} />
             </TouchableOpacity>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('NutritionTracker')}>
               <View style={styles.actionLeft}>
                 <View style={[styles.actionIconContainer, { backgroundColor: '#E8F5E9' }]}>
@@ -221,9 +218,6 @@ const ProfileScreen = ({ navigation }) => {
               <Ionicons name="chevron-forward" size={16} color={colors.grey} />
             </TouchableOpacity>
 
->>>>>>> 76f9c8eb914945604796a85e8d2d83584eff33dc
-            <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('Notifications')}>
-=======
             <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('MealPlanner')}>
               <View style={styles.actionLeft}>
                 <View style={[styles.actionIconContainer, { backgroundColor: '#FFEBF0' }]}>
@@ -237,8 +231,7 @@ const ProfileScreen = ({ navigation }) => {
               <Ionicons name="chevron-forward" size={16} color={colors.grey} />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.actionItem} onPress={() => Alert.alert('Thông báo', 'Không có thông báo mới')}>
->>>>>>> d428b3b853ed06f91ab51858676775879f8ff471
+            <TouchableOpacity style={styles.actionItem} onPress={() => navigation.navigate('Notifications')}>
               <View style={styles.actionLeft}>
                 <View style={[styles.actionIconContainer, { backgroundColor: '#F3EFFF' }]}>
                   <Ionicons name="notifications-outline" size={18} color="#8F00FF" />
