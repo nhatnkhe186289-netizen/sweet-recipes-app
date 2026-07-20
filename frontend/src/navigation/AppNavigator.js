@@ -55,20 +55,12 @@ const AppNavigator = () => {
         } else {
           setInitialRoute('Onboarding');
         }
-        
-        const token = await AsyncStorage.getItem('token');
-        if (token) {
-          // If we have a token, proactively load the user profile so it's ready across all screens
-          const { loadProfile } = require('../store/authSlice');
-          const { store } = require('../store/store');
-          store.dispatch(loadProfile());
-        }
       } catch (error) {
         setInitialRoute('Onboarding');
       }
     };
     checkOnboardingAndAuth();
-  }, []);
+  }, [dispatch]);
 
   if (!initialRoute) {
     return (
