@@ -150,12 +150,23 @@ const CookingModeScreen = ({ route, navigation }) => {
       setStepIndex(stepIndex + 1);
     } else {
       // Completed last step!
-      Vibration.vibrate(200);
-      Alert.alert(
-        '🎉 Hoàn thành!',
-        'Chúc mừng bạn đã hoàn thành tất cả các bước chế biến món bánh ngọt ngào này! 🍰',
-        [{ text: 'Về trang chủ', onPress: () => navigation.popToTop() }]
-      );
+      if (Platform.OS !== 'web') {
+        try {
+          Vibration.vibrate(200);
+        } catch (e) {
+          // Ignore vibration errors
+        }
+        Alert.alert(
+          '🎉 Hoàn thành!',
+          'Chúc mừng bạn đã hoàn thành tất cả các bước chế biến món bánh ngọt ngào này! 🍰',
+          [{ text: 'Về trang chủ', onPress: () => navigation.goBack() }]
+        );
+      } else {
+        const confirmed = window.confirm('🎉 Hoàn thành!\nChúc mừng bạn đã hoàn thành tất cả các bước chế biến món bánh ngọt ngào này! 🍰\nBấm OK để quay lại.');
+        if (confirmed || !confirmed) {
+          navigation.goBack();
+        }
+      }
     }
   };
 
