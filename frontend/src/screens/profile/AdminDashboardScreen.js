@@ -33,11 +33,11 @@ const AdminDashboardScreen = ({ navigation }) => {
       dispatch(changeRecipeStatus({ recipeId, status: newStatus }))
         .unwrap()
         .then(() => {
-          Alert.alert('Thành công', `Đã ${newStatus === 'approved' ? 'duyệt' : 'từ chối'} công thức: ${title}`);
+          alertService.alert('Thành công', `Đã ${newStatus === 'approved' ? 'duyệt' : 'từ chối'} công thức: ${title}`);
           dispatch(fetchRecipes()); // Refresh general list
         })
         .catch((err) => {
-          Alert.alert('Lỗi', err || 'Không thể cập nhật trạng thái.');
+          alertService.alert('Lỗi', err || 'Không thể cập nhật trạng thái.');
         });
     };
 

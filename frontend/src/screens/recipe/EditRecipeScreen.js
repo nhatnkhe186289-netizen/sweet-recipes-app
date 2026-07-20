@@ -10,6 +10,7 @@ import LoadingSpinner from '../../components/LoadingSpinner';
 import colors from '../../theme/colors';
 import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
+import alertService from '../../services/alertService';
 
 const EditRecipeScreen = ({ route, navigation }) => {
   const { recipeId } = route.params;
@@ -43,7 +44,7 @@ const EditRecipeScreen = ({ route, navigation }) => {
         setCalories(recipe.calories.toString());
         setDifficulty(recipe.difficulty);
       } catch (error) {
-        Alert.alert('Lỗi', 'Không thể tải thông tin công thức bánh.');
+        alertService.alert('Lỗi', 'Không thể tải thông tin công thức bánh.');
         navigation.goBack();
       } finally {
         setLoading(false);
@@ -54,12 +55,12 @@ const EditRecipeScreen = ({ route, navigation }) => {
 
   const handleUpdateRecipe = async () => {
     if (!title || !description || !ingredients || !instructions || !cookingTime || !calories || !category) {
-      Alert.alert('Lỗi', 'Vui lòng điền đầy đủ tất cả các trường bắt buộc');
+      alertService.alert('Lỗi', 'Vui lòng điền đầy đủ tất cả các trường bắt buộc');
       return;
     }
 
     if (parseInt(cookingTime) <= 0 || parseInt(calories) <= 0) {
-      Alert.alert('Lỗi', 'Thời gian nấu và lượng calo phải là số lớn hơn 0');
+      alertService.alert('Lỗi', 'Thời gian nấu và lượng calo phải là số lớn hơn 0');
       return;
     }
 
@@ -90,11 +91,11 @@ const EditRecipeScreen = ({ route, navigation }) => {
       }
 
       await recipeService.updateRecipe(recipeId, formData);
-      Alert.alert('Thành công', 'Cập nhật công thức bánh thành công');
+      alertService.alert('Thành công', 'Cập nhật công thức bánh thành công');
       dispatch(fetchRecipes());
       navigation.navigate('RecipeDetail', { recipeId });
     } catch (error) {
-      Alert.alert('Lỗi', error.response?.data?.message || error.message || 'Không thể cập nhật công thức bánh');
+      alertService.alert('Lỗi', error.response?.data?.message || error.message || 'Không thể cập nhật công thức bánh');
     } finally {
       setUpdating(false);
     }

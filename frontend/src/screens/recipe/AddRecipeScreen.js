@@ -9,6 +9,7 @@ import Button from '../../components/Button';
 import colors from '../../theme/colors';
 import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
+import alertService from '../../services/alertService';
 
 const AddRecipeScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -33,12 +34,12 @@ const AddRecipeScreen = ({ navigation }) => {
 
   const handleAddRecipe = async () => {
     if (!title || !description || !ingredients || !instructions || !cookingTime || !calories || !category) {
-      Alert.alert('Lỗi', 'Vui lòng điền đầy đủ tất cả các trường bắt buộc');
+      alertService.alert('Lỗi', 'Vui lòng điền đầy đủ tất cả các trường bắt buộc');
       return;
     }
 
     if (parseInt(cookingTime) <= 0 || parseInt(calories) <= 0) {
-      Alert.alert('Lỗi', 'Thời gian nấu và lượng calo phải là số lớn hơn 0');
+      alertService.alert('Lỗi', 'Thời gian nấu và lượng calo phải là số lớn hơn 0');
       return;
     }
 
@@ -78,11 +79,11 @@ const AddRecipeScreen = ({ navigation }) => {
       }
 
       await recipeService.createRecipe(formData);
-      Alert.alert('Thành công', 'Đăng công thức bánh mới thành công');
+      alertService.alert('Thành công', 'Đăng công thức bánh mới thành công');
       dispatch(fetchRecipes());
       navigation.goBack();
     } catch (error) {
-      Alert.alert('Lỗi', error.response?.data?.message || error.message || 'Không thể đăng công thức bánh');
+      alertService.alert('Lỗi', error.response?.data?.message || error.message || 'Không thể đăng công thức bánh');
     } finally {
       setLoading(false);
     }

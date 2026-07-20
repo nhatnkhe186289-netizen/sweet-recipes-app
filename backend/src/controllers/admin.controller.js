@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const Recipe = require('../models/Recipe');
+const Notification = require('../models/Notification');
 const { sendSuccess, sendError } = require('../utils/responseHandler');
 
 // 1. User Account Management
@@ -100,6 +101,20 @@ const updateRecipeStatus = async (req, res) => {
 
     recipe.status = status;
     await recipe.save();
+
+    // Create a notification for the author
+    if (status === 'approved' || status === 'rejected') {
+      const content = status === 'approved' 
+        ? `Chúc mừng! Công thức "${recipe.title}" của bạn đã được duyệt và hiển thị công khai.`
+        : `Rất tiếc, công thức "${recipe.title}" của bạn đã bị từ chối.`;
+
+      await Notification.create({
+        recipient: recipe.author,
+        type: 'system',
+        recipe: recipe._id,
+        content
+      });
+    }
 
     return sendSuccess(res, recipe, 'Recipe moderation status updated successfully');
   } catch (error) {

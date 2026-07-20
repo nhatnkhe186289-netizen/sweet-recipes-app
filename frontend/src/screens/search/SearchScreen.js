@@ -1,5 +1,5 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   TextInput,
   ScrollView,
+  Platform,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
@@ -23,6 +24,16 @@ const SearchScreen = ({ route }) => {
   const dispatch = useDispatch();
   const [query, setQuery] = useState('');
   const [selectedCategoryId, setSelectedCategoryId] = useState('all');
+
+  const categoryScrollRef = useRef(null);
+  const scrollCategories = (direction) => {
+    if (categoryScrollRef.current && Platform.OS === 'web') {
+      const node = categoryScrollRef.current.getScrollableNode();
+      if (node && node.scrollBy) {
+        node.scrollBy({ left: direction === 'left' ? -250 : 250, behavior: 'smooth' });
+      }
+    }
+  };
 
   const { recipes, categories, isLoading } = useSelector((state) => state.recipe);
 
@@ -113,26 +124,40 @@ const SearchScreen = ({ route }) => {
         </View>
 
         {/* Categories horizontal tabs */}
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.categoryTabs}
-        >
-          {displayedCategories.map((cat) => {
-            const isSelected = selectedCategoryId === cat._id;
-            return (
-              <TouchableOpacity
-                key={cat._id}
-                style={[styles.tabButton, isSelected && styles.activeTabButton]}
-                onPress={() => handleSelectCategory(cat._id)}
-              >
-                <Text style={[styles.tabButtonText, isSelected && styles.activeTabButtonText]}>
-                  {cat.name}
-                </Text>
-              </TouchableOpacity>
-            );
-          })}
-        </ScrollView>
+        <View style={styles.categoryContainer}>
+          {Platform.OS === 'web' && (
+            <TouchableOpacity style={styles.webScrollButtonLeft} onPress={() => scrollCategories('left')}>
+              <Ionicons name="chevron-back" size={24} color={colors.primary} />
+            </TouchableOpacity>
+          )}
+          <ScrollView
+            ref={categoryScrollRef}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={{ flex: 1 }}
+            contentContainerStyle={styles.categoryTabs}
+          >
+            {displayedCategories.map((cat) => {
+              const isSelected = selectedCategoryId === cat._id;
+              return (
+                <TouchableOpacity
+                  key={cat._id}
+                  style={[styles.tabButton, isSelected && styles.activeTabButton]}
+                  onPress={() => handleSelectCategory(cat._id)}
+                >
+                  <Text style={[styles.tabButtonText, isSelected && styles.activeTabButtonText]}>
+                    {cat.name}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
+          </ScrollView>
+          {Platform.OS === 'web' && (
+            <TouchableOpacity style={styles.webScrollButtonRight} onPress={() => scrollCategories('right')}>
+              <Ionicons name="chevron-forward" size={24} color={colors.primary} />
+            </TouchableOpacity>
+          )}
+        </View>
       </View>
 
       {/* Results Title Count */}
@@ -290,6 +315,21 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 20,
     paddingHorizontal: 30,
+  },
+  categoryContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  webScrollButtonLeft: {
+    paddingHorizontal: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  webScrollButtonRight: {
+    paddingHorizontal: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

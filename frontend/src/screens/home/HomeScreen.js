@@ -1,5 +1,5 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -26,6 +26,8 @@ import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
 import { DEFAULT_CATEGORIES } from '../../constants/categories';
 import { showToast } from '../../utils/alert';
+import api from '../../services/api';
+import { useFocusEffect } from '@react-navigation/native';
 
 import { Platform } from 'react-native';
 
@@ -45,6 +47,17 @@ const HomeScreen = ({ navigation }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [refreshing, setRefreshing] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [unreadCount, setUnreadCount] = useState(0);
+
+  const categoryScrollRef = useRef(null);
+  const scrollCategories = (direction) => {
+    if (categoryScrollRef.current && Platform.OS === 'web') {
+      const node = categoryScrollRef.current.getScrollableNode();
+      if (node && node.scrollBy) {
+        node.scrollBy({ left: direction === 'left' ? -250 : 250, behavior: 'smooth' });
+      }
+    }
+  };
 
   const { recipes, categories, isLoading } = useSelector((state) => state.recipe);
   const { user } = useSelector((state) => state.auth);
@@ -57,6 +70,26 @@ const HomeScreen = ({ navigation }) => {
     dispatch(fetchMealPlans());
   }, [dispatch]);
 
+  const fetchUnreadNotifications = async () => {
+    if (user) {
+      try {
+        const response = await api.get('/notifications');
+        if (response.data.success) {
+          const count = response.data.data.filter(n => !n.isRead).length;
+          setUnreadCount(count);
+        }
+      } catch (error) {
+        console.log('Error fetching notifications:', error);
+      }
+    }
+  };
+
+  useFocusEffect(
+    React.useCallback(() => {
+      fetchUnreadNotifications();
+    }, [user])
+  );
+
   const onRefresh = async () => {
     setRefreshing(true);
     await Promise.all([
@@ -64,6 +97,7 @@ const HomeScreen = ({ navigation }) => {
       dispatch(fetchCategories()),
       dispatch(fetchFavorites()),
       dispatch(fetchMealPlans()),
+      fetchUnreadNotifications(),
     ]);
     setRefreshing(false);
   };
@@ -116,6 +150,11 @@ const HomeScreen = ({ navigation }) => {
               onPress={() => navigation.navigate('Notifications')}
             >
               <Ionicons name="notifications-outline" size={22} color={colors.dark} />
+              {unreadCount > 0 && (
+                <View style={styles.badge}>
+                  <Text style={styles.badgeText}>{unreadCount > 99 ? '99+' : unreadCount}</Text>
+                </View>
+              )}
             </TouchableOpacity>
             <Image
               source={{ uri: user?.avatar || 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150' }}
@@ -309,20 +348,34 @@ const HomeScreen = ({ navigation }) => {
             <Text style={styles.seeAllText}>See all <Ionicons name="chevron-forward" size={12} /></Text>
           </TouchableOpacity>
         </View>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.categoryScroll}
-        >
-          {displayedCategories.map((category) => (
-            <CategoryItem
-              key={category._id || category.id}
-              category={category}
-              isSelected={selectedCategory === (category._id || category.id)}
-              onPress={() => handleSelectCategory(category._id || category.id)}
-            />
-          ))}
-        </ScrollView>
+        <View style={styles.categoryContainer}>
+          {Platform.OS === 'web' && (
+            <TouchableOpacity style={styles.webScrollButtonLeft} onPress={() => scrollCategories('left')}>
+              <Ionicons name="chevron-back" size={24} color={colors.primary} />
+            </TouchableOpacity>
+          )}
+          <ScrollView
+            ref={categoryScrollRef}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={{ flex: 1 }}
+            contentContainerStyle={styles.categoryScroll}
+          >
+            {displayedCategories.map((category) => (
+              <CategoryItem
+                key={category._id || category.id}
+                category={category}
+                isSelected={selectedCategory === (category._id || category.id)}
+                onPress={() => handleSelectCategory(category._id || category.id)}
+              />
+            ))}
+          </ScrollView>
+          {Platform.OS === 'web' && (
+            <TouchableOpacity style={styles.webScrollButtonRight} onPress={() => scrollCategories('right')}>
+              <Ionicons name="chevron-forward" size={24} color={colors.primary} />
+            </TouchableOpacity>
+          )}
+        </View>
 
         {/* Popular Recipes Section */}
         <View style={styles.sectionHeader}>
@@ -399,6 +452,7 @@ const styles = StyleSheet.create({
   headerRight: {
     flexDirection: 'row',
     alignItems: 'center',
+    gap: 12,
   },
   iconCircle: {
     width: 40,
@@ -407,9 +461,31 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 12,
-    borderWidth: 1,
-    borderColor: '#F0F0F0',
+    shadowColor: colors.primary,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 3,
+    position: 'relative',
+  },
+  badge: {
+    position: 'absolute',
+    top: -2,
+    right: -2,
+    backgroundColor: 'red',
+    borderRadius: 10,
+    minWidth: 20,
+    height: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 4,
+    borderWidth: 1.5,
+    borderColor: colors.white,
+  },
+  badgeText: {
+    color: colors.white,
+    fontSize: 10,
+    fontWeight: 'bold',
   },
   avatar: {
     width: 42,
@@ -548,9 +624,23 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '600',
   },
+  categoryContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
   categoryScroll: {
     paddingBottom: 8,
-    marginBottom: 20,
+  },
+  webScrollButtonLeft: {
+    paddingHorizontal: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  webScrollButtonRight: {
+    paddingHorizontal: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   gridContainer: {
     flexDirection: 'row',
