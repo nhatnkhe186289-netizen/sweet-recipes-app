@@ -2,7 +2,7 @@
 
 Dự án ứng dụng công thức nấu ăn (Sweet Recipes).
 
-## 🚀 Hướng dẫn Cập nhật Code (DÀNH CHO THÀNH VIÊN NHÓM)
+## Hướng dẫn Cập nhật Code (DÀNH CHO THÀNH VIÊN NHÓM)
 
 Do cấu trúc lịch sử Git của dự án vừa được tái cấu trúc và dọn dẹp lại cho gọn gàng, nên ở **LẦN CẬP NHẬT ĐẦU TIÊN NÀY**, các bạn **KHÔNG** dùng lệnh `git pull` bình thường (vì sẽ gây lỗi xung đột).
 
@@ -28,7 +28,7 @@ git reset --hard origin/main
 
 ---
 
-## 💾 Hệ thống Tự động mồi dữ liệu (Auto Seeding)
+## Hệ thống Tự động mồi dữ liệu (Auto Seeding)
 
 Dự án đã được tích hợp hệ thống mồi dữ liệu thông minh. 
 
@@ -45,7 +45,7 @@ Lệnh này sẽ lấy các công thức trong Database của bạn ghi đè và
 
 ---
 
-## 🗄️ Sơ đồ Database (ERD)
+## Sơ đồ Database (ERD)
 
 Sơ đồ thể hiện các bảng (Collections), thuộc tính và mối quan hệ trong CSDL MongoDB của dự án Sweet Recipes (khi mở trên GitHub hoặc VS Code Preview sẽ tự động dựng hình vẽ):
 
@@ -176,4 +176,3 @@ erDiagram
         Date updatedAt
     }
 ```
-

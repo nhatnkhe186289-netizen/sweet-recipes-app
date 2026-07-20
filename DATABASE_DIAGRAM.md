@@ -1,9 +1,8 @@
-# 🗄️ Sơ đồ Database (ERD) - Sweet Recipes App
+# Sơ đồ Database (ERD) - Sweet Recipes App
 
 Tài liệu chi tiết CSDL MongoDB cho dự án Sweet Recipes.
 
-## 📊 Sơ đồ Mermaid ERD
-
+## Sơ đồ Mermaid ERD
 
 ```mermaid
 erDiagram
@@ -135,7 +134,7 @@ erDiagram
 
 ---
 
-## 📝 Danh sách các Collections
+## Danh sách các Collections
 
 1. **User**: Quản lý thông tin người dùng, vai trò, trạng thái, danh sách làm theo/theo dõi, danh sách món đã tạo & yêu thích.
 2. **Recipe**: Lưu thông tin công thức làm bánh ngọt, nguyên liệu, quy trình, độ khó, calo, tác giả và trạng thái phê duyệt.
