@@ -15,6 +15,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { fetchAdminUsers, changeUserRole, changeUserStatus, deleteUserAccount } from '../../store/adminSlice';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import colors from '../../theme/colors';
+import alertService from '../../services/alertService';
 
 const ManageAccountsScreen = () => {
   const dispatch = useDispatch();
@@ -37,20 +38,11 @@ const ManageAccountsScreen = () => {
         });
     };
 
-    if (Platform.OS === 'web') {
-      if (window.confirm(`Bạn có chắc muốn đổi vai trò của ${username} thành ${nextRole.toUpperCase()}?`)) {
-        performToggle();
-      }
-    } else {
-      Alert.alert(
-        'Đổi vai trò',
-        `Bạn có chắc muốn đổi vai trò của ${username} thành ${nextRole.toUpperCase()}?`,
-        [
-          { text: 'Hủy', style: 'cancel' },
-          { text: 'Xác nhận', onPress: performToggle },
-        ]
-      );
-    }
+    alertService.confirm(
+      'Đổi vai trò',
+      `Bạn có chắc muốn đổi vai trò của ${username} thành ${nextRole.toUpperCase()}?`,
+      performToggle
+    );
   };
 
   const handleToggleStatus = (userId, currentStatus, username) => {
@@ -67,20 +59,11 @@ const ManageAccountsScreen = () => {
         });
     };
 
-    if (Platform.OS === 'web') {
-      if (window.confirm(`Bạn có chắc muốn ${actionText.toLowerCase()} của ${username}?`)) {
-        performToggle();
-      }
-    } else {
-      Alert.alert(
-        actionText,
-        `Bạn có chắc muốn ${actionText.toLowerCase()} của ${username}?`,
-        [
-          { text: 'Hủy', style: 'cancel' },
-          { text: 'Xác nhận', onPress: performToggle },
-        ]
-      );
-    }
+    alertService.confirm(
+      actionText,
+      `Bạn có chắc muốn ${actionText.toLowerCase()} của ${username}?`,
+      performToggle
+    );
   };
 
   const handleDeleteUser = (userId, username) => {
@@ -95,20 +78,14 @@ const ManageAccountsScreen = () => {
         });
     };
 
-    if (Platform.OS === 'web') {
-      if (window.confirm(`Hành động này sẽ xóa vĩnh viễn tài khoản của ${username} và toàn bộ bài đăng của họ. Bạn có chắc chắn muốn tiếp tục?`)) {
-        performDelete();
-      }
-    } else {
-      Alert.alert(
-        'Xóa tài khoản',
-        `Hành động này sẽ xóa vĩnh viễn tài khoản của ${username} và toàn bộ bài đăng của họ. Bạn có chắc chắn muốn tiếp tục?`,
-        [
-          { text: 'Hủy', style: 'cancel' },
-          { text: 'Xóa tài khoản', style: 'destructive', onPress: performDelete },
-        ]
-      );
-    }
+    alertService.confirm(
+      'Xóa tài khoản',
+      `Hành động này sẽ xóa vĩnh viễn tài khoản của ${username} và toàn bộ bài đăng của họ. Bạn có chắc chắn muốn tiếp tục?`,
+      performDelete,
+      null,
+      'Xóa tài khoản',
+      'Hủy'
+    );
   };
 
   const renderUserItem = ({ item }) => {

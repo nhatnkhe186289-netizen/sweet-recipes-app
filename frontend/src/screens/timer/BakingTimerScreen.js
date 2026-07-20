@@ -14,6 +14,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 import colors from '../../theme/colors';
 import spacing from '../../theme/spacing';
+import alertService from '../../services/alertService';
 
 const DEFAULT_PRESETS = [
   { id: '1', title: 'Ủ bột bánh mì', minutes: 45, icon: 'time-outline', isCustom: false },
@@ -25,11 +26,7 @@ const DEFAULT_PRESETS = [
 ];
 
 const showAlert = (title, msg) => {
-  if (Platform.OS === 'web' && typeof window !== 'undefined') {
-    window.alert(`${title}: ${msg}`);
-  } else {
-    Alert.alert(title, msg);
-  }
+  alertService.alert(title, msg);
 };
 
 const BakingTimerScreen = ({ navigation }) => {

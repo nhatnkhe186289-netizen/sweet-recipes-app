@@ -16,6 +16,7 @@ import { fetchAdminRecipes, changeRecipeStatus } from '../../store/adminSlice';
 import { fetchRecipes } from '../../store/recipeSlice';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import colors from '../../theme/colors';
+import alertService from '../../services/alertService';
 
 const AdminDashboardScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -40,20 +41,14 @@ const AdminDashboardScreen = ({ navigation }) => {
         });
     };
 
-    if (Platform.OS === 'web') {
-      if (window.confirm(`Bạn có chắc chắn muốn ${actionText.toLowerCase()} "${title}"?`)) {
-        performUpdate();
-      }
-    } else {
-      Alert.alert(
-        actionText,
-        `Bạn có chắc chắn muốn ${actionText.toLowerCase()} "${title}"?`,
-        [
-          { text: 'Hủy', style: 'cancel' },
-          { text: actionText, onPress: performUpdate },
-        ]
-      );
-    }
+    alertService.confirm(
+      actionText,
+      `Bạn có chắc chắn muốn ${actionText.toLowerCase()} "${title}"?`,
+      performUpdate,
+      null,
+      actionText,
+      'Hủy'
+    );
   };
 
   const filteredRecipes = recipes.filter((r) => r.status === activeTab);

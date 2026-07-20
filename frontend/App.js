@@ -167,8 +167,13 @@ const AlarmManagerWrapper = ({ children }) => {
   );
 };
 
+import CustomAlert from './src/components/CustomAlert';
+import { useRef } from 'react';
+
+// Inside App function:
 export default function App() {
   const isWeb = Platform.OS === 'web';
+  const alertRef = useRef(null);
 
   return (
     <View style={isWeb ? styles.webBackground : styles.container}>
@@ -183,6 +188,7 @@ export default function App() {
             </SafeAreaProvider>
           </AlarmManagerWrapper>
         </Provider>
+        <CustomAlert ref={alertRef} />
       </View>
     </View>
   );

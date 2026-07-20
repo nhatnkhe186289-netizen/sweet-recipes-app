@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import alertService from '../../services/alertService';
 import {
   View,
   Text,
@@ -165,21 +166,16 @@ const MealPlannerScreen = ({ navigation }) => {
       if (alreadyPlanned) {
         const msg = `Bạn đã lập kế hoạch cho bánh "${rec.title}" hôm nay. Bạn có chắc chắn muốn lập kế hoạch thêm không?`;
         
-        let proceed = false;
-        if (Platform.OS === 'web') {
-          proceed = window.confirm(msg);
-        } else {
-          proceed = await new Promise((resolve) => {
-            Alert.alert(
-              'Lập kế hoạch trùng lặp',
-              msg,
-              [
-                { text: 'Hủy', style: 'cancel', onPress: () => resolve(false) },
-                { text: 'Xác nhận', onPress: () => resolve(true) },
-              ]
-            );
-          });
-        }
+        let proceed = await new Promise((resolve) => {
+          alertService.confirm(
+            'Lập kế hoạch trùng lặp',
+            msg,
+            () => resolve(true),
+            () => resolve(false),
+            'Xác nhận',
+            'Hủy'
+          );
+        });
 
         if (!proceed) {
           // Unselect this recipe
@@ -234,16 +230,14 @@ const MealPlannerScreen = ({ navigation }) => {
         });
     };
 
-    if (Platform.OS === 'web') {
-      if (window.confirm('Bạn có muốn xóa món ăn này khỏi lịch nấu không?')) {
-        performDelete();
-      }
-    } else {
-      Alert.alert('Xóa kế hoạch', 'Bạn có muốn xóa món ăn này khỏi lịch nấu không?', [
-        { text: 'Hủy', style: 'cancel' },
-        { text: 'Xóa', style: 'destructive', onPress: performDelete },
-      ]);
-    }
+    alertService.confirm(
+      'Xóa kế hoạch', 
+      'Bạn có muốn xóa món ăn này khỏi lịch nấu không?', 
+      performDelete, 
+      null, 
+      'Xóa', 
+      'Hủy'
+    );
   };
 
   const renderRecipeItem = ({ item }) => {

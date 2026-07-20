@@ -13,6 +13,7 @@ import Button from '../../components/Button';
 import colors from '../../theme/colors';
 import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
+import alertService from '../../services/alertService';
 import { confirmAction } from '../../utils/alert';
 
 const formatDateString = (date) => {
@@ -159,33 +160,17 @@ const RecipeDetailScreen = ({ route, navigation }) => {
     };
 
     if (alreadyPlanned) {
-      if (Platform.OS === 'web') {
-        const confirmSave = window.confirm(
-          'Bạn đã lập kế hoạch cho loại bánh này hôm nay. Bạn có chắc chắn muốn lập kế hoạch với loại bánh này nữa không?'
-        );
-        if (confirmSave) {
-          executeSave();
-        } else {
+      alertService.confirm(
+        'Lập kế hoạch trùng lặp',
+        'Bạn đã lập kế hoạch cho loại bánh này hôm nay. Bạn có chắc chắn muốn lập kế hoạch với loại bánh này nữa không?',
+        executeSave,
+        () => {
           setShowDatePickerModal(false);
           navigation.goBack();
-        }
-      } else {
-        Alert.alert(
-          'Lập kế hoạch trùng lặp',
-          'Bạn đã lập kế hoạch cho loại bánh này hôm nay. Bạn có chắc chắn muốn lập kế hoạch với loại bánh này nữa không?',
-          [
-            {
-              text: 'Hủy',
-              style: 'cancel',
-              onPress: () => {
-                setShowDatePickerModal(false);
-                navigation.goBack();
-              }
-            },
-            { text: 'Xác nhận', onPress: executeSave },
-          ]
-        );
-      }
+        },
+        'Xác nhận',
+        'Hủy'
+      );
     } else {
       executeSave();
     }
@@ -322,9 +307,9 @@ const RecipeDetailScreen = ({ route, navigation }) => {
           })}
 
           {/* Instructions */}
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 16 }}>
-            <Text style={styles.sectionTitle}>Hướng dẫn thực hiện</Text>
-            <View style={{ flexDirection: 'row', gap: 10 }}>
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', marginTop: 16, rowGap: 10 }}>
+            <Text style={[styles.sectionTitle, { marginBottom: 0 }]}>Hướng dẫn thực hiện</Text>
+            <View style={{ flexDirection: 'row', gap: 8 }}>
               <TouchableOpacity
                 style={{
                   flexDirection: 'row',
@@ -338,7 +323,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
               >
                 <Ionicons name="timer-outline" size={16} color="#007AFF" />
                 <Text style={{ fontSize: 12, fontWeight: '700', color: '#007AFF', marginLeft: 4 }}>
-                  ⏱️ Clock Timer
+                  ⏱️ Hẹn giờ
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity

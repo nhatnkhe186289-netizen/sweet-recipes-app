@@ -18,15 +18,12 @@ import Button from '../../components/Button';
 import colors from '../../theme/colors';
 import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
+import alertService from '../../services/alertService';
 
 const { height } = Dimensions.get('window');
 
 const showAlert = (title, msg) => {
-  if (Platform.OS === 'web' && typeof window !== 'undefined') {
-    window.alert(`${title}: ${msg}`);
-  } else {
-    Alert.alert(title, msg);
-  }
+  alertService.alert(title, msg);
 };
 
 const SignUpScreen = ({ navigation }) => {

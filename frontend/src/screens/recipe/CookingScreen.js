@@ -16,6 +16,7 @@ import colors from '../../theme/colors';
 import typography from '../../theme/typography';
 import spacing from '../../theme/spacing';
 import nutritionService from '../../services/nutrition.service';
+import alertService from '../../services/alertService';
 
 const { width } = Dimensions.get('window');
 
@@ -177,32 +178,14 @@ const CookingScreen = ({ route, navigation }) => {
         }
       };
 
-      if (Platform.OS === 'web') {
-        const confirmed = window.confirm(
-          `${title}\n\n${message}\n\nNhấp chọn OK (Đồng ý) để "Ăn ngay & Lưu ${calories || 0} kcal", hoặc Cancel (Hủy) để "Chỉ hoàn thành".`
-        );
-        if (confirmed) {
-          saveCalories();
-        } else {
-          navigation.goBack();
-        }
-      } else {
-        Alert.alert(
-          title,
-          message,
-          [
-            {
-              text: 'Không, chỉ hoàn thành',
-              onPress: () => navigation.goBack(),
-              style: 'cancel',
-            },
-            {
-              text: `Ăn ngay & Lưu ${calories || 0} kcal`,
-              onPress: saveCalories,
-            },
-          ]
-        );
-      }
+      alertService.confirm(
+        title,
+        message,
+        saveCalories,
+        () => navigation.goBack(),
+        `Ăn ngay & Lưu ${calories || 0} kcal`,
+        'Chỉ hoàn thành'
+      );
     }
   };
 

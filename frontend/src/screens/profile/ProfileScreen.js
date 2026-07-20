@@ -77,6 +77,24 @@ const ProfileScreen = ({ navigation }) => {
     );
   };
 
+  if (!user) {
+    return (
+      <SafeAreaView style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
+        <Ionicons name="person-circle-outline" size={100} color={colors.grey} style={{ marginBottom: 20 }} />
+        <Text style={{ fontSize: typography.sizes.xl, fontWeight: 'bold', color: colors.dark, marginBottom: 10 }}>Bạn chưa đăng nhập</Text>
+        <Text style={{ fontSize: typography.sizes.md, color: colors.grey, textAlign: 'center', marginBottom: 30, paddingHorizontal: 40 }}>
+          Vui lòng đăng nhập để xem hồ sơ, theo dõi chỉ số và tham gia cộng đồng!
+        </Text>
+        <TouchableOpacity 
+          style={{ backgroundColor: colors.primary, paddingHorizontal: 40, paddingVertical: 15, borderRadius: 30 }}
+          onPress={() => navigation.navigate('Auth')}
+        >
+          <Text style={{ color: colors.white, fontWeight: 'bold', fontSize: typography.sizes.md }}>Đăng nhập ngay</Text>
+        </TouchableOpacity>
+      </SafeAreaView>
+    );
+  }
+
   const displayedRecipes = showAllRecipes ? userRecipes : userRecipes.slice(0, 6);
 
   const followersCount = user?.followers?.length || 0;
